@@ -140,3 +140,91 @@ header p {
     color: #555;
     border-top: 1px solid #eee;
 }
+/* --- 메인 페이지 스타일 추가 --- */
+
+.main-menu-container {
+    text-align: center;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.topic-item {
+    display: block;
+    padding: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.topic-item i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.topic-item h3 {
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.topic-item p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* 색상 테마 정의 */
+.score-color { background-color: #5d9cec; } /* 파랑 */
+.adjust-color { background-color: #64b5f6; } /* 하늘색 */
+.enroll-color { background-color: #4db6ac; } /* 민트 */
+.credit-color { background-color: #ffb74d; } /* 주황 */
+
+/* 문의 정보 스타일 */
+.contact-info {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    color: #777;
+}
+
+/* --- 휴보강 페이지 스타일 추가 --- */
+
+.adjust-page h2 {
+    color: #3b5998;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.info-section {
+    background-color: #f7f9fc;
+    padding: 15px;
+    border-left: 5px solid #64b5f6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #3b5998;
+    font-weight: bold;
+}
