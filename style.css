@@ -228,3 +228,65 @@ header p {
     color: #3b5998;
     font-weight: bold;
 }
+/* --- adjust.html 전용 아코디언 스타일 --- */
+
+/* 헤더 스타일 */
+.accordion-header-adjust {
+    width: 100%;
+    background-color: #e6f3ff; /* 연한 파란색 배경 */
+    color: #3b5998;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1.3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-bottom: 10px; /* 다음 요소와의 간격 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header-adjust:hover {
+    background-color: #d8ecff;
+}
+
+/* 닫힘/열림 아이콘 (>) 스타일 */
+.accordion-header-adjust i {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: #2a68b4;
+    transform: rotate(0deg); /* 닫혀있을 때 */
+}
+
+/* 클릭되어 열린 상태의 아이콘 (V 모양으로 회전) */
+.accordion-header-adjust.active i {
+    transform: rotate(90deg); /* 오른쪽 화살표가 아래를 향하도록 90도 회전 */
+}
+
+/* 콘텐츠 영역 스타일 */
+.accordion-content-adjust {
+    padding: 0 25px;
+    background-color: #ffffff;
+    overflow: hidden;
+    max-height: 0; /* JS로 높이를 제어 */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 아코디언 내부 콘텐츠 스타일 개선 */
+.accordion-content-adjust h4 {
+    color: #1a1a1a;
+    border-left: 3px solid #64b5f6;
+    padding-left: 10px;
+}
+.accordion-content-adjust li {
+    line-height: 1.8;
+}
+
+/* 기존 rule-section 대신 아코디언 콘텐츠를 사용하므로 이전 rule-section 스타일은 생략하거나 조정 */
