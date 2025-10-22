@@ -1,0 +1,142 @@
+/* 전체 배경 그라데이션 */
+body {
+    font-family: 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* 하늘색 계열 그라데이션 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+}
+
+/* 헤더 스타일 */
+header {
+    text-align: center;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: #3b5998; /* 진한 파란색 */
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* 검색창 스타일 */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0f4f9; /* 연한 배경 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.search-box i {
+    color: #7a7a7a;
+    margin-right: 10px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex-grow: 1;
+    font-size: 1em;
+}
+
+/* 특정 메뉴 (탭) 스타일 */
+.top-menu {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+}
+
+.menu-title {
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.menu-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu-tabs span {
+    background-color: #e0e6f0;
+    color: #444;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menu-tabs span:hover {
+    background-color: #d1d9e6;
+}
+
+/* 아코디언 스타일 */
+.accordion-header {
+    width: 100%;
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.accordion-header:hover {
+    background-color: #f9f9f9;
+}
+
+/* 아이콘 스타일 */
+.accordion-header i {
+    transition: transform 0.3s ease;
+}
+
+/* 클릭되어 열린 상태의 아이콘 */
+.accordion-header.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0 15px;
+    background-color: #fcfcfc;
+    overflow: hidden;
+    max-height: 0; /* JS로 높이를 제어하여 슬라이딩 효과 구현 */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content p {
+    padding: 15px 0;
+    margin: 0;
+    color: #555;
+    border-top: 1px solid #eee;
+}
