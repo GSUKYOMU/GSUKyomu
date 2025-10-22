@@ -3,15 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 - 휴보강 안내</title>
-    <link rel="stylesheet" href="style.css">
+    <title>강서대학교 교무처 - 휴강 및 보강 규정 안내</title>
+    <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* adjust.html 전용 스타일 추가 (가독성 향상) */
+        .rule-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .rule-section h3 {
+            color: #2a68b4; /* 학교 대표색 계열 */
+            border-bottom: 2px solid #e0e6f0;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .rule-section h4 {
+            color: #3b5998;
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .rule-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .rule-section ul ul {
+            list-style: circle;
+            padding-left: 25px;
+            margin-top: 5px;
+        }
+        .important-note {
+            background-color: #fff3cd; /* 경고/주의 색상 */
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #ffc107;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="background-wrap">
         <header>
-            <h1>🕒 휴강 및 보강 관련 안내</h1>
-            <p>강서대학교 교무처 수업 운영</p>
+            <h1>🕒 휴강 및 보강 규정 안내</h1>
+            <p>강서대학교 교원 휴·보강 운영 원칙 및 절차</p>
         </header>
 
         <div class="container adjust-page">
@@ -19,28 +61,75 @@
                 <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
             </a>
             
-            <h2>휴보강 신청 및 확인 절차</h2>
-            
-            <div class="info-section">
-                <h3>1. 휴강 신청 절차</h3>
-                <p>교수는 수업일 7일 전까지 교무처에 휴강 신청서를 제출해야 합니다. 부득이한 경우(경조사, 질병 등) 즉시 제출 가능합니다. 학생들은 학교 포털 또는 학과 공지사항을 통해 반드시 확인하시기 바랍니다.</p>
-            </div>
-            
-            <div class="info-section">
-                <h3>2. 보강 의무 및 기간</h3>
-                <p>휴강이 발생한 모든 수업은 반드시 보강을 실시해야 합니다. 보강은 해당 학기 종강일 이전에 완료되어야 하며, 보강 계획서는 휴강 신청 시 함께 제출해야 합니다.</p>
+            <div class="rule-section">
+                <h3>1. 휴강 및 보강의 원칙 및 승인</h3>
+                
+                <p>수업의 내실을 기하기 위하여 교원(교수, 강사)은 임의로 결강 및 휴강을 할 수 없습니다. 정당한 사유로 휴강해야 할 경우에는 반드시 **교무처장의 사전 승인**을 받아야 합니다.</p>
+                
+                <h4>A. 휴·보강 계획서 제출 (사전 또는 즉시)</h4>
+                
+                <ol>
+                    <li>
+                        <strong>사전 계획에 따른 휴강 (출장, 결근 등):</strong>
+                        <ul>
+                            <li>휴강 계획이 있는 경우, **1주일 전**에 휴·보강계획서를 학부장을 경유하여 교무처에 제출해야 합니다.</li>
+                            <li>교원은 학생들에게 보강 시간 등을 공지하여 수업 결손이 없도록 최선을 다해야 합니다.</li>
+                            <li>계획이 있는 경우, **전자출결시스템**에도 휴강 및 보강계획을 입력해야 합니다.</li>
+                            <li>교무처는 휴·보강계획서를 접수하는 즉시 이를 공지해야 합니다.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>불가피한 사유에 의한 갑작스러운 휴강 (건강 문제 등):</strong>
+                        <ul>
+                            <li>불가피한 이유로 갑작스럽게 휴강했을 경우, **복귀 즉시** 휴·보강계획서를 학부장에게 제출해야 합니다.</li>
+                            <li>교·강사가 학생에게 직접 휴강 사실을 공지한 경우에도, 그 내역을 **전자출결시스템에 입력**해야 합니다.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>결강 처리 기준:</strong>
+                        <ul>
+                            <li>교원이 수업 시간 **15분이 경과**하여도 출강하지 않으면 해당 과목의 시간은 결강으로 처리되며 보강을 실시해야 합니다.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4>B. 휴·보강 횟수 제한 및 기간</h4>
+                
+                <div class="important-note">
+                    <i class="fas fa-exclamation-triangle"></i> 주의 사항
+                </div>
+                <ul>
+                    <li>휴·보강은 한 학기에 과목별 **최대 2회**까지만 가능합니다.</li>
+                    <li>개인 사유에 의한 휴강이 학기당 2회 이상일 경우 경고 조치, 3회 이상일 경우 허용하지 않을 수도 있습니다.</li>
+                    <li>보강은 **기말시험 이전까지만** 허용됩니다 (종강 이후에는 불가).</li>
+                    <li>법정공휴일 및 임시공휴일로 인해 수업일수가 부족할 경우, **16주차를 결손과목 보충기간**으로 지정하여 운영합니다. (대체공휴일 휴강은 별도 계획서 제출 불필요)</li>
+                </ul>
             </div>
 
+            <div class="rule-section">
+                <h3>2. 보강 결과보고서 제출 및 사후 관리</h3>
+                
+                <h4>A. 보강 결과보고서 제출</h4>
+                <ul>
+                    <li>보강을 실시한 교·강사는 교무처에 **보강 결과보고서**를 제출해야 합니다.</li>
+                    <li>또한, 보강 후 **1주일 이내**에 보강확인서를 제출해야 합니다.</li>
+                </ul>
+
+                <h4>B. 모니터링 및 제재</h4>
+                <ul>
+                    <li>교무처는 수업 모니터링을 통해 보강 실시 여부를 점검하며, 모니터링 결과 보강 미실시 확인 시 **무단 결강으로 간주**합니다.</li>
+                    <li>휴·보강 내역 및 실시 여부는 **교원업적평가에 반영**됩니다.</li>
+                    <li>성적평가관리위원회는 매 학기 성적 입력 완료 후, 휴보강 실시 여부를 포함한 수업 및 성적 관리 사항을 점검해야 합니다.</li>
+                </ul>
+            </div>
+            
             <div class="info-section">
-                <h3>3. 학생 문의처</h3>
-                <p>
-                    <strong>문의:</strong> 교무처 수업지원팀<br>
-                    <strong>전화:</strong> 02-XXX-XXXX<br>
-                    <strong>이메일:</strong> class@gangseo.ac.kr
-                </p>
+                <h3>교무처 수업지원팀 문의</h3>
+                <p>자세한 내용은 교무처 수업지원팀으로 문의 바랍니다.</p>
+                <p><strong>전화:</strong> 02-XXX-XXXX</p>
             </div>
             
         </div>
     </div>
-</body>
+    </body>
 </html>
