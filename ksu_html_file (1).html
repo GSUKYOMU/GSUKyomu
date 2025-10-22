@@ -1,377 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 수업 관련 안내</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .section-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .section-content.active {
-            max-height: 3000px;
-        }
-        .rotate-180 {
-            transform: rotate(180deg);
-        }
-        .chevron {
-            transition: transform 0.3s ease;
-        }
-        .tab-button {
-            transition: all 0.3s ease;
-        }
-        .tab-button.active {
-            background: linear-gradient(to right, #2563eb, #1d4ed8);
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>강서대학교 교무처 수업 문의</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-    <div class="p-6">
-        <div class="max-w-4xl mx-auto">
-            <!-- Header -->
-            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-                <h1 class="text-4xl font-bold text-gray-800 mb-2">수업 관련 안내</h1>
-                <p class="text-gray-600 text-lg">강서대학교 교무처 수업관리팀</p>
-                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mt-6">
-                    <p class="text-sm text-gray-700">
-                        <span class="font-semibold">안내:</span> 본 페이지는 수업 운영 관련 주요 정보를 제공합니다. 자세한 문의는 교무처로 연락주시기 바랍니다.
-                    </p>
-                </div>
-            </div>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
 
-            <!-- Tab Navigation -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-                <div class="flex flex-wrap gap-3">
-                    <button onclick="showTab('rest-class')" id="tab-rest-class" class="tab-button active px-6 py-3 rounded-lg font-semibold bg-gray-100">
-                        휴보강 안내
-                    </button>
-                    <button onclick="showTab('faq')" id="tab-faq" class="tab-button px-6 py-3 rounded-lg font-semibold bg-gray-100">
-                        자주 묻는 질문
-                    </button>
-                </div>
-            </div>
+  <header class="bg-blue-700 text-white p-4 text-center shadow-md">
+    <h1 class="text-2xl font-bold">강서대학교 교무처 수업 관련 문의</h1>
+    <p class="text-sm">최신 정보 제공 및 자주 묻는 질문 안내</p>
+  </header>
 
-            <!-- Rest Class Content -->
-            <div id="content-rest-class" class="tab-content">
-                <div class="space-y-4">
-                    <!-- Section 1: Principles -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('principles')" class="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                </svg>
-                                <span class="text-lg font-semibold">휴강 및 보강의 원칙</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-principles" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-principles" class="section-content">
-                            <div class="p-6 border-t border-gray-200">
-                                <div class="bg-red-50 border-l-4 border-red-600 p-4 mb-6">
-                                    <p class="text-red-900 font-semibold">⚠️ 중요</p>
-                                    <p class="text-red-800 text-sm mt-2">
-                                        교수, 강사는 임의로 결강 및 휴강을 할 수 없습니다. 정당한 사유로 휴강해야 할 경우 반드시 교무처장의 사전 승인을 받아야 합니다.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <main class="max-w-4xl mx-auto p-6">
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold border-b pb-2 mb-4">📌 문서 1 요약</h2>
+      <div class="bg-white p-4 rounded shadow">
+        <p>
+          여기에 <strong>문서 1 (https://claude.ai/public/artifacts/1e38bf7f-6a6e-4289-970f-ed95e5777161)</strong>의 요약 혹은 전체 텍스트를 붙여넣으세요.<br><br>
+          예: <br>
+          - 수강 신청 관련 주요 일정<br>
+          - 수업 변경 신청 방법<br>
+          - 문의 가능한 전화번호 및 이메일 등
+        </p>
+      </div>
+    </section>
 
-                    <!-- Section 2: System Guide -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('system')" class="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                <span class="text-lg font-semibold">헤이영 시스템 사용 안내</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-system" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-system" class="section-content">
-                            <div class="p-6 border-t border-gray-200 space-y-6">
-                                <!-- HeyYoung Link -->
-                                <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded">
-                                    <p class="font-semibold text-gray-800 mb-3">🔗 헤이영 시스템 접속</p>
-                                    <a href="https://campus.heyoung.co.kr/" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded transition-colors">
-                                        헤이영 시스템 바로가기 →
-                                    </a>
-                                </div>
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold border-b pb-2 mb-4">📌 문서 2 요약</h2>
+      <div class="bg-white p-4 rounded shadow">
+        <p>
+          여기에 <strong>문서 2 (https://claude.ai/public/artifacts/bc0bfb1a-292b-49f3-86d5-81f6c0ca9f66)</strong>의 요약 혹은 전체 텍스트를 붙여넣으세요.<br><br>
+          예: <br>
+          - 수업시간 변경, 휴·복학 절차<br>
+          - 학적변동 관련 안내<br>
+          - 교무처 방문 시 준비물
+        </p>
+      </div>
+    </section>
 
-                                <!-- Designated Rest Days -->
-                                <div class="border-l-4 border-blue-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">📅 지정보강일 (학기 시작 전 일괄 처리)</h3>
-                                    <div class="bg-blue-50 p-3 rounded mb-3">
-                                        <p class="text-sm text-gray-700">
-                                            교무처에서 학기 시작 전에 헤이영을 통해 <span class="font-semibold">지정보강일로 일괄 처리</span>합니다. 별도의 신청이 필요없습니다.
-                                        </p>
-                                    </div>
-                                </div>
+    <section class="text-sm text-gray-600">
+      본 페이지는 강서대학교 학생들의 편의를 위해 제작되었습니다. 보다 정확한 정보는 공식 교무처에 문의해 주세요.
+    </section>
+  </main>
 
-                                <!-- Change Designated Day -->
-                                <div class="border-l-4 border-orange-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">🔄 지정보강일 변경 신청</h3>
-                                    <p class="text-sm text-gray-700 mb-3">
-                                        지정보강일이 아닌 <span class="font-semibold">다른 날짜 또는 온라인 보강</span>을 원할 경우:
-                                    </p>
-                                    
-                                    <div class="space-y-3">
-                                        <div class="bg-gray-50 p-3 rounded">
-                                            <p class="font-semibold text-gray-800 mb-2">💻 PC 방법</p>
-                                            <ol class="space-y-1 text-sm text-gray-700">
-                                                <li>1. 헤이영 메뉴 → <span class="font-semibold">휴강/보강 등록</span> 클릭</li>
-                                                <li>2. 취소할 과목 선택</li>
-                                                <li>3. 일괄처리된 지정보강일 선택</li>
-                                                <li>4. 하단의 <span class="font-semibold text-red-600">휴강취소</span> 클릭</li>
-                                                <li>5. 원하는 일자 및 방식으로 새로 신청</li>
-                                            </ol>
-                                        </div>
+  <footer class="bg-blue-100 text-center text-sm p-4 mt-10">
+    제작: GPT온라인 (<a href="https://gptonline.ai/ko/" class="text-blue-700 font-semibold underline">https://gptonline.ai/ko/</a>)
+  </footer>
 
-                                        <div class="bg-gray-50 p-3 rounded">
-                                            <p class="font-semibold text-gray-800 mb-2">📱 모바일 방법</p>
-                                            <ol class="space-y-1 text-sm text-gray-700">
-                                                <li>1. 메뉴 → <span class="font-semibold">휴/보강조회</span> 클릭</li>
-                                                <li>2. 취소할 과목 선택</li>
-                                                <li>3. 하단의 <span class="font-semibold text-red-600">철회 버튼</span> 터치</li>
-                                                <li>4. 원하는 일자 및 방식으로 새로 신청</li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section 3: Submission -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('submission')" class="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                <span class="text-lg font-semibold">휴·보강 계획서 제출</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-submission" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-submission" class="section-content">
-                            <div class="p-6 border-t border-gray-200 space-y-6">
-                                <!-- HeyYoung Process -->
-                                <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-lg">
-                                    <h4 class="font-semibold text-gray-800 mb-3">🖨️ 헤이영 휴보강계획서 출력 및 제출 절차</h4>
-                                    <div class="space-y-2 text-sm">
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
-                                            <p><span class="font-semibold">PC 헤이영</span> → 메뉴 중 <span class="font-semibold">"휴강/보강 수업조회"</span> 클릭</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
-                                            <p>오른쪽으로 스크롤하여 <span class="font-semibold">"휴보강계획서 [보기]"</span> 클릭</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
-                                            <p>매 교시별로 출력</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">4</span>
-                                            <p>우측하단에 <span class="font-semibold">본인 서명</span></p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">5</span>
-                                            <p><span class="font-semibold">학과장 및 학과사무실</span>에 제출</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs font-bold">6</span>
-                                            <p>학과장 서명 후 <span class="font-semibold">교무처에 제출</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Type 1 -->
-                                <div class="border-l-4 border-green-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">1️⃣ 사전 계획에 따른 휴강</h3>
-                                    <ul class="space-y-2 text-sm text-gray-700">
-                                        <li>• 제출시기: 휴강 1주일 전</li>
-                                        <li>• 제출경로: 학부장 경유 → 교무처</li>
-                                        <li>• 학생공지 및 시스템 등록 필수</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Type 2 -->
-                                <div class="border-l-4 border-orange-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">2️⃣ 불가피한 사유에 의한 갑작스러운 휴강</h3>
-                                    <ul class="space-y-2 text-sm text-gray-700">
-                                        <li>• 제출시기: 복귀 즉시</li>
-                                        <li>• 제출경로: 학부장에게 제출</li>
-                                        <li>• 시스템 등록 필수</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Type 3 -->
-                                <div class="border-l-4 border-red-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">3️⃣ 결강 처리 기준</h3>
-                                    <p class="text-sm text-gray-700">수업 시간 15분 경과 후 미출강 시 결강 처리 및 보강 실시</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section 4: Limits -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('limits')" class="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                                <span class="text-lg font-semibold">휴·보강 횟수 및 기간 제한</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-limits" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-limits" class="section-content">
-                            <div class="p-6 border-t border-gray-200">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-600">
-                                        <p class="font-semibold text-gray-800 mb-2">📊 횟수 제한</p>
-                                        <ul class="space-y-2 text-sm text-gray-700">
-                                            <li>• 학기당 과목별 최대 2회</li>
-                                            <li>• 개인사유 2회 이상: 경고</li>
-                                            <li>• 개인사유 3회 이상: 불가</li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-600">
-                                        <p class="font-semibold text-gray-800 mb-2">📅 기간 제한</p>
-                                        <ul class="space-y-2 text-sm text-gray-700">
-                                            <li>• 기말시험 이전까지만 가능</li>
-                                            <li>• 종강 후 보강 불가</li>
-                                            <li>• 16주차는 보충기간</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section 5: Report -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('report')" class="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span class="text-lg font-semibold">보강 결과보고서 제출</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-report" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-report" class="section-content">
-                            <div class="p-6 border-t border-gray-200 space-y-6">
-                                <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded">
-                                    <p class="font-semibold text-red-900 mb-2">⏰ 제출 기한</p>
-                                    <p class="text-red-800 text-sm">보강 실시 후 <span class="font-semibold">일주일 이내</span> 제출</p>
-                                </div>
-
-                                <div class="border-l-4 border-blue-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">📝 작성 항목</h3>
-                                    <div class="space-y-2 text-sm text-gray-700">
-                                        <p>• <span class="font-semibold">학과:</span> 강의 개설 학과</p>
-                                        <p>• <span class="font-semibold">학년:</span> 대상 학년</p>
-                                        <p>• <span class="font-semibold">휴강일시:</span> 원래 일자 및 교시</p>
-                                        <p>• <span class="font-semibold">보강일시:</span> 실제 보강 일자</p>
-                                        <p>• <span class="font-semibold">방법:</span> 대면/온라인</p>
-                                        <p>• <span class="font-semibold">내용:</span> 수업 내용 상세</p>
-                                    </div>
-                                </div>
-
-                                <div class="border-l-4 border-green-600 pl-4">
-                                    <h3 class="font-semibold text-gray-800 mb-3">📎 첨부 자료</h3>
-                                    <div class="space-y-3">
-                                        <div class="bg-green-50 p-3 rounded">
-                                            <p class="font-semibold text-gray-800 mb-2">🏫 대면 수업</p>
-                                            <p class="text-sm text-gray-700">• 수업 사진 또는 헤이영 출석 기록</p>
-                                            <p class="text-xs text-gray-600 mt-1">헤이영: 출석부 → 변경시간 캡쳐</p>
-                                        </div>
-                                        <div class="bg-purple-50 p-3 rounded">
-                                            <p class="font-semibold text-gray-800 mb-2">💻 온라인 수업</p>
-                                            <p class="text-sm text-gray-700">• LMS 영상 업로드 화면</p>
-                                            <p class="text-xs text-gray-600 mt-1">출석기간 및 영상 분량 포함</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ Content -->
-            <div id="content-faq" class="tab-content" style="display: none;">
-                <div class="space-y-4">
-                    <!-- FAQ 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('faq1')" class="w-full flex items-center justify-between bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <span class="text-lg font-semibold">Q1. 휴강 신청 없이 휴강하면 어떻게 되나요?</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-faq1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-faq1" class="section-content">
-                            <div class="p-6 border-t border-gray-200 bg-purple-50">
-                                <p class="text-gray-800"><span class="font-semibold">A.</span> 무단 결강으로 처리되며, 교원업적평가에 부정적으로 반영됩니다. 반드시 사전 승인을 받아야 합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('faq2')" class="w-full flex items-center justify-between bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <span class="text-lg font-semibold">Q2. 보강을 기말시험 이후에 할 수 있나요?</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-faq2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-faq2" class="section-content">
-                            <div class="p-6 border-t border-gray-200 bg-purple-50">
-                                <p class="text-gray-800"><span class="font-semibold">A.</span> 아니요. 보강은 반드시 기말시험 이전까지 완료해야 하며, 종강 후에는 불가능합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('faq3')" class="w-full flex items-center justify-between bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all">
-                            <div class="flex items-center gap-3">
-                                <span class="text-lg font-semibold">Q3. 지정보강일에 보강이 어려운 경우 어떻게 하나요?</span>
-                            </div>
-                            <svg class="w-6 h-6 chevron" id="chevron-faq3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="content-faq3" class="section-content">
-                            <div class="p-6 border-t border-gray-200 bg-purple-50">
-                                <p class="text-gray-800"><span class="font-semibold">A.</span> 헤이영 시스템에서 일괄처리된 지정보강일을 취소한 후, 원하는 날짜로 다시 신청하시면 됩니다. PC와 모바일 모두 가능합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button onclick="toggleSection('faq4')" class="w-full flex items-center justify-between bg-gradient
+</body>
+</html>
