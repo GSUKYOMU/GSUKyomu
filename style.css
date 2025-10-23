@@ -301,3 +301,114 @@ header p {
     border: 1px solid #eee;
     margin-bottom: 20px;
 }
+/* --- New Adjust Page Styles (image_9d8c82.png look) --- */
+
+/* 페이지 헤더 스타일 */
+.adjust-header h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+.adjust-header p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 안내 박스 스타일 */
+.info-box-header {
+    background-color: #f0f8ff; /* 연한 파란색 배경 */
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.info-box-header p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 아코디언 헤더 스타일 (파란색 배경) */
+.accordion-header-new {
+    width: 100%;
+    background-color: #007bff; /* 파란색 배경 */
+    color: #ffffff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 1.15em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    margin-bottom: 1px; /* 항목 간 간격 최소화 */
+}
+
+.accordion-header-new:hover {
+    background-color: #0056b3;
+}
+
+/* 아이콘 스타일 */
+.accordion-header-new i {
+    transition: transform 0.3s ease;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* 클릭되어 열린 상태의 아이콘 (위쪽 화살표) */
+.accordion-header-new.active i {
+    transform: rotate(180deg); 
+}
+
+/* 콘텐츠 영역 스타일 */
+.accordion-content-new {
+    padding: 0 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+    max-height: 0; 
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    margin-bottom: 10px; /* 섹션 사이 간격 */
+}
+
+/* 중요 박스 스타일 (휴강 원칙 내부) */
+.important-warning {
+    background-color: #fdeaea;
+    color: #d8000c;
+    padding: 15px;
+    border-left: 5px solid #d8000c;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-size: 1em;
+}
+.important-warning strong {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* 아코디언 내부 상세 내용 스타일 */
+.accordion-content-new h4 {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.accordion-content-new ul, .accordion-content-new ol {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+/* 링크 스타일 (헤이영 등) */
+.content-link {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
