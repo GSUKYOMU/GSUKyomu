@@ -3,50 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 수업 문의 (메인)</title>
+    <title>성적 입력 및 제출 서류 안내</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="background-wrap">
-        <header>
-            <h1>🏛️ 강서대학교 교무처 수업 문의</h1>
-            <p>궁금한 주제를 선택해 주세요.</p>
+    <div class="container">
+        <header class="header">
+            <h1>
+                <span class="icon-box">📘</span>
+                성적 입력 및 제출 서류 안내
+            </h1>
+            <p class="subtitle">성적 입력 방법 및 필수 제출 서류 안내</p>
         </header>
 
-        <div class="container main-menu-container">
-            <div class="topic-grid">
-                
-                <a href="score.html" class="topic-item score-color">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>성적</h3>
-                    <p>평가 기준, 입력 및 제출 서류 안내</p>
-                </a>
-                
-                <a href="adjust.html" class="topic-item adjust-color">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>휴보강</h3>
-                    <p>휴강, 보강 신청 및 확인 절차</p>
-                </a>
-
-                <a href="#" class="topic-item enroll-color">
-                    <i class="fas fa-user-plus"></i>
-                    <h3>수강 신청</h3>
-                    <p>방법, 정정 기간 및 유의사항</p>
-                </a>
-
-                <a href="#" class="topic-item credit-color">
-                    <i class="fas fa-file-invoice"></i>
-                    <h3>학점 인정</h3>
-                    <p>재수강, 계절학기, 교류 학점</p>
-                </a>
+        <main class="card">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 출석, 기한 등)">
             </div>
-            
-            <div class="contact-info">
-                <h4>교무처 문의</h4>
-                <p>전화: 02-XXX-XXXX | 이메일: academic@gangseo.ac.kr</p>
+
+            <div class="featured-menu">
+                <button class="menu-button">성적평가 기준</button>
+                <button class="menu-button">성적 입력 기준</button>
+                <button class="menu-button">성적 제출 서류</button>
+                <button class="menu-button">제출 방법 및 기한</button>
+                <button class="menu-button">성적 관리 및 자료보관</button>
+                <button class="menu-button second-row">민원 사례</button>
+                <button class="menu-button second-row">기타 유의사항</button>
             </div>
-        </div>
+
+            <hr class="divider">
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        성적평가 기준
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        성적 입력 기준
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    </div>
+            </div>
+        </main>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
