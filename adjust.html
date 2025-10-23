@@ -111,26 +111,67 @@
                     <i class="fas fa-calendar-check"></i> 보강 실시 후 <mark>일주일 이내</mark>에 제출해야 합니다.
                 </div>
 
-                <h4 style="margin-top: 30px;">📝 보강결과보고서 작성 항목</h4>
-                <ul>
-                    <li><strong>🏫 학과:</strong> 본인의 소속학과가 아닌 <mark>강의가 개설된 학과</mark>를 작성</li>
-                    <li><strong>📚 학년:</strong> <mark>몇 학년을 대상으로 열린 강의인지</mark> 작성</li>
-                    <li><strong>⏱️ 휴강일시:</strong> 휴강한 <mark>원래 일자 및 교시</mark>와 해당 교시의 <strong>정확한 시간</strong> 기입</li>
-                    <li><strong>⏱️ 보강일시:</strong> 휴강일시와 동일한 방식으로 작성</li>
-                    <li><strong>👥 보강 방법 및 내용:</strong>
+                <h4 style="margin-top: 30px; margin-bottom: 15px;"><i class="fas fa-pencil-alt" style="margin-right: 10px; color: #4a90e2;"></i> 보강결과보고서 작성 항목</h4>
+
+                <div class="report-item">
+                    <div class="item-icon"><i class="fas fa-school"></i></div>
+                    <div class="item-content">
+                        <strong>학과:</strong> 
+                        <p>본인의 소속학과가 아닌 <mark>강의가 개설된 학과</mark>를 작성</p>
+                    </div>
+                </div>
+
+                <div class="report-item">
+                    <div class="item-icon"><i class="fas fa-book"></i></div>
+                    <div class="item-content">
+                        <strong>학년:</strong> 
+                        <p><mark>몇 학년을 대상으로 열린 강의인지</mark> 작성</p>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="item-icon"><i class="fas fa-clock"></i></div>
+                    <div class="item-content">
+                        <strong>휴강일시:</strong> 
+                        <p>휴강한 <mark>원래 일자 및 교시</mark>와 해당 교시의 <strong>정확한 시간</strong> 기입</p>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="item-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="item-content">
+                        <strong>보강일시:</strong> 
+                        <p>휴강일시와 동일한 방식으로 작성</p>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="item-icon"><i class="fas fa-users"></i></div>
+                    <div class="item-content">
+                        <strong>보강 방법 및 내용:</strong> 
                         <ul>
                             <li><strong>방법:</strong> 대면/온라인 여부 작성</li>
                             <li><strong>내용:</strong> 진행한 수업 내용 상세 작성</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
 
-                <h4 style="margin-top: 30px;">📎 관련 자료 첨부 (증빙 자료)</h4>
-                <ul>
-                    <li><strong>대면 보강 시:</strong> 대면 수업 <strong>사진</strong> 또는 헤이영 <mark>출결 상세 내용 캡처</mark> 첨부</li>
-                    <li><strong>온라인 보강 시 (LMS):</strong> LMS에서 해당 주차에 업로드한 <strong>영상 캡처</strong> (<mark>출석 기간 및 영상의 분량</mark>이 나오도록) 첨부</li>
-                </ul>
-                
+
+                <div class="attachment-section">
+                    <h4 class="section-title"><i class="fas fa-paperclip"></i> 관련 자료 첨부 (증빙 자료)</h4>
+                    
+                    <h5 style="color: #444; margin-top: 0; margin-bottom: 5px;">대면 보강 시:</h5>
+                    <ul>
+                        <li>대면 수업 <strong>사진</strong> 또는 헤이영 <mark>출결 상세 내용 캡처</mark> 첨부</li>
+                    </ul>
+                    
+                    <h5 style="color: #444; margin-top: 15px; margin-bottom: 5px;">온라인 보강 시 (LMS):</h5>
+                    <ul>
+                        <li>LMS에서 해당 주차에 업로드한 <strong>영상 캡처</strong> (<mark>출석 기간 및 영상의 분량</mark>이 나오도록) 첨부</li>
+                    </ul>
+                </div>
+
+
                 <h4 style="margin-top: 30px;">🔍 모니터링 및 제재</h4>
                 <ul>
                     <li>교무처는 보강 미실시 확인 시 <strong>무단 결강으로 간주</strong></li>
@@ -150,48 +191,6 @@
         </div>
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const headers = document.querySelectorAll('.accordion-header-new');
-
-            headers.forEach(header => {
-                header.addEventListener('click', function() {
-                    const contentId = this.getAttribute('data-content-id');
-                    const content = document.getElementById(contentId);
-                    const icon = this.querySelector('.fas:last-child');
-                    
-                    this.classList.toggle('active');
-
-                    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                        // 닫기 동작
-                        content.style.maxHeight = '0px';
-                        content.style.paddingTop = '0';
-                        content.style.paddingBottom = '0';
-                        icon.classList.replace('fa-angle-up', 'fa-angle-right');
-                    } else {
-                        // 열기 동작
-                        // content.scrollHeight + 40px (padding 여유분)을 더해 정확한 높이를 계산합니다.
-                        content.style.maxHeight = content.scrollHeight + 40 + 'px'; 
-                        content.style.paddingTop = '20px';
-                        content.style.paddingBottom = '20px';
-                        icon.classList.replace('fa-angle-right', 'fa-angle-up');
-                    }
-                });
-            });
-            
-            // 초기 로딩 시 모든 아코디언을 닫아두고 아이콘을 오른쪽(>)으로 설정
-            headers.forEach(header => {
-                const contentId = header.getAttribute('data-content-id');
-                const content = document.getElementById(contentId);
-                const icon = header.querySelector('.fas:last-child');
-                
-                content.style.maxHeight = '0px';
-                content.style.paddingTop = '0';
-                content.style.paddingBottom = '0';
-                header.classList.remove('active');
-                icon.classList.replace('fa-angle-up', 'fa-angle-right');
-            });
-        });
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const headers = document.querySelectorAll('.accordion-header-new');
@@ -223,6 +222,7 @@
 
                     if (this.classList.contains('active')) {
                         // 열기 동작
+                        // content.scrollHeight + 40px (padding 여유분)을 더해 정확한 높이를 계산합니다.
                         content.style.maxHeight = content.scrollHeight + 40 + 'px'; 
                         content.style.paddingTop = '20px';
                         content.style.paddingBottom = '20px';
