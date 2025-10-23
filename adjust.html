@@ -192,6 +192,64 @@
                 icon.classList.replace('fa-angle-up', 'fa-angle-right');
             });
         });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.accordion-header-new');
+            const contents = document.querySelectorAll('.accordion-content-new'); // 모든 내용 요소를 선택
+
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const contentId = this.getAttribute('data-content-id');
+                    const content = document.getElementById(contentId);
+                    const isOpening = !this.classList.contains('active'); // 지금 닫혀있어서 열려고 하는지 확인
+
+                    // 1. 모든 아코디언 닫기 (자동 닫힘 로직)
+                    if (isOpening) {
+                        headers.forEach(h => {
+                            h.classList.remove('active');
+                            const icon = h.querySelector('.fas:last-child');
+                            icon.classList.replace('fa-angle-up', 'fa-angle-right');
+                        });
+                        contents.forEach(c => {
+                            c.style.maxHeight = '0px';
+                            c.style.paddingTop = '0';
+                            c.style.paddingBottom = '0';
+                        });
+                    }
+
+                    // 2. 현재 아코디언 토글 (열거나 닫기)
+                    this.classList.toggle('active');
+                    const icon = this.querySelector('.fas:last-child');
+
+                    if (this.classList.contains('active')) {
+                        // 열기 동작
+                        content.style.maxHeight = content.scrollHeight + 40 + 'px'; 
+                        content.style.paddingTop = '20px';
+                        content.style.paddingBottom = '20px';
+                        icon.classList.replace('fa-angle-right', 'fa-angle-up');
+                    } else {
+                        // 닫기 동작
+                        content.style.maxHeight = '0px';
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                        icon.classList.replace('fa-angle-up', 'fa-angle-right');
+                    }
+                });
+            });
+            
+            // 초기 로딩 시 모든 아코디언을 닫아두고 아이콘을 오른쪽(>)으로 설정
+            headers.forEach(header => {
+                const contentId = header.getAttribute('data-content-id');
+                const content = document.getElementById(contentId);
+                const icon = header.querySelector('.fas:last-child');
+                
+                content.style.maxHeight = '0px';
+                content.style.paddingTop = '0';
+                content.style.paddingBottom = '0';
+                header.classList.remove('active');
+                icon.classList.replace('fa-angle-up', 'fa-angle-right');
+            });
+        });
     </script>
 </body>
 </html>
