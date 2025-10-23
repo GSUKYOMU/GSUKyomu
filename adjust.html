@@ -3,149 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 - 휴강 및 보강 규정 안내</title>
+    <title>강서대학교 교무처 - 휴보강 신청 안내</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 추가된 CSS 스타일이 style.css에 반영되어 있다고 가정합니다. */
-        .heyoung-link {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #2980b9; /* 링크 색상 조정 */
-        }
-        .important-note {
-            background-color: #fef4e7; /* 배경색 조정 */
-            color: #b97500;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 5px solid #ffaa00;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-        .main-info-header { /* 메인 정보 헤더를 클로드 스타일처럼 깔끔하게 */
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #333;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .contact-box {
-            background-color: #f7f7f7;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 30px;
+        /* CSS 파일에 정의된 스타일을 사용합니다. */
+        /* 헤더 스타일을 클래스로 조정 */
+        .adjust-page-header {
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
     <div class="background-wrap">
-        <header>
-            <h1>🕒 휴강 및 보강 규정 안내</h1>
-            <p>강서대학교 교원 휴·보강 운영 원칙 및 전자출결시스템(헤이영) 사용 안내</p>
-        </header>
-
         <div class="container adjust-page">
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
             </a>
 
-            <div class="heyoung-info-box">
-                <h3 class="main-info-header">전자출결시스템 (헤이영) 사용 안내 <i class="fas fa-external-link-alt"></i></h3>
-                <p>휴보강 계획 및 관리는 **헤이영 시스템**을 통해 진행됩니다. 아래 링크를 통해 접속하세요.</p>
-                <div style="text-align: center; margin: 10px 0;">
-                    <a href="https://campus.heyoung.co.kr/" target="_blank" class="heyoung-link" style="font-size: 1.1em; text-decoration: none;">
-                        <i class="fas fa-link"></i> 헤이영 시스템 바로가기
-                    </a>
+            <div class="adjust-page-header">
+                <h1 style="font-size: 2em; font-weight: 700; color: #333; margin-bottom: 5px;">휴보강 신청 안내</h1>
+                <p style="font-size: 1.1em; color: #555; margin-bottom: 15px;">강서대학교 교무처 수업관리</p>
+            </div>
+            
+            <div class="info-box-header">
+                <p><strong>안내:</strong> 본 시스템은 휴강 및 보강 신청 절차를 안내합니다. 자세한 문의는 교무처로 연락주시기 바랍니다.</p>
+            </div>
+
+            <button class="accordion-header-new active" data-content-id="content1">
+                <i class="fas fa-exclamation-circle"></i> 휴강 및 보강의 원칙 <i class="fas fa-angle-up"></i>
+            </button>
+            
+            <div class="accordion-content-new" id="content1" style="max-height: none; padding-top: 20px; padding-bottom: 20px;">
+                <div class="important-warning">
+                    <strong>⚠️ 중요</strong>
+                    교수, 강사는 임의로 결강 및 휴강을 할 수 없습니다. 정당한 사유로 휴강해야 할 경우 반드시 **교무처장의 사전 승인**을 받아야 합니다.
                 </div>
             </div>
 
-            <button class="accordion-header-adjust">
-                1. 휴강 및 보강의 원칙 및 승인 <i class="fas fa-chevron-right"></i>
+            <button class="accordion-header-new" data-content-id="content2">
+                <i class="fas fa-desktop"></i> 헤이영 시스템 사용 안내 <i class="fas fa-angle-down"></i>
             </button>
             
-            <div class="accordion-content-adjust">
-                <p>수업의 내실을 기하기 위하여 교원(교수, 강사)은 임의로 결강 및 휴강을 할 수 없습니다. 정당한 사유로 휴강해야 할 경우에는 반드시 **교무처장의 사전 승인**을 받아야 합니다.</p>
+            <div class="accordion-content-new" id="content2">
+                <h4>📅 지정보강일 (학기 시작 전 일괄 처리)</h4>
+                <p>교무처에서 학기 시작 전에 헤이영을 통해 **지정보강일로 일괄 처리**합니다. **별도의 신청이 필요없습니다.**</p>
+
+                <h4>🔄 지정보강일 변경 신청</h4>
+                <p>지정보강일이 아닌 다른 날짜 또는 온라인 보강을 원할 경우, 다음 절차에 따라 일괄 처리 내역을 취소 후 새로 신청해야 합니다.</p>
                 
-                <h4>A. 휴·보강 계획서 제출 및 승인 절차 (헤이영 PC 기준)</h4>
-                
-                <ol>
-                    <li>
-                        **휴·보강 계획서 제출 및 승인:**
-                        <ul>
-                            <li>헤이영(PC) 메뉴 중 **'휴강/보강 수업조회'**에 접속합니다.</li>
-                            <li>오른쪽으로 스크롤하여 **휴보강계획서 [보기]**를 클릭하여 매 교시 출력 후 우측 하단에 **본인 서명**을 합니다.</li>
-                            <li>**학과장 및 학과사무실**에 제출하여 **학과장님 서명**을 받은 후 교무처에 최종 제출해야 합니다.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        **지정 보강일 일괄 처리 및 취소:**
-                        <ul>
-                            <li>**학기 시작 전**, 교무처에서 지정보강일에 대해 헤이영을 통해 **지정보강일로 일괄 보강 처리**합니다.</li>
-                            <li>**[일괄 보강 취소 방법]** 해당 지정보강일이 아닌 다른 날짜 혹은 당일 온라인 보강을 진행하고 싶은 경우, 일괄 처리된 내역을 **취소**해야 합니다.
-                                <ul>
-                                    <li>**PC:** 메뉴 중 **'휴강/보강 등록'** → 취소할 과목 선택 → 일괄처리된 지정보강일 선택 → 하단 **'휴강취소'** 클릭</li>
-                                    <li>**모바일:** 메뉴 > 휴/보강조회 > 취소할 과목 선택 → 하단 **'철회'** 버튼 터치</li>
-                                </ul>
-                            </li>
-                            <li>취소 후 원하는 일자 및 방식으로 **새로운 휴보강 신청**을 진행해야 합니다.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        **휴강 및 보강 횟수 제한 및 기간 (규정):**
-                        <div class="important-note">
-                            <i class="fas fa-exclamation-triangle"></i> 주의 사항 및 제한 규정
-                        </div>
-                        <ul>
-                            <li>휴·보강은 한 학기에 과목별 **최대 2회**까지만 가능합니다.</li>
-                            <li>보강은 **기말시험 이전까지만** 허용됩니다 (종강 이후 불가).</li>
-                            <li>법정공휴일 등에 따른 수업일수 부족 시 **16주차를 결손과목 보충기간**으로 지정 운영합니다.</li>
-                        </ul>
-                    </li>
+                <p style="font-weight: bold; margin-bottom: 5px;">💻 PC 방법</p>
+                <ol style="list-style-type: decimal;">
+                    <li>헤이영 메뉴 → **휴강/보강 등록** 클릭</li>
+                    <li>취소할 과목 선택</li>
+                    <li>일괄처리된 지정보강일 선택</li>
+                    <li>하단의 **휴강취소** 클릭</li>
+                    <li>원하는 일자 및 방식으로 **새로 신청**</li>
+                </ol>
+
+                <p style="font-weight: bold; margin-bottom: 5px;">📱 모바일 방법</p>
+                <ol style="list-style-type: decimal;">
+                    <li>메뉴 → **휴/보강조회** 클릭</li>
+                    <li>취소할 과목 선택</li>
+                    <li>하단의 **철회 버튼** 터치</li>
+                    <li>원하는 일자 및 방식으로 **새로 신청**</li>
                 </ol>
             </div>
-            
-            <button class="accordion-header-adjust">
-                2. 보강 결과보고서 제출 및 사후 관리 <i class="fas fa-chevron-right"></i>
-            </button>
 
-            <div class="accordion-content-adjust">
+            <button class="accordion-header-new" data-content-id="content3">
+                <i class="fas fa-file-alt"></i> 휴보강계획서 제출 <i class="fas fa-angle-down"></i>
+            </button>
+            
+            <div class="accordion-content-new" id="content3">
+                <h4>🖨️ 헤이영 휴보강계획서 출력 및 제출 절차 (사전 휴강 시)</h4>
+                <ol style="list-style-type: decimal;">
+                    <li>PC 헤이영 → 메뉴 중 **"휴강/보강 수업조회"** 클릭</li>
+                    <li>오른쪽으로 스크롤하여 **"휴보강계획서 [보기]"** 클릭</li>
+                    <li>매 교시별로 출력</li>
+                    <li>우측하단에 **본인 서명**</li>
+                    <li>**학과장 및 학과사무실에 제출**</li>
+                    <li>학과장 서명 후 **교무처에 최종 제출**</li>
+                </ol>
+                
+                <h4 style="margin-top: 30px;">2️⃣ 불가피한 사유에 의한 갑작스러운 휴강 (건강 문제 등)</h4>
+                <ul>
+                    <li>**제출시기:** **복귀 즉시**</li>
+                    <li>**제출경로:** **학부장에게 제출**</li>
+                    <li>**시스템등록:** 전자출결시스템에 휴강 내역 입력</li>
+                </ul>
+
+                <h4 style="margin-top: 30px;">3️⃣ 결강 처리 기준</h4>
+                <ul>
+                    <li>수업 시간 **15분 경과 후에도 출강하지 않으면 결강 처리**</li>
+                    <li>결강 시 보강을 **반드시 실시**해야 함</li>
+                </ul>
+            </div>
+
+            <button class="accordion-header-new" data-content-id="content4">
+                <i class="fas fa-clock"></i> 휴보강 횟수 및 기간 제한 <i class="fas fa-angle-down"></i>
+            </button>
+            
+            <div class="accordion-content-new" id="content4">
+                <ul>
+                    <li>휴·보강은 한 학기에 과목별 **최대 2회**까지만 가능합니다.</li>
+                    <li>보강은 **기말시험 이전까지만 허용**됩니다 (종강 이후 불가).</li>
+                    <li>법정공휴일 등에 따른 수업일수 부족 시 **16주차를 결손과목 보충기간으로 지정 운영**합니다.</li>
+                </ul>
+            </div>
+
+            <button class="accordion-header-new" data-content-id="content5">
+                <i class="fas fa-check-circle"></i> 보강 결과보고서 제출 및 작성 방법 <i class="fas fa-angle-down"></i>
+            </button>
+            
+            <div class="accordion-content-new" id="content5">
+                
                 <div style="text-align: center; margin: 10px 0; padding: 10px; border: 1px dashed #999; border-radius: 5px;">
-                    <a href="report_form.hwp" download class="heyoung-link" style="color: #e74c3c; font-size: 1.1em; text-decoration: none;">
+                    <a href="report_form.hwp" download class="content-link" style="color: #e74c3c; font-size: 1.1em; text-decoration: none;">
                         <i class="fas fa-file-download"></i> 보강 결과보고서 양식 다운로드 (클릭)
                     </a>
                 </div>
                 
-                <h4>A. 보강 결과보고서 제출 기한</h4>
-                <div class="important-note">
-                    <i class="fas fa-clock"></i> 보강 진행 후 **일주일 이내**에 제출해야 합니다.
+                <h4>⏰ 제출 기한</h4>
+                <div class="important-warning" style="background-color: #f0f8ff; border-left-color: #007bff; color: #007bff; font-weight: bold;">
+                    <i class="fas fa-calendar-check"></i> 보강 실시 후 **일주일 이내**에 제출해야 합니다.
                 </div>
 
-                <h4>B. 보고서 작성 내역 (필수 기재 사항)</h4>
-                <p>다음과 같이 작성 내용을 정확히 기재해야 합니다.</p>
+                <h4 style="margin-top: 30px;">📝 보강결과보고서 작성 항목</h4>
                 <ul>
-                    <li>**학과:** **강의가 개설된 학과**를 작성합니다. (본인 소속학과 아님)</li>
-                    <li>**학년:** 강의가 **몇 학년 대상으로 열린 강의**인지를 작성합니다.</li>
-                    <li>**휴강/보강 일시:** 휴강/보강을 진행한 일자 및 교시 (예: 7-9교시)와 해당 교시의 시간을 작성합니다.</li>
-                    <li>**보강 방법 및 내용:** 대면/온라인 구분 및 진행한 수업 내용을 작성합니다.</li>
+                    <li>**🏫 학과:** 본인의 소속학과가 **아닌** **강의가 개설된 학과**를 작성</li>
+                    <li>**📚 학년:** **몇 학년을 대상으로 열린 강의인지** 작성</li>
+                    <li>**⏱️ 휴강일시:** 휴강한 **원래 일자 및 교시** (예: 7-9교시)와 해당 교시의 **정확한 시간** 기입</li>
+                    <li>**⏱️ 보강일시:** 휴강일시와 동일한 방식으로 작성</li>
+                    <li>**👥 보강 방법 및 내용:**
+                        <ul>
+                            <li>**방법:** 대면 또는 온라인 여부 작성</li>
+                            <li>**내용:** 진행한 수업 내용 상세 작성</li>
+                        </ul>
+                    </li>
                 </ul>
 
-                <h4>C. 관련 자료 첨부 지침 (증빙 자료)</h4>
-                <ul>
-                    <li>**대면 보강 시:** 대면 수업 **사진** 또는 헤이영 **출결 상세 내용 캡처**를 첨부합니다.</li>
-                    <li>**온라인 보강 시 (LMS):** LMS에서 해당 주차에 업로드한 **영상 캡처** (출석 기간 및 **영상의 분량**이 나오도록)를 첨부해야 합니다.</li>
-                </ul>
+                <h4 style="margin-top: 30px;">📎 관련 자료 첨부 (증빙 자료)</h4>
+                
+                <p style="font-weight: bold;">🏫 대면 수업 진행 시</p>
+                <p>다음 중 하나를 첨부해주세요: **대면 수업 사진** 또는 **헤이영 출석 기록**</p>
+                <p style="font-weight: bold; margin-bottom: 5px;">💻 PC 버전 캡쳐 방법</p>
+                <ol>
+                    <li>해당 과목 출석부 입장</li>
+                    <li>예시로 2-3명 학생의 해당 주차, 날짜 O/X/△ 클릭</li>
+                    <li>**"출력상세보기"의 "변경시간"이 나오도록 캡쳐**</li>
+                </ol>
+                <p style="font-weight: bold; margin-bottom: 5px; margin-top: 15px;">📱 모바일 버전 캡쳐 방법</p>
+                <ol>
+                    <li>우측하단 **전체메뉴** → **출결관리**</li>
+                    <li>강의목록에서 보강 진행 과목 선택</li>
+                    <li>보강 진행한 해당 주차 터치</li>
+                    <li>예시 학생의 출석 옆 **">"** 터치</li>
+                    <li>**2-3명의 해당 보강일자 및 시간 출결 내용 캡쳐**</li>
+                </ol>
 
-            </div>
-            
-            <div class="contact-box">
-                <h3 style="margin-top: 0; color: #333;"><i class="fas fa-headset"></i> 교무처 수업지원팀 문의</h3>
-                <p>자세한 내용은 교무처 수업지원팀으로 문의 바랍니다.</p>
-                <p><strong>전화:</strong> 02-XXX-XXXX | <strong>이메일:</strong> academic@gangseo.ac.kr</p>
+                <p style="font-weight: bold; margin-bottom: 5px; margin-top: 25px;">💻 온라인 수업 진행 시</p>
+                <p>LMS에서 다음을 캡쳐하여 첨부해주세요: **업로드 영상, 출석기간, 영상 분량**이 나오도록 캡쳐</p>
+
+                <h4 style="margin-top: 30px;">🔍 모니터링 및 제재</h4>
+                <ul>
+                    <li>교무처는 수업 모니터링으로 보강 실시 여부 점검</li>
+                    <li>보강 미실시 확인 시 **무단 결강으로 간주**</li>
+                    <li>휴보강 내역은 **교원업적평가에 반영**</li>
+                    <li>성적평가관리위원회의 **정기 점검 대상**</li>
+                </ul>
             </div>
             
         </div>
     </div>
-    <script src="adjust_script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.accordion-header-new');
+
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    // 데이터 속성을 이용해 해당 콘텐츠를 찾음
+                    const contentId = this.getAttribute('data-content-id');
+                    const content = document.getElementById(contentId);
+                    
+                    this.classList.toggle('active');
+
+                    if (content.style.maxHeight && content.style.maxHeight !== 'none') {
+                        // 닫기
+                        content.style.maxHeight = null;
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                        this.querySelector('i:last-child').classList.replace('fa-angle-up', 'fa-angle-down');
+                    } else {
+                        // 열기
+                        content.style.maxHeight = content.scrollHeight + 40 + 'px'; // 40px은 패딩 공간 여유분
+                        content.style.paddingTop = '20px';
+                        content.style.paddingBottom = '20px';
+                        this.querySelector('i:last-child').classList.replace('fa-angle-down', 'fa-angle-up');
+                    }
+                });
+            });
+            
+            // 초기 로딩 시 첫 번째 항목을 열어두고 아이콘을 변경합니다.
+            const initialHeader = document.querySelector('.accordion-header-new.active');
+            const initialContent = document.getElementById(initialHeader.getAttribute('data-content-id'));
+            
+            if (initialContent) {
+                 // maxHeight를 null 대신 명확한 값으로 설정하여 CSS transition이 동작하게 합니다.
+                initialContent.style.maxHeight = initialContent.scrollHeight + 40 + 'px';
+                initialContent.style.paddingTop = '20px';
+                initialContent.style.paddingBottom = '20px';
+            }
+        });
+    </script>
 </body>
 </html>
