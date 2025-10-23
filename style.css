@@ -696,3 +696,115 @@ header p {
     font-size: 0.95em;
     line-height: 1.5;
 }
+/* ======================================= */
+/* ====== Score Page (score.html) Styles ====== */
+/* ======================================= */
+
+/* --- 탭 메뉴 컨테이너 --- */
+.tab-menu-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 탭 리스트 (flex로 가로 정렬) */
+.tab-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 개별 탭 버튼 */
+.tab-list button {
+    flex-grow: 1; /* 모든 버튼이 동일 너비를 차지하도록 */
+    padding: 10px 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #6c757d; /* 기본 텍스트 색상 */
+    border-bottom: 3px solid transparent; /* 기본 밑줄 투명 */
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 활성화된 탭 스타일 */
+.tab-list button.active {
+    color: #007bff; /* 활성화된 텍스트 색상 (파란색) */
+    font-weight: 700;
+    border-bottom: 3px solid #007bff; /* 활성화된 밑줄 */
+}
+
+/* --- 성적 페이지 아코디언 스타일 (기존 아코디언과 구분) --- */
+.score-accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 8px; /* 항목 간 간격 */
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* 연한 그라데이션 배경 */
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-accordion-header:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+}
+
+.score-accordion-header.active {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* 활성화 시 파란색 그라데이션 */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.score-accordion-header .fas {
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.score-accordion-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 20px;
+}
+
+.score-accordion-content h5 {
+    font-size: 1em;
+    color: #007bff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
+
+.score-accordion-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.score-accordion-content p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
