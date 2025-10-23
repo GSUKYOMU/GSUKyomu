@@ -584,227 +584,115 @@ header p {
 .content-section-box ol {
     list-style-type: decimal;
 }
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 - 성적 안내</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div class="background-wrap">
-        <div class="container adjust-page">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
-            </a>
+/* ======================================= */
+/* ====== Score Page (score.html) Styles ====== */
+/* ======================================= */
 
-            <div class="adjust-page-header">
-                <h1 style="font-size: 2em; font-weight: 700; color: #333; margin-bottom: 5px;">성적 입력 및 제출서류 안내</h1>
-                <p style="font-size: 1.1em; color: #555; margin-bottom: 15px;">성적 입력 방법 및 필수 제출 서류 안내</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <div style="background-color: #fff; border-radius: 8px; padding: 10px; border: 1px solid #ddd;">
-                    <i class="fas fa-search" style="color: #6c757d; margin-right: 10px;"></i>
-                    <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)" 
-                           style="width: calc(100% - 30px); border: none; outline: none; font-size: 1em;">
-                </div>
-            </div>
+/* --- 탭 메뉴 컨테이너 --- */
+.tab-menu-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
 
-            <div class="tab-menu-container">
-                <div style="font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 10px;">
-                    <i class="fas fa-th-list"></i> 빠른 메뉴
-                </div>
-                <ul class="tab-list" id="score-tab-list">
-                    <li><button data-target="contentA" class="active">성적평가 기준</button></li>
-                    <li><button data-target="contentB">성적 입력 기준</button></li>
-                    <li><button data-target="contentC">성적 제출 서류</button></li>
-                    <li><button data-target="contentD">제출 방법 및 기한</button></li>
-                </ul>
-            </div>
+/* 탭 리스트 (flex로 가로 정렬) */
+.tab-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-            <div id="tab-content-wrapper">
-                
-                <div class="tab-content" id="contentA" style="display: block;">
-                    <button class="score-accordion-header" data-content-id="acc1">
-                        성적평가 기준 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="acc1">
-                        <h5>상대평가 원칙</h5>
-                        <p>수강인원 20명 이상 강좌는 원칙적으로 상대평가를 적용합니다. 강좌 특성상 예외가 필요한 경우, 사전에 교무처 승인을 받아야 합니다.</p>
-                        
-                        <h5>평가 항목</h5>
-                        <ul>
-                            <li>출석: 20%</li>
-                            <li>중간고사: 30%</li>
-                            <li>기말고사: 30%</li>
-                            <li>기타 (과제/태도): 20%</li>
-                        </ul>
-                    </div>
-                </div>
+/* 개별 탭 버튼 */
+.tab-list button {
+    flex-grow: 1; /* 모든 버튼이 동일 너비를 차지하도록 */
+    padding: 10px 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #6c757d; /* 기본 텍스트 색상 */
+    border-bottom: 3px solid transparent; /* 기본 밑줄 투명 */
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
 
-                <div class="tab-content" id="contentB" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="acc2">
-                        성적 입력 기준 및 유의사항 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="acc2">
-                        <h5>성적 입력 기간</h5>
-                        <p>성적 입력 기간은 학기 종료 후 2주 이내입니다. 정확한 기간은 교무처 공지사항을 확인해 주십시오.</p>
-                        
-                        <h5>입력 시스템</h5>
-                        <ul>
-                            <li>헤이영 시스템 접속 후 성적 관리 메뉴 이용</li>
-                            <li>입력 마감 시간 이후 수정 불가</li>
-                        </ul>
-                    </div>
-                </div>
+/* 활성화된 탭 스타일 */
+.tab-list button.active {
+    color: #007bff; /* 활성화된 텍스트 색상 (파란색) */
+    font-weight: 700;
+    border-bottom: 3px solid #007bff; /* 활성화된 밑줄 */
+}
 
-                <div class="tab-content" id="contentC" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="acc3">
-                        성적 제출 서류 목록 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="acc3">
-                        <h5>필수 제출 서류</h5>
-                        <ul>
-                            <li>성적 평점 결과표 (헤이영 시스템 출력)</li>
-                            <li>성적 확인 서약서 (학과장 서명)</li>
-                            <li>시험지 및 채점 자료 (보관용)</li>
-                        </ul>
-                    </div>
-                </div>
+/* --- 성적 페이지 아코디언 스타일 (기존 아코디언과 구분) --- */
+.score-accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 8px; /* 항목 간 간격 */
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* 연한 그라데이션 배경 */
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-                <div class="tab-content" id="contentD" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="acc4">
-                        제출 방법 및 기한 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="acc4">
-                        <h5>제출 방법</h5>
-                        <p>출력된 성적 서류는 학과 사무실을 경유하여 교무처에 최종 제출해야 합니다.</p>
-                        
-                        <h5>기한 유의사항</h5>
-                        <p>성적 이의신청 기간이 종료된 후 최종 마감일까지 제출해야 하며, 미제출 시 교원업적평가에 반영될 수 있습니다.</p>
-                    </div>
-                </div>
-                
-                <button class="score-accordion-header" data-content-id="acc5" style="margin-top: 20px;">
-                    성적 관리 및 자료 보관 <i class="fas fa-angle-down"></i>
-                </button>
-                <div class="score-accordion-content" id="acc5">
-                    <h5>보관 원칙</h5>
-                    <p>시험지 및 성적 관련 자료는 학과에서 5년간 의무적으로 보관해야 합니다.</p>
-                </div>
-                
-                <button class="score-accordion-header" data-content-id="acc6">
-                    성적 관련 민원 사례 <i class="fas fa-angle-down"></i>
-                </button>
-                <div class="score-accordion-content" id="acc6">
-                    <h5>주요 민원 유형</h5>
-                    <ul>
-                        <li>성적 정정 요청: 이의신청 기간 내에만 가능</li>
-                        <li>재시험 요청: 불가</li>
-                    </ul>
-                </div>
-                
-                <button class="score-accordion-header" data-content-id="acc7">
-                    기타 유의사항 <i class="fas fa-angle-down"></i>
-                </button>
-                <div class="score-accordion-content" id="acc7">
-                    <h5>F학점 처리</h5>
-                    <p>F학점은 성적증명서에 표기되며, 학점 환산 시 평균에 포함되지 않습니다.</p>
-                </div>
-            </div>
+.score-accordion-header:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+}
 
-            
-            <div class="contact-box" style="margin-top: 30px; background-color: #f7f7f7; padding: 15px; border-radius: 8px;">
-                <h3 style="margin-top: 0; color: #333;"><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
-                <p>자세한 내용은 교무처 수업담당자에게 문의 바랍니다.</p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453" style="text-decoration: none; color: #333;">02-2600-2453</a> | 
-                    <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr" style="text-decoration: none; color: #333;">kyomu@gangseo.ac.kr</a>
-                </p>
-            </div>
-            
-        </div>
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- 탭 기능 ---
-            const tabButtons = document.querySelectorAll('#score-tab-list button');
-            const tabContents = document.querySelectorAll('.tab-content');
+.score-accordion-header.active {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* 활성화 시 파란색 그라데이션 */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
+.score-accordion-header .fas {
+    font-size: 1em;
+    margin-left: 10px;
+}
 
-                    // 1. 모든 버튼/콘텐츠 비활성화
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.style.display = 'none');
+.score-accordion-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 20px;
+}
 
-                    // 2. 현재 탭 활성화 및 내용 표시
-                    this.classList.add('active');
-                    document.getElementById(targetId).style.display = 'block';
+.score-accordion-content h5 {
+    font-size: 1em;
+    color: #007bff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
 
-                    // 3. 탭 내용이 변경될 때마다 해당 탭 내 아코디언들을 초기화 (모두 닫기)
-                    const activeContent = document.getElementById(targetId);
-                    const activeAccordions = activeContent.querySelectorAll('.score-accordion-header');
-                    
-                    activeAccordions.forEach(header => {
-                        header.classList.remove('active');
-                        const content = document.getElementById(header.getAttribute('data-content-id'));
-                        const icon = header.querySelector('.fas:last-child');
-                        
-                        content.style.maxHeight = '0px';
-                        content.style.paddingTop = '0';
-                        content.style.paddingBottom = '0';
-                        icon.classList.replace('fa-angle-up', 'fa-angle-down');
-                    });
-                });
-            });
+.score-accordion-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 0.95em;
+}
 
-            // --- 아코디언 기능 ---
-            const headers = document.querySelectorAll('.score-accordion-header');
-
-            headers.forEach(header => {
-                header.addEventListener('click', function() {
-                    const contentId = this.getAttribute('data-content-id');
-                    const content = document.getElementById(contentId);
-                    const icon = this.querySelector('.fas:last-child');
-                    
-                    this.classList.toggle('active');
-
-                    if (this.classList.contains('active')) {
-                        // 열기 동작
-                        // content.scrollHeight는 내부 콘텐츠의 정확한 높이를 반환합니다. 
-                        content.style.maxHeight = content.scrollHeight + 40 + 'px'; 
-                        content.style.paddingTop = '20px';
-                        content.style.paddingBottom = '20px';
-                        icon.classList.replace('fa-angle-down', 'fa-angle-up');
-                    } else {
-                        // 닫기 동작
-                        content.style.maxHeight = '0px';
-                        content.style.paddingTop = '0';
-                        content.style.paddingBottom = '0';
-                        icon.classList.replace('fa-angle-up', 'fa-angle-down');
-                    }
-                });
-            });
-            
-            // 초기 로딩 시 모든 아코디언을 닫아두고 아이콘을 아래로 설정
-            headers.forEach(header => {
-                const contentId = header.getAttribute('data-content-id');
-                const content = document.getElementById(contentId);
-                const icon = header.querySelector('.fas:last-child');
-                
-                content.style.maxHeight = '0px';
-                content.style.paddingTop = '0';
-                content.style.paddingBottom = '0';
-                header.classList.remove('active');
-                icon.classList.replace('fa-angle-up', 'fa-angle-down');
-            });
-        });
-    </script>
-</body>
-</html>
+.score-accordion-content p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
