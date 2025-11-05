@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        :root {
+            --gsu-purple: #662D91; /* GSU Purple */
+            --gsu-black: #000000;
+            --gsu-warm-gray: #DCE0D3; /* GSU Warm Gray */
+            --gsu-silver: #7A8087; /* GSU Silver */
+            --gsu-white: #FFFFFF;
+            --gsu-light-bg: #F5F5F5;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,8 +24,8 @@
 
         body {
             font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
-            color: #333;
+            background: linear-gradient(135deg, var(--gsu-light-bg) 0%, var(--gsu-warm-gray) 100%);
+            color: var(--gsu-black);
             min-height: 100vh;
             padding: 20px;
         }
@@ -34,7 +43,7 @@
         .header h1 {
             font-size: 2.2em;
             font-weight: 700;
-            color: #0d47a1;
+            color: var(--gsu-purple);
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -60,15 +69,17 @@
             width: 100%;
             padding: 14px 20px;
             font-size: 1.1em;
-            border: none;
+            border: 2px solid var(--gsu-silver);
             border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             outline: none;
-            transition: box-shadow 0.3s;
+            transition: all 0.3s;
+            background: var(--gsu-white);
+            color: var(--gsu-black);
         }
 
         #globalSearch:focus {
-            box-shadow: 0 4px 16px rgba(13, 71, 161, 0.25);
+            border-color: var(--gsu-purple);
+            box-shadow: 0 0 0 3px rgba(102, 45, 145, 0.15);
         }
 
         /* 검색 결과 */
@@ -80,19 +91,19 @@
             display: block;
             padding: 16px;
             margin: 12px 0;
-            background: white;
+            background: var(--gsu-white);
             border-radius: 12px;
             text-decoration: none;
-            color: #333;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            color: var(--gsu-black);
+            border-left: 4px solid var(--gsu-purple);
             transition: all 0.25s ease;
-            border-left: 4px solid #1976d2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .search-result-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            background: #f0f7ff;
+            box-shadow: 0 4px 12px rgba(102, 45, 145, 0.15);
+            background: #f9f4ff; /* GSU Purple 연한 배경 */
         }
 
         .search-result-item strong {
@@ -101,7 +112,7 @@
             gap: 10px;
             font-size: 1.15em;
             margin-bottom: 6px;
-            color: #0d47a1;
+            color: var(--gsu-purple);
         }
 
         .search-result-item p {
@@ -138,37 +149,40 @@
             align-items: center;
             justify-content: center;
             padding: 30px 20px;
-            background: white;
+            background: var(--gsu-white);
             border-radius: 16px;
             text-align: center;
             text-decoration: none;
-            color: #333;
+            color: var(--gsu-black);
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             min-height: 180px;
+            border: 1px solid var(--gsu-silver);
         }
 
         .menu-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(13, 71, 161, 0.18);
-            color: #0d47a1;
+            box-shadow: 0 8px 20px rgba(102, 45, 145, 0.18);
+            border-color: var(--gsu-purple);
         }
 
         .menu-card i {
             font-size: 2.2em;
             margin-bottom: 16px;
-            color: #1976d2;
+            color: var(--gsu-purple);
             transition: transform 0.3s;
         }
 
         .menu-card:hover i {
             transform: scale(1.15);
+            color: var(--gsu-purple);
         }
 
         .menu-card h2 {
             font-size: 1.4em;
             font-weight: 700;
             margin-bottom: 10px;
+            color: var(--gsu-purple);
         }
 
         .menu-card p {
@@ -177,11 +191,11 @@
             line-height: 1.5;
         }
 
-        /* 푸터 스타일 (선택) */
+        /* 추가: 하단 푸터 (선택) */
         .footer {
             text-align: center;
             margin-top: 40px;
-            color: #888;
+            color: var(--gsu-silver);
             font-size: 0.9em;
         }
     </style>
