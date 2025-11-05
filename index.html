@@ -6,82 +6,6 @@
     <title>강서대학교 수업 문의 안내</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* 간단한 스타일 (style.css에 옮기셔도 됩니다) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        body {
-            background-color: #f9f9fb;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            color: #1a3a6c;
-            margin-bottom: 10px;
-        }
-
-        .header .subtitle {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .main-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .menu-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        }
-
-        .menu-card i {
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: #2c5aa0;
-        }
-
-        .menu-card h2 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-
-        .menu-card p {
-            color: #555;
-            font-size: 15px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -94,18 +18,21 @@
         </header>
 
         <main class="main-menu">
-<a href="score.html" class="menu-card">
-    <i class="fas fa-chart-bar"></i>
-    <h2>성적 관련</h2>
-    <p>성적 평가, 입력, 제출 서류, 기한 등 확인</p>
-</a>
+            <a href="score.html" class="menu-card">
+                <i class="fas fa-chart-bar"></i>
+                <h2>성적 관련</h2>
+                <p>성적 평가, 입력, 제출 서류, 기한 등 확인</p>
+            </a>
 
-<a href="adjust.html" class="menu-card">
-    <i class="fas fa-calendar-alt"></i>
-    <h2>휴·보강 관련</h2>
-    <p>휴강/복학, 보강 신청, 일정 변경 등 확인</p>
-</a>
+            <a href="adjust.html" class="menu-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h2>휴·보강 관련</h2>
+                <p>휴강/복학, 보강 신청, 일정 변경 등 확인</p>
+            </a>
         </main>
     </div>
+
+    <!-- 스크립트는 필요시 추가 (예: 애니메이션, 접근성 등) -->
+    <script src="scripts.js"></script>
 </body>
 </html>
