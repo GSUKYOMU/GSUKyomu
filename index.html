@@ -6,6 +6,29 @@
     <title>강서대학교 수업 문의 안내</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 검색창 스타일 (기존 style.css에 추가해도 됨) */
+        .search-box {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .search-input {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .no-results {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,24 +38,68 @@
                 강서대학교 수업 문의 안내
             </h1>
             <p class="subtitle">성적 또는 휴·보강 관련 문의를 선택해 주세요.</p>
+
+            <!-- 🔍 검색창 추가 -->
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="예: 보강, 성적, 휴강, 복학 등으로 검색하세요">
+            </div>
         </header>
 
-        <main class="main-menu">
-            <a href="score.html" class="menu-card">
+        <main class="main-menu" id="menuContainer">
+            <a href="score.html" class="menu-card" data-keywords="성적 성적평가 성적입력 성적제출 성적기한">
                 <i class="fas fa-chart-bar"></i>
                 <h2>성적 관련</h2>
                 <p>성적 평가, 입력, 제출 서류, 기한 등 확인</p>
             </a>
 
-            <a href="adjust.html" class="menu-card">
+            <a href="adjust.html" class="menu-card" data-keywords="휴강 보강 휴보강 복학 일정 변경 결강">
                 <i class="fas fa-calendar-alt"></i>
                 <h2>휴·보강 관련</h2>
                 <p>휴강/복학, 보강 신청, 일정 변경 등 확인</p>
             </a>
         </main>
+
+        <div id="noResults" class="no-results">
+            <i class="fas fa-search"></i> 검색 결과가 없습니다.
+        </div>
     </div>
 
-    <!-- 스크립트는 필요시 추가 (예: 애니메이션, 접근성 등) -->
-    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const menuCards = document.querySelectorAll('.menu-card');
+            const noResults = document.getElementById('noResults');
+            const menuContainer = document.getElementById('menuContainer');
+
+            searchInput.addEventListener('input', function () {
+                const query = this.value.trim().toLowerCase();
+                let hasMatch = false;
+
+                menuCards.forEach(card => {
+                    const keywords = card.getAttribute('data-keywords') || '';
+                    const title = card.querySelector('h2')?.textContent || '';
+                    const desc = card.querySelector('p')?.textContent || '';
+
+                    const fullText = (title + ' ' + desc + ' ' + keywords).toLowerCase();
+
+                    if (query === '' || fullText.includes(query)) {
+                        card.style.display = 'block';
+                        hasMatch = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // "검색 결과 없음" 표시 여부
+                if (query !== '' && !hasMatch) {
+                    noResults.style.display = 'block';
+                    menuContainer.style.display = 'none';
+                } else {
+                    noResults.style.display = 'none';
+                    menuContainer.style.display = 'grid'; // 또는 block, flex 등 기존 레이아웃에 맞게
+                }
+            });
+        });
+    </script>
 </body>
 </html>
