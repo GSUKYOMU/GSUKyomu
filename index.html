@@ -94,6 +94,7 @@
 
     <script>
         const searchableItems = [
+            // === adjust.html ===
             {
                 keywords: "원칙 휴강 보강 승인 교무처",
                 icon: "fa-exclamation-circle",
@@ -128,8 +129,79 @@
                 title: "교무처 문의처",
                 summary: "수업 관련 문의: 02-2600-2453 또는 kyomu@gangseo.ac.kr",
                 link: "adjust.html#문의"
+            },
+
+            // === score.html ===
+            {
+                keywords: "평가기준 상대평가 등급 분포 A+ B F",
+                icon: "fa-percent",
+                title: "성적평가 기준",
+                summary: "상대평가 등급별 분포 비율 및 소수점 처리 규정",
+                link: "score.html#평가기준"
+            },
+            {
+                keywords: "상대평가 절대평가 예외 실습 수강인원",
+                icon: "fa-ban",
+                title: "상대평가 제외 과목",
+                summary: "실습·캡스톤·소인원 등 상대평가 적용 제외 조건",
+                link: "score.html#절대평가"
+            },
+            {
+                keywords: "평가요소 중간 기말 출석 참여도",
+                icon: "fa-list-ol",
+                title: "평가 요소 및 비율",
+                summary: "출석은 20% 이내 필수 반영, 강의계획서와 반드시 일치해야 함",
+                link: "score.html#평가요소"
+            },
+            {
+                keywords: "낙제 F 60점 결석 1/3",
+                icon: "fa-times-circle",
+                title: "낙제 및 금제 기준",
+                summary: "60점 미만 또는 결석 1/3 초과 시 낙제(F) 처리",
+                link: "score.html#낙제기준"
+            },
+            {
+                keywords: "제출서류 성적보고서 출석부 CQI",
+                icon: "fa-file-contract",
+                title: "성적 제출 서류",
+                summary: "성적보고서, 출석부, CQI는 담당교수 서명 필수",
+                link: "score.html#제출서류"
+            },
+            {
+                keywords: "출석수기 온라인 LMS 헤이영 수기 입력",
+                icon: "fa-keyboard",
+                title: "온라인 수업 출석 수기 입력",
+                summary: "LMS와 헤이영 미연동 시 수기 입력 및 출결 확정 필수",
+                link: "score.html#출석수기"
+            },
+            {
+                keywords: "제출기한 제출방법 우편 빠른등기",
+                icon: "fa-mail-bulk",
+                title: "제출 방법 및 기한",
+                summary: "서명된 서류를 빠른등기로 교무처에 마감일 2일 이내 도착",
+                link: "score.html#제출기한"
+            },
+            {
+                keywords: "자료보관 10년 보관 성적근거",
+                icon: "fa-archive",
+                title: "성적 자료 보관",
+                summary: "시험지·과제물 등 성적 근거 자료 10년 보관 의무",
+                link: "score.html#자료보관"
+            },
+            {
+                keywords: "민원사례 오류 성적오기재 결석 F",
+                icon: "fa-exclamation-triangle",
+                title: "성적 관련 민원 사례",
+                summary: "흔한 오류: 결석 1/3 초과 학생에 성적 부여, 상대평가 미준수 등",
+                link: "score.html#민원사례"
+            },
+            {
+                keywords: "기타유의 CQI 조기취업 대체학습",
+                icon: "fa-info-circle",
+                title: "기타 유의사항",
+                summary: "CQI 중요성, 조기취업자 대체학습 확인 및 보관 의무",
+                link: "score.html#기타유의"
             }
-            // score.html 항목은 실제 파일 받으면 추가 가능
         ];
 
         document.getElementById('globalSearch').addEventListener('input', function () {
