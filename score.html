@@ -8,143 +8,54 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f5f7fa;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
+            background-color: #f9fbfd;
+            line-height: 1.7;
+            color: #222;
             padding: 20px;
+            font-size: 15px;
         }
         .background-wrap {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         .container {
             background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .back-link {
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            color: #007bff;
+            color: #1976d2;
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 16px;
         }
         .page-hero {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 10px;
-            background: linear-gradient(to right, #e0f7fa, #bbdefb);
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 12px;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            border: 1px solid #90caf9;
         }
         .page-hero i {
-            font-size: 1.5em;
-            color: #007bff;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #0d47a1;
+            margin-bottom: 12px;
         }
         .page-hero h1 {
-            font-size: 2em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 5px;
+            font-size: 2.1em;
+            font-weight: 800;
+            color: #0d47a1;
+            margin-bottom: 8px;
         }
         .page-hero p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .tab-menu-container {
-            margin: 25px 0;
-        }
-        .tab-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            list-style: none;
-            margin-top: 8px;
-        }
-        .tab-list button {
-            padding: 10px 16px;
-            border: 1px solid #ddd;
-            background: #f8f9fa;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.95em;
-            transition: all 0.2s;
-        }
-        .tab-list button.active {
-            background: #007bff;
-            color: white;
-            border-color: #007bff;
-        }
-        .tab-content {
-            display: none;
-            margin-top: 15px;
-        }
-        .tab-content.active {
-            display: block;
-        }
-
-        .score-accordion-header {
-            width: 100%;
-            text-align: left;
-            padding: 14px 16px;
-            background: #f1f8ff;
-            border: 1px solid #cce5ff;
-            border-radius: 6px;
-            margin: 10px 0;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .score-accordion-content {
-            display: none;
-            padding: 15px;
-            margin: 10px 0;
-            background: #f9f9f9;
-            border-left: 3px solid #007bff;
-            border-radius: 0 6px 6px 6px;
-            font-size: 0.95em;
-        }
-        .score-accordion-content.show {
-            display: block;
-        }
-        .score-accordion-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-        .score-accordion-content th,
-        .score-accordion-content td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-        }
-        .score-accordion-content th {
-            background-color: #e9ecef;
-        }
-
-        .contact-box {
-            margin-top: 30px;
-            background-color: #f7f7f7;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .contact-box h3 {
-            margin-top: 0;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .contact-box a {
-            text-decoration: none;
-            color: #333;
-        }
-        .contact-box a:hover {
-            color: #007bff;
+            font-size: 1.15em;
+            color: #37474f;
         }
 
         .search-box {
@@ -153,20 +64,170 @@
         .search-box > div {
             background-color: #fff;
             border-radius: 8px;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 12px;
+            border: 1px solid #cfd8dc;
             display: flex;
             align-items: center;
         }
         .search-box i {
-            color: #6c757d;
-            margin-right: 10px;
+            color: #546e7a;
+            margin-right: 12px;
+            font-size: 1.1em;
         }
         .search-box input {
             width: 100%;
             border: none;
             outline: none;
             font-size: 1em;
+            color: #263238;
+        }
+
+        .tab-menu-container {
+            margin: 25px 0;
+        }
+        .tab-menu-container > div {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+        .tab-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+        .tab-list button {
+            padding: 12px 18px;
+            border: 2px solid #e0e0e0;
+            background: #f5f9ff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.25s;
+        }
+        .tab-list button:hover {
+            border-color: #1976d2;
+            background: #e3f2fd;
+        }
+        .tab-list button.active {
+            background: #1976d2;
+            color: white;
+            border-color: #1565c0;
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .score-accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 16px 20px;
+            background: #e8f4fc;
+            border: 2px solid #b3e0ff;
+            border-radius: 8px;
+            margin: 14px 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0d47a1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .score-accordion-header:hover {
+            background: #d1eaff;
+        }
+        .score-accordion-content {
+            display: none;
+            padding: 20px;
+            margin: 14px 0;
+            background: #f8fbff;
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 8px;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+        .score-accordion-content.show {
+            display: block;
+        }
+
+        /* 강조 스타일 */
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #5d4037;
+        }
+        .critical {
+            color: #d32f2f;
+            font-weight: 700;
+        }
+        .note {
+            color: #1565c0;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #90a4ae;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            font-weight: 700;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        ol, ul {
+            padding-left: 25px;
+            margin: 12px 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+
+        .contact-box {
+            margin-top: 35px;
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+        }
+        .contact-box h3 {
+            margin-top: 0;
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        .contact-box a {
+            text-decoration: none;
+            color: #1b5e20;
+            font-weight: 600;
+        }
+        .contact-box a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -191,9 +252,7 @@
             </div>
 
             <div class="tab-menu-container">
-                <div style="font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 10px;">
-                    <i class="fas fa-th-list"></i> 빠른 메뉴
-                </div>
+                <div><i class="fas fa-th-list"></i> 빠른 메뉴</div>
                 <ul class="tab-list" id="score-tab-list">
                     <li><button data-target="tabA" class="active">성적평가 기준</button></li>
                     <li><button data-target="tabB">성적 입력 기준</button></li>
@@ -202,146 +261,149 @@
                 </ul>
             </div>
 
-            <!-- 탭 내용 -->
-            <div id="tab-content-wrapper">
-                <!-- 탭 A: 성적평가 기준 -->
-                <div class="tab-content active" id="tabA">
-                    <button class="score-accordion-header" data-content="accA1">
-                        성적평가 기준 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA1">
-                        <p>성적 평가는 다음과 같은 등급으로 분류되며, 평점평균(GPA) 계산은 각 과목의 평점에 학점수를 곱하여 합산한 후 총 신청 학점수의 합계로 나눈 값으로 산출됩니다.</p>
-                        <table>
-                            <thead>
-                                <tr><th>등급</th><th>점수</th><th>평점</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>A+</td><td>95 - 100</td><td>4.5</td></tr>
-                                <tr><td>A0</td><td>90 - 94</td><td>4.0</td></tr>
-                                <tr><td>B+</td><td>85 - 89</td><td>3.5</td></tr>
-                                <tr><td>B0</td><td>80 - 84</td><td>3.0</td></tr>
-                                <tr><td>C+</td><td>75 - 79</td><td>2.5</td></tr>
-                                <tr><td>C0</td><td>70 - 74</td><td>2.0</td></tr>
-                                <tr><td>D+</td><td>65 - 69</td><td>1.5</td></tr>
-                                <tr><td>D0</td><td>60 - 64</td><td>1.0</td></tr>
-                                <tr><td>F</td><td>-----------</td><td>0.0</td></tr>
-                            </tbody>
-                        </table>
-                        <p>• <strong>P/F 평가</strong>: 현장 실습과 같이 등급별 평가가 어려운 과목의 경우 <strong>‘P’(합격) 또는 ‘F’(불합격)</strong>로 평가하며, 'P'로 평가된 학점은 평점평균 산출에서 제외됩니다.</p>
-                    </div>
-
-                    <button class="score-accordion-header" data-content="accA2">
-                        자주 들어오는 질문 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA2">
-                        <p><strong>몇회 결석부터 F인가요?</strong></p>
-                        <p>- 학생이 한 학기 수업 시간수의 3분의 1 이상을 결석한 과목에 대해서는 그 학점을 인정하지 않으며, 담당 교수가 급제 성적을 부여했더라도 교무처에서 직권으로 성적을 취소(과락 처리)합니다. 추가로 지각 3회는 1회의 결석으로 처리됩니다.</p>
-                    </div>
+            <!-- 탭 A: 성적평가 기준 -->
+            <div class="tab-content active" id="tabA">
+                <button class="score-accordion-header" data-content="accA1">
+                    성적평가 기준 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accA1">
+                    <p>성적 평가는 다음과 같은 등급으로 분류되며, 평점평균(GPA) 계산은 각 과목의 평점에 학점수를 곱하여 합산한 후 총 신청 학점수의 합계로 나눈 값으로 산출됩니다.</p>
+                    <table>
+                        <thead>
+                            <tr><th>등급</th><th>점수</th><th>평점</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A+</td><td>95 - 100</td><td>4.5</td></tr>
+                            <tr><td>A0</td><td>90 - 94</td><td>4.0</td></tr>
+                            <tr><td>B+</td><td>85 - 89</td><td>3.5</td></tr>
+                            <tr><td>B0</td><td>80 - 84</td><td>3.0</td></tr>
+                            <tr><td>C+</td><td>75 - 79</td><td>2.5</td></tr>
+                            <tr><td>C0</td><td>70 - 74</td><td>2.0</td></tr>
+                            <tr><td>D+</td><td>65 - 69</td><td>1.5</td></tr>
+                            <tr><td>D0</td><td>60 - 64</td><td>1.0</td></tr>
+                            <tr><td>F</td><td>-----------</td><td class="critical">0.0</td></tr>
+                        </tbody>
+                    </table>
+                    <p>• <span class="note">P/F 평가</span>: 현장 실습과 같이 등급별 평가가 어려운 과목의 경우 <strong>‘P’(합격) 또는 ‘F’(불합격)</strong>로 평가하며, <span class="highlight">'P'는 평점평균 산출에서 제외</span>됩니다.</p>
                 </div>
 
-                <!-- 탭 B: 성적 입력 기준 -->
-                <div class="tab-content" id="tabB">
-                    <button class="score-accordion-header" data-content="accB1">
-                        성적입력 안내 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB1">
-                        <ol>
-                            <li>중간 및 기말고사, 과제물, 출석성적 합을 100점이 되도록 기재해 주시기 바랍니다.<br>
-                                (예) 출석 10%, 중간고사 30%, 기말고사 40%, 과제 20% → 합계 100%<br>
-                                출석 15회(만점), 중간고사 80점(×30%), 기말고사 90점(×40%), 과제 70점(×20%)<br>
-                                출석 10점 + 중간 24점 + 기말 36점 + 과제 14점 = 84점(B학점)</li>
-                            <li>결석이 수업일수의 1/3 이상 되는 학생은 F처리해 주시고 성적보고서 비고란에 출석미달로 기재하기 바랍니다.<br>
-                                ➀ 출결체크 상태: 출석 O / 결석 X / 지각 △<br>
-                                ➁ 총 수업시수의 1/3 이상 결시자에 대하여는 출석미달로 반드시 F 학점처리 합니다.<br>
-                                (Ex : 수업시간이 3시간 일 때 총 출석 시간이 30시간 이하인 경우 F (30/45) → 결석 15시간 이상)<br>
-                                수업시간이 2시간 일 때 총 출석 시간이 20시간 이하인 경우 F (20/30) → 결석 10시간 이상<br>
-                                ③ 출결체크 상태 중 “_(미정)” 시수는 출결 진행하지 않은 것으로 보기 때문에 꼭 O / X / △ 중 하나로 입력하여주시기 바랍니다.</li>
-                        </ol>
-                    </div>
-
-                    <button class="score-accordion-header" data-content="accB2">
-                        상대평가 제외 과목 기준 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB2">
-                        <ol>
-                            <li>실습과목: 교내/외 현장교육 60% 이상 참여하는 경우.</li>
-                            <li>실기과목.</li>
-                            <li>캡스톤디자인과목.</li>
-                            <li>융합, 마이크로디그리 교과.</li>
-                            <li>외부 전문평가자 과목: 평가점수의 30% 이상 외부 평가가 반영되는 경우.</li>
-                            <li>수강인원 10명 이하의 강좌.</li>
-                            <li>기타 총장이 인정하는 교과목.</li>
-                            <li>PASS 과목 및 실습/실기과목 (학칙 시행세칙에서 별도 명시).</li>
-                            <li>외국인 유학생의 성적평가는 달리 적용할 수 있습니다.</li>
-                        </ol>
-                    </div>
-
-                    <button class="score-accordion-header" data-content="accB3">
-                        평가 요소 및 비율 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB3">
-                        <p>성적평가는 상대평가를 원칙으로 합니다.</p>
-                        <table>
-                            <thead>
-                                <tr><th>등급</th><th>평점</th><th>점수</th><th colspan="2">수강생 비율(상대평가)</th></tr>
-                                <tr><th></th><th></th><th></th><th>교양</th><th>전공</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>A+</td><td>4.5</td><td>95-100</td><td>30%</td><td>35%</td></tr>
-                                <tr><td>A</td><td>4.0</td><td>90-94</td><td></td><td></td></tr>
-                                <tr><td>B+</td><td>3.5</td><td>85-89</td><td>40%</td><td>45%</td></tr>
-                                <tr><td>B</td><td>3.0</td><td>80-84</td><td></td><td></td></tr>
-                                <tr><td>C+</td><td>2.5</td><td>75-79</td><td>30%</td><td>20%</td></tr>
-                                <tr><td>C</td><td>2.0</td><td>70-74</td><td></td><td></td></tr>
-                                <tr><td>D+</td><td>1.5</td><td>65-69</td><td></td><td></td></tr>
-                                <tr><td>D</td><td>1.0</td><td>60-64</td><td></td><td></td></tr>
-                                <tr><td>F</td><td>0.0</td><td>60미만</td><td></td><td></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 탭 C: 성적 제출 서류 -->
-                <div class="tab-content" id="tabC">
-                    <button class="score-accordion-header" data-content="accC1">
-                        제출 서류 목록 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accC1">
-                        <p><strong>필수:</strong></p>
-                        <ul>
-                            <li>성적보고서 1부 (성적 정정 마감일 이후에 출력하여 ‘담당교수’란에 서명 후 제출)</li>
-                            <li>출석부 1부 (전자출결시스템에서 출력하여 ‘서명’란에 서명 후 제출)</li>
-                            <li>강의개선보고서(CQI) (학사인트라넷에서 입력 → 입력완료 후 제출 불필요)</li>
-                        </ul>
-                        <p><strong>해당교수:</strong></p>
-                        <ul>
-                            <li>조기취업 학생 관련 자료 (성적보고서 및 출석부 제출 때 같이 제출)<br>
-                                조기취업한 학생이 학기말에 제출한<br>
-                                1) 출석인정확인서<br>
-                                2) 재직증빙서류<br>
-                                ** 1), 2)가 학기말 기준인지 확인해야 함.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 탭 D: 제출 방법 및 기한 -->
-                <div class="tab-content" id="tabD">
-                    <button class="score-accordion-header" data-content="accD1">
-                        성적보고서 및 출석부 제출 안내 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accD1">
-                        <p>성적보고서 및 출석부 제출시에는 반드시 서명날인 하셔서 교무처로 직접 또는 우편으로 송부하여 주시기 바랍니다. (제출 마감일 발송 기준 2일 이내 도착 할 수 있도록 빠른등기로 발송 바랍니다.)</p>
-                        <p><strong>주소</strong>: (07661) 서울시 강서구 까치산로 24길 47 강서대학교 본관 1층 교무과 수업담당자</p>
-                    </div>
+                <button class="score-accordion-header" data-content="accA2">
+                    자주 들어오는 질문 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accA2">
+                    <p><strong class="critical">몇 회 결석부터 F인가요?</strong></p>
+                    <p>- 학생이 한 학기 수업 시간수의 <span class="highlight">3분의 1 이상</span>을 결석한 과목에 대해서는 그 학점을 인정하지 않으며, 담당 교수가 급제 성적을 부여했더라도 <span class="critical">교무처에서 직권으로 성적을 취소(과락 처리)</span>합니다.</p>
+                    <p>- 추가로 <span class="highlight">지각 3회는 1회의 결석</span>으로 처리됩니다.</p>
                 </div>
             </div>
 
-            <!-- 공통 하단 항목 -->
-            <button class="score-accordion-header" data-content="accE1" style="margin-top: 20px;">
+            <!-- 탭 B: 성적 입력 기준 -->
+            <div class="tab-content" id="tabB">
+                <button class="score-accordion-header" data-content="accB1">
+                    성적입력 안내 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accB1">
+                    <ol>
+                        <li><strong>중간·기말고사, 과제물, 출석성적 합을 100점이 되도록 기재</strong>해 주시기 바랍니다.<br>
+                            (예) 출석 10%, 중간고사 30%, 기말고사 40%, 과제 20% → 합계 100%<br>
+                            출석 15회(만점), 중간고사 80점(×30%), 기말고사 90점(×40%), 과제 70점(×20%)<br>
+                            출석 10점 + 중간 24점 + 기말 36점 + 과제 14점 = <span class="highlight">84점 (B학점)</span>
+                        </li>
+                        <li><span class="critical">결석이 수업일수의 1/3 이상 되는 학생은 반드시 F처리</span>해 주시고 성적보고서 비고란에 <span class="highlight">출석미달</span>로 기재하기 바랍니다.
+                            <br>➀ 출결체크 상태: 출석 <span class="note">O</span> / 결석 <span class="critical">X</span> / 지각 <span class="note">△</span><br>
+                            ➁ 총 수업시수의 1/3 이상 결시자 → <span class="critical">출석미달로 반드시 F</span><br>
+                            (예: 3시간 수업 → 총 45시간, <span class="highlight">결석 15시간 이상이면 F</span>)<br>
+                            ③ “_(미정)” 시수는 <span class="critical">출결 미진행으로 간주</span> → 반드시 O/X/△ 중 하나로 입력
+                        </li>
+                    </ol>
+                </div>
+
+                <button class="score-accordion-header" data-content="accB2">
+                    상대평가 제외 과목 기준 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accB2">
+                    <ol>
+                        <li>실습과목: 교내/외 현장교육 60% 이상 참여하는 경우.</li>
+                        <li>실기과목.</li>
+                        <li>캡스톤디자인과목.</li>
+                        <li>융합, 마이크로디그리 교과.</li>
+                        <li>외부 전문평가자 과목: 평가점수의 30% 이상 외부 평가 반영.</li>
+                        <li>수강인원 <span class="highlight">10명 이하</span>의 강좌.</li>
+                        <li>기타 총장이 인정하는 교과목.</li>
+                        <li>PASS 과목 및 실습/실기과목 (학칙 시행세칙 명시).</li>
+                        <li>외국인 유학생의 성적평가는 달리 적용 가능.</li>
+                    </ol>
+                </div>
+
+                <button class="score-accordion-header" data-content="accB3">
+                    평가 요소 및 비율 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accB3">
+                    <p><strong>성적평가는 상대평가를 원칙</strong>으로 합니다.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>등급</th><th>평점</th><th>점수</th><th colspan="2">수강생 비율 (상대평가)</th>
+                            </tr>
+                            <tr>
+                                <th></th><th></th><th></th><th>교양</th><th>전공</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A+</td><td>4.5</td><td>95-100</td><td class="highlight">30%</td><td class="highlight">35%</td></tr>
+                            <tr><td>A</td><td>4.0</td><td>90-94</td><td></td><td></td></tr>
+                            <tr><td>B+</td><td>3.5</td><td>85-89</td><td class="highlight">40%</td><td class="highlight">45%</td></tr>
+                            <tr><td>B</td><td>3.0</td><td>80-84</td><td></td><td></td></tr>
+                            <tr><td>C+</td><td>2.5</td><td>75-79</td><td class="highlight">30%</td><td class="highlight">20%</td></tr>
+                            <tr><td>C</td><td>2.0</td><td>70-74</td><td></td><td></td></tr>
+                            <tr><td>D+/D</td><td>1.5/1.0</td><td>60-69</td><td></td><td></td></tr>
+                            <tr><td>F</td><td>0.0</td><td>60미만</td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 탭 C: 성적 제출 서류 -->
+            <div class="tab-content" id="tabC">
+                <button class="score-accordion-header" data-content="accC1">
+                    제출 서류 목록 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accC1">
+                    <p><strong class="note">필수 제출 서류:</strong></p>
+                    <ul>
+                        <li><span class="highlight">성적보고서 1부</span> (성적 정정 마감일 <strong>이후</strong> 출력 → ‘담당교수’란에 <span class="critical">서명 필수</span>)</li>
+                        <li><span class="highlight">출석부 1부</span> (전자출결시스템 출력 → ‘서명’란에 <span class="critical">서명 필수</span>)</li>
+                        <li><span class="highlight">강의개선보고서(CQI)</span> (학사인트라넷에서 입력 → 제출 불필요)</li>
+                    </ul>
+                    <p><strong class="note">해당 교수만 제출:</strong></p>
+                    <ul>
+                        <li>조기취업 학생 관련 자료 (성적보고서·출석부와 <span class="highlight">동시 제출</span>)<br>
+                            - 1) 출석인정확인서<br>
+                            - 2) 재직증빙서류<br>
+                            → <span class="critical">학기말 기준 자료인지 반드시 확인!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 탭 D: 제출 방법 및 기한 -->
+            <div class="tab-content" id="tabD">
+                <button class="score-accordion-header" data-content="accD1">
+                    성적보고서 및 출석부 제출 안내 <i class="fas fa-angle-down toggle-icon"></i>
+                </button>
+                <div class="score-accordion-content" id="accD1">
+                    <p><span class="critical">반드시 서명·날인 후</span> 교무처로 <strong>직접 또는 우편</strong>으로 송부하여 주시기 바랍니다.</p>
+                    <p>→ 제출 마감일 발송 기준 <span class="highlight">2일 이내 도착</span>하도록 <strong>빠른등기</strong>로 발송 바랍니다.</p>
+                    <p><strong>주소</strong>: <span class="highlight">(07661) 서울시 강서구 까치산로 24길 47 강서대학교 본관 1층 교무과 수업담당자</span></p>
+                </div>
+            </div>
+
+            <!-- 공통 항목 -->
+            <button class="score-accordion-header" data-content="accE1" style="margin-top: 25px;">
                 성적 관리 및 자료 보관 <i class="fas fa-angle-down toggle-icon"></i>
             </button>
             <div class="score-accordion-content" id="accE1">
-                <p>모든 성적 근거 자료는 10년간 교수님께서 보관</p>
+                <p><span class="critical">모든 성적 근거 자료는 10년간 교수님께서 보관</span>하셔야 합니다.</p>
             </div>
 
             <button class="score-accordion-header" data-content="accE2">
@@ -349,12 +411,12 @@
             </button>
             <div class="score-accordion-content" id="accE2">
                 <ol>
-                    <li>학생들의 과제물 성적은 성적입력마감일 이전에 정리하여 기일 내에 제출될 수 있도록 지도바랍니다.</li>
-                    <li>성적입력기간에 성적을 입력하지 못한 경우에는 해당학생의 성적표에 F로 성적이 표기되어 장학금 수혜 등의 혜택을 받을 수 없습니다. 그러므로 반드시 기일 내에 성적을 입력하여 주시기 바랍니다.</li>
-                    <li>교무처에 제출하는 성적보고서와 출석부를 제외한 과제물, 중간/기말고사 등의 성적근거자료는 반드시 10년간 보관하여 주시기 바랍니다. (성적 이의 제기 시 확인용)</li>
-                    <li>성적입력은 성적입력기간 및 정정기간에 가능하며, 반드시 성적보고서 결과는 성적정정일이후에 출력된 보고서만 인정합니다. (이전출력자료는 수정될 가능성이 있어 최종기일을 지켜 출력하시기 바랍니다.)</li>
-                    <li>조기취업으로 인해 출석인정 신청학생이 대체학습 및 대체방안 미 이행 시 출석인정이 불가하오니 학생의 이행여부에 대해서 확인하시고 학생들이 제출한 출석인정 확인서는 교무처로 제출하고, 대체학습 성과물을 반드시 10년간 보관하여 주시기 바랍니다.</li>
-                    <li>교수님께서 입력해주시는 강의개선보고서(CQI)는 향후 본교의 교육과정 개발 및 교육부 대학구조개혁평가에 활용될 예정이오니 참고하시기 바랍니다.</li>
+                    <li>과제물 성적은 <span class="highlight">성적입력마감일 이전</span>에 정리하여 기일 내 제출 가능하도록 지도바랍니다.</li>
+                    <li><span class="critical">성적 미입력 시 F 처리</span> → 장학금 등 혜택 상실 가능성 있음. <span class="highlight">기한 엄수 필수</span>!</li>
+                    <li>교무처 제출 서류 외 과제·시험지 등은 <span class="critical">10년간 보관</span> (성적 이의 시 확인용).</li>
+                    <li>성적보고서는 <span class="highlight">성적정정일 이후 출력본만 인정</span>. 이전 출력본은 무효.</li>
+                    <li>조기취업 학생의 <span class="highlight">대체학습 이행 여부 반드시 확인</span>. 미이행 시 출석인정 불가.</li>
+                    <li>CQI는 <span class="note">교육과정 개발 및 대학평가에 활용</span>되오니 정성껏 작성 부탁드립니다.</li>
                 </ol>
             </div>
 
@@ -362,143 +424,20 @@
                 성적 관련 민원 사례 안내 <i class="fas fa-angle-down toggle-icon"></i>
             </button>
             <div class="score-accordion-content" id="accE3">
-                <p><strong>가. 성적입력 중 잘못입력으로 인한 민원 - A교수</strong></p>
-                <ol>
-                    <li>수강 학생이 타당한 근거로 A교수에게 성적이의 신청을 해도 이를 받지 않음</li>
-                    <li>성적 이의신청기간 종료일에 교무처 중재로 성적 정정<br>
-                        - 석차별 하향 조정이 아닌 무작위 정정으로 인하여 고득점자 성적이 하락됨</li>
-                    <li>성적 정정으로 인한 기 고득점자의 성적변경 관련 2차 이의 발생</li>
-                    <li>해당 교수 본인의 실수를 인정하고 성적정정 자료를 근거로 최종 성적 반영</li>
-                    <li>해당 교수는 성적 입력기간 외 성적정정으로 간주하여 교원업적평가 반영 및 차 학기 강의배정 제한 조치함</li>
-                </ol>
-
-                <p><strong>나. 성적입력 중 잘못입력으로 인한 민원 - B교수</strong></p>
-                <ol>
-                    <li>교수 본인의 실수로 15주 출석 완료한 B학생에게 출석점수를 1점으로 부여</li>
-                    <li>해당 학생의 청원 신청으로 인하여 교무처에서 사실 확인 함.</li>
-                    <li>해당 교수가 본인의 실수임을 인정하고 학점정정사유서 작성 및 내부결재를 통해 해당 학생 성적 정정</li>
-                    <li>해당 교수는 성적 입력기간 외 성적정정으로 간주하여 교원업적평가 반영 및 차 학기 강의배정 제한 조치함</li>
-                </ol>
-
-                <p><strong>다. 성적 평가 시 절대평가 관련 민원 – C교수 및 D교수</strong></p>
-                <ol>
-                    <li>대학영어 담당 교수 중 C, D교수가 성적을 절대평가로서 성적 부여</li>
-                    <li>해당 교수는 학생들의 시험 성적을 중간, 기말고사에 실시한 토익성적을 각각 35점 만점으로 환산하여 입력하였고, 그 결과 해당 수업의 90%가 넘는 학생들이 C, D 학점을 받게 됨. 이로 인해 해당학생의 청원 신청으로 교무처에서 사실 확인 함.</li>
-                </ol>
-                <p><strong>[예시]</strong> 대학영어 수업 중 토익점수를 각각 400, 450(990점 만점)점수 받았던 학생의 경우</p>
-                <table>
-                    <tr><th>출석</th><th>중간고사<br>(토익 400/990)</th><th>기말고사<br>(토익 450/990)</th><th>과제</th><th>합계</th><th>등급</th></tr>
-                    <tr><td>10 / 10</td><td>15 / 35</td><td>16 / 35</td><td>20 / 20</td><td>61 / 100</td><td>D</td></tr>
-                </table>
-                <ol start="3">
-                    <li>해당 수업은 수강학생의 영어 수준별 분반된 과목이었으며 해당 수업은 중, 하위권 반이였음. 학생의 수준별에 맞춰 상대평가 하였어야 했는데 절대평가로 성적평가 하였기에 교무처에서는 해당과목의 성적을 상대평가로 재평가할 것을 교수에게 통보하였음.</li>
-                    <li>해당 교수 본인의 성적정정 자료를 받고 내부결재를 통해 해당 수업의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>라. 출석일수 미달학생에게 성적부여 관련 건 – E교수</strong></p>
-                <ol>
-                    <li>성적보고서 및 출석부 검토 결과, E교수 수업의 수강생 중 1명이 수업일수의 1/3이상 결석했는데도 성적이 부여된 사실을 확인함.</li>
-                    <li>수업운영에관한규정 제4조 3항에 근거하여, 담당교수가 성적을 부여했을지라도 출석일수 미달학생에 대해 교무처 직권으로 과락처리 함.</li>
-                </ol>
-
-                <p><strong>마. 성적입력 중 누락으로 인한 민원 - F교수</strong></p>
-                <ol>
-                    <li>F교수는 성적입력기간(6월 26일 – 6월 29일)에 수강생 A학생의 성적입력 중, 본인의 실수로 기말고사 성적에 추가 과제자료 성적을 반영하지 않음.</li>
-                    <li>A학생은 성적확인 및 이의신청기간(7월 4일 – 7월 7일)에 성적확인을 안함.</li>
-                    <li>7월 13일 성적 이관 후, B학생이 뒤 늦게 교수에게 이의 및 정정신청을 함.</li>
-                    <li>F교수가 본인의 실수임을 인정하고 학점정정사유서 작성 후 성적정정.</li>
-                </ol>
-
-                <p><strong>바. 성적확인 및 이의신청 관련 민원 – G교수</strong></p>
-                <ol>
-                    <li>B학생은 성적확인 및 이의신청기간(7월 4일 – 7월 7일)에 본인이 수강하는 과목의 중간고사, 기말고사, 과제 감점사유에 대해 G교수에게 E-mail로 질문함.</li>
-                    <li>G교수는 “성적은 평가기준에 따라 적용하였으니 참고바랍니다.” 라고 B학생에게 답변함.</li>
-                    <li>B학생은 가) 7월 5일 E-mail 발송한지 2분 만에 수신확인 했음에도 불구하고 7월 7일까지 답변을 안한 점, 나) 타 교수와 성적이의 신청 및 답변을 사례로, C교수가 성적이의에 대한 명확한 답변을 안한 점을 교무처에 문의함.</li>
-                    <li>교무처에서 G교수에게 해당사실을 확인 전화 했으나, 감점에 대한 사유는 밝히지 않음.</li>
-                    <li>B학생은 교무처에 청원서를 작성하고, 교무처에서는 업무연락으로 G교수에게 중간고사, 기말고사, 과제 감점사유를 답변을 요청함. 이후 회신된 G교수의 답변을 B학생에게 전달.</li>
-                    <li>G교수는 강사에관한규정 제8조(임용의 제한) 근거, 2019학년도 2학기 강의배정제한 조치함.</li>
-                </ol>
-
-                <p><strong>사. 성적 등급 비율 조정 관련 건 - H교수</strong></p>
-                <ol>
-                    <li>본교 규정에 근거, 성적은 상대평가로서 성적평가 하는 것을 원칙으로 하고 있으며, 교양수업의 등급별 분표비율은 [A:30% B:40%, C&D:100%]로 성문화 되어 있음</li>
-                    <li>H교수는 대학영어 수업은 예전부터 수준별로 분반되어 있으며, 상급반을 담당한 H교수는 관례대로 A등급 성적을 40% 부여할 것을 학생과 약속함.</li>
-                    <li>지난 2017년 7월 24일 제4회 성적평가점검위원회에서 해당과목에 대해 성적 등급 비율에 대하여 논의한적 없었으며, 2017학년도 2학기 내내 교양학부로부터 해당 수업의 성적비율에 대한 조율을 요청한 적이 없었음.</li>
-                    <li>H교수는 성적입력기간 중 본인이 담당하는 대학영어 반에 A등급 성적을 40%까지 부여할 것을 교무처에 요청하였으나, 교무처에서는 관련 회의에서 논의된 내용이 아니었으며, 관례를 근거로 성적비율을 조정할 수 없다고 불가 통보함.</li>
-                    <li>이에 H교수는 학생들과 약속한 것을 지키기 위해 학점정정 사유서를 작성하여 교무처에 제출 후 해당학생들의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>아. 성적 수정 관련 건 - I교수</strong></p>
-                <ol>
-                    <li>본교 규정에 근거, 성적은 상대평가로서 성적평가 하는 것을 원칙으로 하고 있으며, 전공수업의 등급별 비율은 [A:35% B:45%, C&D:100%]로 성문화 되어 있음.</li>
-                    <li>I교수는 4학년 전공수업을 맡고 있으며, 해당수업을 상대평가로 성적 부여하려 했으나, 1. 4학년 전공수업이라 수강인원이 적은 점과, 2. 수강학생들의 학습성취도를 근거로, 수강생중 B학생에게 C성적을 부여할 수 없다고 교무처에 연락을 함.</li>
-                    <li>교무처에서는 성적평가는 상대평가로 부여해야 하며, 등급별 비율 조정은 불가하다고 답변함.</li>
-                    <li>이에 I교수는 성적정정기간 이후, B학생의 학습 성취도를 근거로 학점정정사유서를 작성하여 교무처에 제출하였으며, 결재 후 B학생의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>자. 성적 수정 관련 건 - J교수</strong></p>
-                <ol>
-                    <li>J교수는 실기 수업을 맡고 있으며, 해당수업을 실기성취도와 출결로 성적을 부여하는 과목임.</li>
-                    <li>2018학년도 2학기 성적확인 및 정정기간(2018.07.09.~07.13.)이후 본인의 성적을 확인한 D학생은, 출석과 실기성취도를 충족하였는데 Fail이 나와서 담당교수인 J교수에게 성적문의를 함.</li>
-                    <li>J교수는 착오로 인하여 성적이 부여됐음을 확인하고, 성적정정기간 이후, D학생의 출석 및 실기 성취도를 근거로 학점정정사유서를 작성하여 교무처에 제출하였으며, 결재 후 D학생의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>차. 서류 누락으로 인한 성적 정정 관련 건</strong></p>
-                <ol>
-                    <li>여름계절학기 예배 수업을 수강신청한 G학생은 출석대체 과제물을 교목실에 제출하였으나, 교목실에서는 출석대체 과제물을 성적에 반영하지 않고, 출석미달로 F성적을 부여함</li>
-                    <li>여름계절학기 성적확인 및 정정기간 (2018.07.25.~07.26) 이후 G학생이 성적 조회 결과 F성적에 대하여 문의를 하였고, 확인 결과 교목실에서 업무인수인계 과정에 출석대체과제물이 결여된 체 성적이 부여됨을 확인함.</li>
-                    <li>이에 교목실에서는 업무착오(서류 누락)으로 인하여 잘못 매겨진 성적을 정정하기 위해 정정 공문을 교무처에 발송하였으며, 결재 후 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>카. 성적 오기재로 인한 성적 정정 건</strong></p>
-                <ol>
-                    <li>성적정정기간 이후 교목실에서 예배 성적 점검 중 A학생의 예배성적이 오기재 된 것을 발견함.</li>
-                    <li>성적입력기간 및 성적정정기간 이후 미국 오클라호마 대학교 교환학생인 B, C학생의 예배성적이 뒤늦게 교목실로 도착함.</li>
-                    <li>교목실에서 오기재로 입력된 해당 학생의 예배성적 정정 공문을 교무처로 발송하였으며, 내부 결재 후 성적 정정함.</li>
-                </ol>
-
-                <p><strong>타. 과제 성적 일부 누락으로 인한 성적 정정 건 - A교수</strong></p>
-                <ol>
-                    <li>교양교과목을 수강한 B학생은 성적이의신청 기간에 담당교수인 A교수에게 성적문의를 하였음. 담당교수인 A교수의 검토 결과, 해당 성적 중 과제 일부분이 누락한 채로 성적 입력되었음을 확인하였고, 이에 대한 정정할 예정임을 학생에게 통보함.</li>
-                    <li>B학생은 성적정정기간 이후 성적조회 해보니 성적정정이 누락된 것을 확인함.</li>
-                    <li>담당교수인 A는 착오로 인하여 성적정정이 이루어지지 않았음을 확인하고, B학생의 과제 제출 자료를 근거로 학점정정사유서를 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>파. 성적 수정 관련 건</strong></p>
-                <ol>
-                    <li>예배과목을 수강한 C학생은 성적정정기간 내 개인사정으로 인하여 성적정정기간 이후 성적 열람하게 됨.</li>
-                    <li>C학생은 예배성적이 F나온 것을 확인하고 교목실에 성적문의를 함.</li>
-                    <li>교목실의 검토 결과 착오로 인하여 C학생의 예배성적이 F가 부여됨을 확인하고, 이에 학점정정요청 업무연락을 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적을 정정함.</li>
-                </ol>
-
-                <p><strong>하. 성적 수정 관련 건</strong></p>
-                <ol>
-                    <li>전공 수업을 수강한 B학생은 성적 정적기간 내 개인사정으로 인하여 성적 정정기간 이후 성적열람하게 됨.</li>
-                    <li>B학생은 자신의 전공 성적이 F가 나온 것을 확인하고, 전공과목 담당교수에게 성적 문의를 함.</li>
-                    <li>전공과목 담당교수인 A교수는 급하게 성적을 입력하다 F학점으로 입력된 것을 확인하지 못하고, B학생의 팀 프로젝트 내용, 과제 제출자료, 중간 및 기말고사 자료를 근거로 학점정정사유서를 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적 정정함.</li>
-                </ol>
-
-                <p><strong>A. 성적 수정 관련 건</strong></p>
-                <ol>
-                    <li>교양 수업을 수강한 C학생의 기말고사 당초 점수가 31점에도 불구하고 0점으로 잘못 입력됨.</li>
-                    <li>교양 수업을 담당한 B교수는 전산 입력과정에서 0점으로 자동변경된 것을 발견하지 못하였음.</li>
-                    <li>성적이의신청 및 정정기간에 별 다른 이의신청이 없었음.</li>
-                    <li>C학생이 성적이의신청 및 정정기간 이후 문의를 하였고, 담당교수가 학생의 기말고사 시험지를 확인하고 이를 근거로 학점정정사유서를 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적 정정함.</li>
-                </ol>
-
-                <p><strong>B. 성적 수정 관련건 _ A교수</strong></p>
-                <ol>
-                    <li>전공 수업을 수강한 B학생은 성적 정정기간 내 성적을 확인하지 않음</li>
-                    <li>전공과목 담당 교수인 A교수는 성적입력과정에서 B학생의 출결이 전제 출석일수에 1/3 이상 결석한 것으로 착각하여 F학점 처리</li>
-                    <li>성적확정 이후 A교수는 B학생의 출결 및 다른 성적들이 정상임을 확인하고 학점정정사유서를 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적을 정정</li>
-                </ol>
-
-                <p><strong>C. 성적 수정 관련 건 _ A교수</strong></p>
-                <ol>
-                    <li>전공 수업을 수강한 B학생은 성적 정정기간 내 성적을 확인하지 않음</li>
-                    <li>전공과목 담당 교수인 A교수는 성적입력과정에서 B학생의 출결이 전제 출석일수에 1/3 이상 결석한 것으로 착각하여 F학점 처리</li>
-                    <li>성적확정 이후 A교수는 B학생의 출결 및 다른 성적들이 정상임을 확인하고 학점정정사유서를 작성하여 교무처에 제출함. 이에 교무처는 결재 후 해당 학생의 성적을 정정</li>
-                </ol>
+                <p><strong class="critical">가. 성적 잘못입력 - A교수</strong></p>
+                <p>→ 무작위 정정으로 고득점자 성적 하락 → <span class="highlight">교원업적평가 반영 + 차기 강의배정 제한</span></p>
+                
+                <p><strong class="critical">나. 출석점수 착오 - B교수</strong></p>
+                <p>→ 출석 완료 학생에게 1점 부여 → <span class="highlight">성적정정 후 강의배정 제한</span></p>
+                
+                <p><strong class="critical">다. 절대평가 적용 오류 - C/D교수</strong></p>
+                <p>→ 수준별 분반 수업임에도 절대평가 → <span class="highlight">상대평가로 재정정</span></p>
+                
+                <p><strong class="critical">라. 출석미달 학생 성적 부여 - E교수</strong></p>
+                <p>→ 교무처 <span class="highlight">직권 과락 처리</span></p>
+                
+                <p>※ 기타 사례도 유사하게 <span class="critical">본인 실수 인정 → 정정 → 강의배정 제한</span> 조치됨</p>
+                <p>→ <span class="highlight">성적 입력 및 정정 기한 철저히 준수</span>하시기 바랍니다.</p>
             </div>
 
             <div class="contact-box" id="문의">
@@ -513,29 +452,26 @@
     </div>
 
     <script>
-        // 탭 전환
         document.querySelectorAll('#score-tab-list button').forEach(button => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('#score-tab-list button').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
                 button.classList.add('active');
-                const target = button.getAttribute('data-target');
-                document.getElementById(target).classList.add('active');
+                document.getElementById(button.dataset.target).classList.add('active');
             });
         });
 
-        // 아코디언 토글
-        document.querySelectorAll('.score-accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const contentId = button.getAttribute('data-content');
-                const content = document.getElementById(contentId);
-                const icon = button.querySelector('.toggle-icon');
-
-                if (content.classList.contains('show')) {
-                    content.classList.remove('show');
-                    icon.classList.remove('fa-angle-up');
-                    icon.classList.add('fa-angle-down');
-                } else {
+        document.querySelectorAll('.score-accordion-header').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = document.getElementById(btn.dataset.content);
+                const icon = btn.querySelector('.toggle-icon');
+                const isShow = content.classList.contains('show');
+                document.querySelectorAll('.score-accordion-content').forEach(c => c.classList.remove('show'));
+                document.querySelectorAll('.toggle-icon').forEach(i => {
+                    i.classList.remove('fa-angle-up');
+                    i.classList.add('fa-angle-down');
+                });
+                if (!isShow) {
                     content.classList.add('show');
                     icon.classList.remove('fa-angle-down');
                     icon.classList.add('fa-angle-up');
