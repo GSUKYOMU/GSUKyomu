@@ -54,15 +54,42 @@
             font-size: 1.1em;
             color: #555;
         }
+        .search-box {
+            margin-bottom: 25px;
+        }
+        .search-input-wrap {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        .search-input-wrap i {
+            color: #6c757d;
+            margin-right: 10px;
+        }
+        .search-input-wrap input {
+            width: calc(100% - 30px);
+            border: none;
+            outline: none;
+            font-size: 1em;
+        }
         .tab-menu-container {
             margin: 25px 0;
+        }
+        .tab-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 10px;
         }
         .tab-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             list-style: none;
-            margin-top: 8px;
+            padding: 0;
         }
         .tab-list button {
             padding: 10px 16px;
@@ -72,6 +99,7 @@
             cursor: pointer;
             font-size: 0.95em;
             transition: all 0.2s;
+            font-weight: 500;
         }
         .tab-list button.active {
             background: #007bff;
@@ -79,80 +107,59 @@
             border-color: #007bff;
         }
         .tab-content {
-            display: none;
             margin-top: 15px;
+            padding: 5px 0;
         }
-        .tab-content.active {
-            display: block;
-        }
-        .score-accordion-header {
-            width: 100%;
-            text-align: left;
-            padding: 14px 16px;
-            background: #f1f8ff;
-            border: 1px solid #cce5ff;
+
+        /* 아코디언 스타일 (화면캡처에 맞춰 최소화) */
+        .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
             border-radius: 6px;
-            margin: 10px 0;
-            cursor: pointer;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #f8f8f8;
+            padding: 15px;
             font-weight: 600;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: #333;
         }
-        .score-accordion-content {
-            display: none;
+        .accordion-content {
             padding: 15px;
-            margin: 10px 0;
-            background: #f9f9f9;
-            border-left: 3px solid #007bff;
-            border-radius: 0 6px 6px 6px;
+            border-top: 1px solid #eee;
+            background-color: #fff;
+            display: none; /* 기본적으로 닫혀있음 */
+            font-size: 0.95em;
         }
-        .score-accordion-content.show {
+        .accordion-content.show {
             display: block;
         }
-        /* 테이블 스타일 추가 */
-        .content-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        .content-table th, .content-table td {
-            border: 1px solid #e0e0e0;
-            padding: 10px;
-            text-align: center;
-        }
-        .content-table th {
-            background-color: #eaf6ff;
-            font-weight: 600;
-        }
-        .content-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .content-list li {
-            margin-bottom: 8px;
+        .accordion-content ul {
             padding-left: 20px;
-            position: relative;
         }
-        .content-list li::before {
-            content: "\f058"; /* fa-check-circle */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: #28a745;
-            position: absolute;
-            left: 0;
+        .accordion-content li {
+            margin-bottom: 5px;
+            list-style: disc;
         }
         .contact-box {
             margin-top: 30px;
-            background-color: #f7f7f7;
+            background-color: #e9f7ff; /* 색상 변경 */
             padding: 15px;
             border-radius: 8px;
+            border: 1px solid #cce5ff;
         }
         .contact-box h3 {
             margin-top: 0;
-            color: #333;
+            color: #007bff;
             margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .contact-box p {
+            margin: 5px 0;
         }
         .contact-box a {
             text-decoration: none;
@@ -176,159 +183,96 @@
                 <p>성적 입력 방법 및 필수 제출 서류 안내</p>
             </div>
 
-            <div style="margin-bottom: 25px;">
-                <div style="background-color: #fff; border-radius: 8px; padding: 10px; border: 1px solid #ddd;">
-                    <i class="fas fa-search" style="color: #6c757d; margin-right: 10px;"></i>
-                    <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)" 
-                           style="width: calc(100% - 30px); border: none; outline: none; font-size: 1em;">
+            <div class="search-box">
+                <div class="search-input-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)">
                 </div>
             </div>
 
             <div class="tab-menu-container">
-                <div style="font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 10px;">
+                <div class="tab-title">
                     <i class="fas fa-th-list"></i> 빠른 메뉴
                 </div>
                 <ul class="tab-list" id="score-tab-list">
-                    <li><button data-target="tabA" class="active">성적평가 기준</button></li>
+                    <li><button data-target="tabA">성적평가 기준</button></li>
                     <li><button data-target="tabB">성적 입력 기준</button></li>
-                    <li><button data-target="tabC">성적 제출 서류</button></li>
+                    <li><button data-target="tabC" class="active">성적 제출 서류</button></li>
                     <li><button data-target="tabD">제출 방법 및 기한</button></li>
                 </ul>
             </div>
 
             <div id="tab-content-wrapper">
-                <div class="tab-content active" id="tabA">
-                    <button class="score-accordion-header" data-content="accA1">
-                        성적 등급 및 평점 기준 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA1">
-[cite_start]                        <h3>성적 등급 및 평점표 [cite: 1]</h3>
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>등급</th>
-                                    <th>점수</th>
-                                    <th>평점</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>A+</td><td>95 - 100</td><td>4.5</td></tr>
-                                <tr><td>A0</td><td>90 - 94</td><td>4.0</td></tr>
-                                <tr><td>B+</td><td>85 - 89</td><td>3.5</td></tr>
-                                <tr><td>B0</td><td>80 - 84</td><td>3.0</td></tr>
-                                <tr><td>C+</td><td>75 - 79</td><td>2.5</td></tr>
-                                <tr><td>C0</td><td>70 - 74</td><td>2.0</td></tr>
-                                <tr><td>D+</td><td>65 - 69</td><td>1.5</td></tr>
-                                <tr><td>D0</td><td>60 - 64</td><td>1.0</td></tr>
-                                <tr><td>F</td><td>----------</td><td>0.0</td></tr>
-                            </tbody>
-                        </table>
-[cite_start]                        <p style="margin-top: 15px;">※ **P/F 평가:** 현장 실습과 같이 등급별 평가가 어려운 과목은 **‘P’(합격) 또는 ‘F’(불합격)**로 평가하며, 'P' 학점은 평점평균 산출에서 제외됩니다. [cite: 1]</p>
-                    </div>
-
-                    <button class="score-accordion-header" data-content="accA2">
-                        상대평가 제외 과목 기준 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA2">
-[cite_start]                        <p>다음 과목들은 절대평가 또는 별도 기준으로 진행됩니다. [cite: 1]</p>
-                        <ul class="content-list">
-[cite_start]                            <li>**실습과목**: 교내/외 현장교육 60% 이상 참여하는 경우 [cite: 1]</li>
-[cite_start]                            <li>**실기과목** [cite: 1]</li>
-[cite_start]                            <li>**캡스톤디자인과목** [cite: 1]</li>
-[cite_start]                            <li>**융합, 마이크로디그리 교과** [cite: 1]</li>
-[cite_start]                            <li>**외부 전문평가자 과목**: 평가점수의 30% 이상 외부 평가가 반영되는 경우 [cite: 1]</li>
-[cite_start]                            <li>**수강인원 10명 이하**의 강좌 [cite: 1]</li>
-[cite_start]                            <li>기타 총장이 인정하는 교과목 [cite: 1]</li>
-[cite_start]                            <li>PASS 과목 및 실습/실기과목 (학칙 시행세칙에서 별도 명시) [cite: 1]</li>
-[cite_start]                            <li>외국인 유학생의 성적평가는 달리 적용될 수 있습니다. [cite: 1]</li>
-                        </ul>
+                                <div class="tab-content" id="tabA">
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-content="accA1">
+                            성적 등급 및 평점 기준
+                            <i class="fas fa-angle-up toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content show" id="accA1">
+                            <p>내용은 이전 답변을 참고하여 성적 등급표, P/F 평가 기준, 상대평가 제외 기준 등을 포함합니다.</p>
+                        </div>
                     </div>
                 </div>
-
                 <div class="tab-content" id="tabB">
-                    <button class="score-accordion-header" data-content="accB1">
-                        상대평가 등급별 분포 비율 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB1">
-[cite_start]                        <p>성적 평가는 상대평가를 원칙으로 합니다. [cite: 1]</p>
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">등급</th>
-                                    <th rowspan="2">평점</th>
-                                    <th rowspan="2">점수</th>
-[cite_start]                                    <th colspan="2">수강생 비율 (상대평가 최대 기준) [cite: 1]</th>
-                                </tr>
-                                <tr>
-                                    <th>교양</th>
-                                    <th>전공</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>A+</td><td>4.5</td><td>95-100</td><td>30%</td><td>35%</td></tr>
-                                <tr><td>A</td><td>4.0</td><td>90-94</td><td>30%</td><td>35%</td></tr>
-                                <tr><td>B+</td><td>3.5</td><td>85-89</td><td>40%</td><td>45%</td></tr>
-                                <tr><td>B</td><td>3.0</td><td>80-84</td><td>40%</td><td>45%</td></tr>
-                                <tr><td>C+</td><td>2.5</td><td>75-79</td><td>30%</td><td>20%</td></tr>
-                                <tr><td>C</td><td>2.0</td><td>70-74</td><td>30%</td><td>20%</td></tr>
-                                <tr><td>D+</td><td>1.5</td><td>65-69</td><td>30%</td><td>20%</td></tr>
-                                <tr><td>D</td><td>1.0</td><td>60-64</td><td>30%</td><td>20%</td></tr>
-                                <tr><td>F</td><td>0.0</td><td>60미만</td><td>30%</td><td>20%</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <button class="score-accordion-header" data-content="accB2">
-                        출석 미달 F 처리 기준 (총 수업 시수 1/3 이상 결시) <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB2">
-                        <ul class="content-list">
-[cite_start]                            <li>**총 수업시수의 1/3 이상 결시자**에 대해서는 출석미달로 **반드시 F 학점 처리**해야 합니다. [cite: 1]</li>
-[cite_start]                            <li>**지각 3회**는 **결석 1회**로 처리됩니다. [cite: 1]</li>
-[cite_start]                            <li>성적 보고서 비고란에 '출석미달'로 기재해야 합니다. [cite: 1]</li>
-                        </ul>
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-content="accB1">
+                            상대평가 등급별 분포 비율 및 F 처리 기준
+                            <i class="fas fa-angle-up toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content show" id="accB1">
+                            <p>내용은 이전 답변을 참고하여 상대평가 비율표, 출석 미달(1/3 이상 결석) F 처리 기준 등을 포함합니다.</p>
+                        </div>
                     </div>
                 </div>
+                
+                                <div class="tab-content active" id="tabC">
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-content="accC1">
+                            필수 제출 서류 목록
+                            <i class="fas fa-angle-up toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content show" id="accC1">
+                            <h4>필수 제출 서류 (교무처 제출)</h4>
+                            <ul>
+                                <li>**성적 보고서 1부**: 성적 정정 마감일 이후 출력하여 ‘담당교수’란에 **서명 후 제출**[cite: 42, 61].</li>
+                                <li>**출석부 1부**: 전자출결시스템에서 출력하여 ‘서명’란에 **서명 후 제출**[cite: 43].</li>
+                                <li>**강의개선보고서(CQI)**: 학사인트라넷에서 **입력 (입력 완료 후 제출 불필요)**[cite: 44].</li>
+                            </ul>
 
-                <div class="tab-content" id="tabC">
-                    <button class="score-accordion-header" data-content="accC1">
-                        필수 제출 서류 목록 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accC1">
-                        <h3>필수 제출 서류</h3>
-                        <ul class="content-list">
-[cite_start]                            <li>**성적 보고서 1부**: 성적 정정 마감일 이후에 출력하여 ‘담당교수’란에 서명 후 제출 [cite: 1]</li>
-[cite_start]                            <li>**출석부 1부**: 전자출결시스템에서 출력하여 ‘서명’란에 서명 후 제출 [cite: 1]</li>
-[cite_start]                            <li>**강의개선보고서(CQI)**: 학사인트라넷에서 입력(입력 완료 후 제출 불필요) [cite: 1]</li>
-                        </ul>
-                        <h3 style="margin-top: 15px;">해당 교수만 제출하는 서류</h3>
-                        <ul class="content-list">
-[cite_start]                            <li>조기취업 학생 관련 자료 (성적 보고서 및 출석부 제출 시 같이 제출) [cite: 1]</li>
-[cite_start]                            <li>**포함 내용**: 1) 출석인정확인서 2)재직증빙서류 [cite: 1]</li>
-                        </ul>
+                            <h4 style="margin-top: 15px;">해당 교수 제출 서류 (조기취업 학생)</h4>
+                            <ul>
+                                <li>**조기취업 학생 관련 자료**: 성적 보고서 및 출석부 제출 시 같이 제출[cite: 46].</li>
+                                <li>포함 내용: 1) 출석인정확인서 2) 재직증빙서류[cite: 47].</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-content="accC2">
+                            성적 관리 및 자료 보관
+                            <i class="fas fa-angle-up toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content show" id="accC2">
+                            <p>교무처에 제출하는 성적보고서와 출석부를 제외한 **과제물, 중간/기말고사 등의 성적 근거 자료**는 반드시 **10년간 교수님께서 보관**해야 합니다. (성적 이의 제기 시 확인용) [cite: 60].</p>
+                            <p style="margin-top: 10px;">
+                                ※ 조기취업 학생의 **대체학습 성과물**도 **10년간 보관**해야 합니다[cite: 63].
+                            </p>
+                        </div>
                     </div>
                 </div>
-
+                
                 <div class="tab-content" id="tabD">
-                    <button class="score-accordion-header" data-content="accD1">
-                        성적 보고서 및 출석부 제출 방법 <i class="fas fa-angle-down toggle-icon"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accD1">
-[cite_start]                        <h3>제출 방법 및 주소 [cite: 1]</h3>
-[cite_start]                        <p>성적보고서 및 출석부 제출 시에는 **반드시 서명날인** 하셔서 교무처로 **직접 또는 우편**으로 송부하여 주시기 바랍니다. [cite: 1]</p>
-[cite_start]                        <p style="margin-top: 10px;">(제출 마감일 발송 기준 **2일 이내 도착**할 수 있도록 **빠른등기**로 발송 바랍니다.) [cite: 1]</p>
-                        <p style="margin-top: 10px;">
-                            <i class="fas fa-map-marker-alt" style="color: #dc3545;"></i> **주소:** (07661) 서울시 강서구 까치산로 24길 47 강서대학교 본관 1층 교무과 수업담당자
-                        </p>
+                    <div class="accordion-item">
+                        <div class="accordion-header" data-content="accD1">
+                            성적 보고서 및 출석부 제출 방법
+                            <i class="fas fa-angle-up toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content show" id="accD1">
+                            <p>내용은 이전 답변을 참고하여 제출 방법 및 주소 등을 포함합니다.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <button class="score-accordion-header" data-content="accE1" style="margin-top: 20px;">
-                성적 근거 자료 보관 기간 <i class="fas fa-angle-down toggle-icon"></i>
-            </button>
-            <div class="score-accordion-content" id="accE1">
-                <p>성적 보고서와 출석부를 제외한 과제물, 중간/기말고사 등의 성적 근거 자료는 **10년간 교수님께서 보관**해야 합니다. (성적 이의 제기 시 확인용) [cite_start][cite: 1]</p>
             </div>
 
             <div class="contact-box">
@@ -343,6 +287,7 @@
     </div>
 
     <script>
+        // 탭 기능 스크립트 (Tab C: 성적 제출 서류가 기본 활성화되도록 설정)
         document.querySelectorAll('#score-tab-list button').forEach(button => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('#score-tab-list button').forEach(b => b.classList.remove('active'));
@@ -354,19 +299,23 @@
             });
         });
 
-        document.querySelectorAll('.score-accordion-header').forEach(button => {
+        // 아코디언 기능 스크립트 (모든 아코디언이 기본적으로 열려있도록 설정)
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            const contentId = button.getAttribute('data-content');
+            const content = document.getElementById(contentId);
+            const icon = button.querySelector('.toggle-icon');
+
+            // 초기 상태: Tab C의 아코디언은 열려있고, 아이콘은 fa-angle-up
+            // 나머지 탭의 아코디언은 닫혀있고, 아이콘은 fa-angle-down
+            if (button.closest('.tab-content.active')) {
+                content.classList.add('show');
+                icon.classList.add('fa-angle-up');
+            } else {
+                content.classList.remove('show');
+                icon.classList.add('fa-angle-down');
+            }
+
             button.addEventListener('click', () => {
-                const contentId = button.getAttribute('data-content');
-                const content = document.getElementById(contentId);
-                const icon = button.querySelector('.toggle-icon');
-
-                // 다른 모든 아코디언 닫기 (선택 사항)
-                // document.querySelectorAll('.score-accordion-content.show').forEach(c => c.classList.remove('show'));
-                // document.querySelectorAll('.score-accordion-header .toggle-icon').forEach(i => {
-                //     i.classList.remove('fa-angle-up');
-                //     i.classList.add('fa-angle-down');
-                // });
-
                 if (content.classList.contains('show')) {
                     content.classList.remove('show');
                     icon.classList.remove('fa-angle-up');
