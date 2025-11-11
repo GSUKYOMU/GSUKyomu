@@ -1,140 +1,158 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 - 성적 안내</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div class="background-wrap">
-        <div class="container adjust-page">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
-            </a>
-
-            <div class="adjust-page-header" style="text-align: center; margin-bottom: 30px; padding: 20px; border-radius: 10px; background: linear-gradient(to right, #e0f7fa, #bbdefb);">
-                <i class="fas fa-edit" style="font-size: 1.5em; color: #007bff; margin-bottom: 5px;"></i>
-                <h1 style="font-size: 2em; font-weight: 700; color: #333; margin-bottom: 5px;">성적 입력 및 제출서류 안내</h1>
-                <p style="font-size: 1.1em; color: #555;">성적 입력 방법 및 필수 제출 서류 안내</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <div style="background-color: #fff; border-radius: 8px; padding: 10px; border: 1px solid #ddd;">
-                    <i class="fas fa-search" style="color: #6c757d; margin-right: 10px;"></i>
-                    <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)" 
-                           style="width: calc(100% - 30px); border: none; outline: none; font-size: 1em;">
-                </div>
-            </div>
-
-            <div class="tab-menu-container">
-                <div style="font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 10px;">
-                    <i class="fas fa-th-list"></i> 빠른 메뉴
-                </div>
-                <ul class="tab-list" id="score-tab-list">
-                    <li><button data-target="tabA" class="active" id="평가기준">성적평가 기준</button></li>
-                    <li><button data-target="tabB" id="입력기준">성적 입력 기준</button></li>
-                    <li><button data-target="tabC" id="제출서류">성적 제출 서류</button></li>
-                    <li><button data-target="tabD" id="제출기한">제출 방법 및 기한</button></li>
-                </ul>
-            </div>
-
-            <div id="tab-content-wrapper">
-                
-                <div class="tab-content" id="tabA" style="display: block;">
-                    <button class="score-accordion-header" data-content-id="accA1" id="상대평가">
-                        성적평가 기준 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA1">
-                        <!-- (내용 동일, 생략) -->
-                    </div>
-
-                    <button class="score-accordion-header" data-content-id="accA2" id="절대평가">
-                        상대평가 제외 과목 기준 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accA2">
-                        <!-- (내용 동일) -->
-                    </div>
-                </div>
-
-                <div class="tab-content" id="tabB" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="accB1" id="평가요소">
-                        평가 요소 및 비율 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB1">
-                        <!-- (내용 동일) -->
-                    </div>
-
-                    <button class="score-accordion-header" data-content-id="accB2" id="낙제기준">
-                        낙제(F) 및 금제 기준 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accB2">
-                        <!-- (내용 동일) -->
-                    </div>
-                </div>
-
-                <div class="tab-content" id="tabC" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="accC1" id="필수서류">
-                        필수 제출 서류 목록 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accC1">
-                        <!-- (내용 동일) -->
-                    </div>
-
-                    <button class="score-accordion-header" data-content-id="accC2" id="출석수기">
-                        온라인 수업 수기 입력 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accC2">
-                        <!-- (내용 동일) -->
-                    </div>
-                </div>
-
-                <div class="tab-content" id="tabD" style="display: none;">
-                    <button class="score-accordion-header" data-content-id="accD1" id="제출방법">
-                        성적 보고서 및 출석부 제출 방법 <i class="fas fa-angle-down"></i>
-                    </button>
-                    <div class="score-accordion-content" id="accD1">
-                        <!-- (내용 동일) -->
-                    </div>
-                </div>
-            </div>
-            
-            <button class="score-accordion-header" data-content-id="accE1" style="margin-top: 20px;" id="자료보관">
-                성적 관리 및 자료 보관 <i class="fas fa-angle-down"></i>
-            </button>
-            <div class="score-accordion-content" id="accE1">
-                <!-- (내용 동일) -->
-            </div>
-            
-            <button class="score-accordion-header" data-content-id="accE3" id="민원사례">
-                성적 관련 민원 사례 <i class="fas fa-angle-down"></i>
-            </button>
-            <div class="score-accordion-content" id="accE3">
-                <!-- (내용 동일) -->
-            </div>
-            
-            <button class="score-accordion-header" data-content-id="accE4" id="기타유의">
-                기타 유의사항 <i class="fas fa-angle-down"></i>
-            </button>
-            <div class="score-accordion-content" id="accE4">
-                <!-- (내용 동일) -->
-            </div>
-
-            <div class="contact-box" style="margin-top: 30px; background-color: #f7f7f7; padding: 15px; border-radius: 8px;" id="문의">
-                <h3 style="margin-top: 0; color: #333;"><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
-                <p>자세한 내용은 교무처 수업담당자에게 문의 바랍니다.</p>
-                <p>
-                    <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453" style="text-decoration: none; color: #333;">02-2600-2453</a> | 
-                    <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr" style="text-decoration: none; color: #333;">kyomu@gangseo.ac.kr</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // 기존 스크립트 동일 (생략)
-        // 다만 URL 해시로 섹션 열기 기능 추가 가능 (adjust.html과 동일하게)
-    </script>
-</body>
-</html>
+ <html lang="ko">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>강서대학교 교무처 - 성적 안내</title>
+     <link rel="stylesheet" href="style.css"> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ </head>
+ <body>
+     <div class="background-wrap">
+         <div class="container adjust-page">
+             <a href="index.html" class="back-link">
+                 <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
+             </a>
+ 
+-            <div class="adjust-page-header" style="text-align: center; margin-bottom: 30px; padding: 20px; border-radius: 10px; background: linear-gradient(to right, #e0f7fa, #bbdefb);">
+-                <i class="fas fa-edit" style="font-size: 1.5em; color: #007bff; margin-bottom: 5px;"></i>
+-                <h1 style="font-size: 2em; font-weight: 700; color: #333; margin-bottom: 5px;">성적 입력 및 제출서류 안내</h1>
+-                <p style="font-size: 1.1em; color: #555;">성적 입력 방법 및 필수 제출 서류 안내</p>
++            <div class="adjust-page-header page-hero">
++                <i class="fas fa-edit"></i>
++                <h1>성적 입력 및 제출서류 안내</h1>
++                <p>성적 입력 방법 및 필수 제출 서류 안내</p>
+             </div>
+             
+             <div style="margin-bottom: 25px;">
+                 <div style="background-color: #fff; border-radius: 8px; padding: 10px; border: 1px solid #ddd;">
+                     <i class="fas fa-search" style="color: #6c757d; margin-right: 10px;"></i>
+                     <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)" 
+                            style="width: calc(100% - 30px); border: none; outline: none; font-size: 1em;">
+                 </div>
+             </div>
+ 
+             <div class="tab-menu-container">
+                 <div style="font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 10px;">
+                     <i class="fas fa-th-list"></i> 빠른 메뉴
+                 </div>
+                 <ul class="tab-list" id="score-tab-list">
+                     <li><button data-target="tabA" class="active" id="평가기준">성적평가 기준</button></li>
+                     <li><button data-target="tabB" id="입력기준">성적 입력 기준</button></li>
+                     <li><button data-target="tabC" id="제출서류">성적 제출 서류</button></li>
+                     <li><button data-target="tabD" id="제출기한">제출 방법 및 기한</button></li>
+                 </ul>
+             </div>
+ 
+             <div id="tab-content-wrapper">
+                 
+                 <div class="tab-content" id="tabA" style="display: block;">
+                     <button class="score-accordion-header" data-content-id="accA1" id="상대평가">
+-                        성적평가 기준 <i class="fas fa-angle-down"></i>
++                        성적평가 기준 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accA1">
+                         <!-- (내용 동일, 생략) -->
+                     </div>
+ 
+                     <button class="score-accordion-header" data-content-id="accA2" id="절대평가">
+-                        상대평가 제외 과목 기준 <i class="fas fa-angle-down"></i>
++                        상대평가 제외 과목 기준 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accA2">
+                         <!-- (내용 동일) -->
+                     </div>
+                 </div>
+ 
+                 <div class="tab-content" id="tabB" style="display: none;">
+                     <button class="score-accordion-header" data-content-id="accB1" id="평가요소">
+-                        평가 요소 및 비율 <i class="fas fa-angle-down"></i>
++                        평가 요소 및 비율 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accB1">
+                         <!-- (내용 동일) -->
+                     </div>
+ 
+                     <button class="score-accordion-header" data-content-id="accB2" id="낙제기준">
+-                        낙제(F) 및 금제 기준 <i class="fas fa-angle-down"></i>
++                        낙제(F) 및 금제 기준 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accB2">
+                         <!-- (내용 동일) -->
+                     </div>
+                 </div>
+ 
+                 <div class="tab-content" id="tabC" style="display: none;">
+                     <button class="score-accordion-header" data-content-id="accC1" id="필수서류">
+-                        필수 제출 서류 목록 <i class="fas fa-angle-down"></i>
++                        필수 제출 서류 목록 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accC1">
+                         <!-- (내용 동일) -->
+                     </div>
+ 
+                     <button class="score-accordion-header" data-content-id="accC2" id="출석수기">
+-                        온라인 수업 수기 입력 <i class="fas fa-angle-down"></i>
++                        온라인 수업 수기 입력 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accC2">
+                         <!-- (내용 동일) -->
+                     </div>
+                 </div>
+ 
+                 <div class="tab-content" id="tabD" style="display: none;">
+                     <button class="score-accordion-header" data-content-id="accD1" id="제출방법">
+-                        성적 보고서 및 출석부 제출 방법 <i class="fas fa-angle-down"></i>
++                        성적 보고서 및 출석부 제출 방법 <i class="fas fa-angle-down toggle-icon"></i>
+                     </button>
+                     <div class="score-accordion-content" id="accD1">
+                         <!-- (내용 동일) -->
+                     </div>
+                 </div>
+             </div>
+             
+             <button class="score-accordion-header" data-content-id="accE1" style="margin-top: 20px;" id="자료보관">
+-                성적 관리 및 자료 보관 <i class="fas fa-angle-down"></i>
++                성적 관리 및 자료 보관 <i class="fas fa-angle-down toggle-icon"></i>
+             </button>
+             <div class="score-accordion-content" id="accE1">
+                 <!-- (내용 동일) -->
+             </div>
+             
+             <button class="score-accordion-header" data-content-id="accE3" id="민원사례">
+-                성적 관련 민원 사례 <i class="fas fa-angle-down"></i>
++                성적 관련 민원 사례 <i class="fas fa-angle-down toggle-icon"></i>
+             </button>
+             <div class="score-accordion-content" id="accE3">
+                 <!-- (내용 동일) -->
+             </div>
+             
+             <button class="score-accordion-header" data-content-id="accE4" id="기타유의">
+-                기타 유의사항 <i class="fas fa-angle-down"></i>
++                기타 유의사항 <i class="fas fa-angle-down toggle-icon"></i>
+             </button>
+             <div class="score-accordion-content" id="accE4">
+                 <!-- (내용 동일) -->
+             </div>
+ 
+-            <div class="contact-box" style="margin-top: 30px; background-color: #f7f7f7; padding: 15px; border-radius: 8px;" id="문의">
+-                <h3 style="margin-top: 0; color: #333;"><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
++            <div class="contact-box" id="문의">
++                <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
+                 <p>자세한 내용은 교무처 수업담당자에게 문의 바랍니다.</p>
+                 <p>
+-                    <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453" style="text-decoration: none; color: #333;">02-2600-2453</a> | 
+-                    <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr" style="text-decoration: none; color: #333;">kyomu@gangseo.ac.kr</a>
++                    <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> | 
++                    <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+                 </p>
+             </div>
+         </div>
+     </div>
+     
+     <script>
+         // 기존 스크립트 동일 (생략)
+         // 다만 URL 해시로 섹션 열기 기능 추가 가능 (adjust.html과 동일하게)
+     </script>
+ </body>
+ </html>
