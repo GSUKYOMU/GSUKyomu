@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서대학교 교무처 - 성적 안내</title>
+    <title>성적 입력 및 제출서류 안내</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,12 +13,9 @@
             line-height: 1.6;
             color: #333;
         }
-        .background-wrap {
-            padding: 20px;
-        }
         .container {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: #fff;
             padding: 25px;
             border-radius: 10px;
@@ -31,31 +28,25 @@
             color: #007bff;
             margin-bottom: 20px;
             font-weight: 500;
+            font-size: 0.9em;
         }
         .page-hero {
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
             border-radius: 10px;
-            background: linear-gradient(to right, #e0f7fa, #bbdefb);
-        }
-        .page-hero i {
-            font-size: 1.5em;
-            color: #007bff;
-            margin-bottom: 10px;
+            background: #f0f8ff; /* 연한 파란색 배경 */
+            border: 1px solid #cce5ff;
         }
         .page-hero h1 {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 700;
             color: #333;
             margin-bottom: 5px;
         }
         .page-hero p {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #555;
-        }
-        .search-box {
-            margin-bottom: 25px;
         }
         .search-input-wrap {
             background-color: #fff;
@@ -64,6 +55,7 @@
             border: 1px solid #ddd;
             display: flex;
             align-items: center;
+            margin-bottom: 20px;
         }
         .search-input-wrap i {
             color: #6c757d;
@@ -76,7 +68,7 @@
             font-size: 1em;
         }
         .tab-menu-container {
-            margin: 25px 0;
+            margin-bottom: 20px;
         }
         .tab-title {
             font-size: 0.9em;
@@ -100,6 +92,7 @@
             font-size: 0.95em;
             transition: all 0.2s;
             font-weight: 500;
+            color: #333;
         }
         .tab-list button.active {
             background: #007bff;
@@ -109,9 +102,13 @@
         .tab-content {
             margin-top: 15px;
             padding: 5px 0;
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
         }
 
-        /* 아코디언 스타일 (화면캡처에 맞춰 최소화) */
+        /* 아코디언 스타일 (캡처 화면과 동일하게 구현) */
         .accordion-item {
             margin-bottom: 10px;
             border: 1px solid #ddd;
@@ -128,11 +125,14 @@
             align-items: center;
             color: #333;
         }
+        .accordion-header i {
+            transition: transform 0.2s;
+        }
         .accordion-content {
             padding: 15px;
             border-top: 1px solid #eee;
             background-color: #fff;
-            display: none; /* 기본적으로 닫혀있음 */
+            display: none;
             font-size: 0.95em;
         }
         .accordion-content.show {
@@ -140,14 +140,26 @@
         }
         .accordion-content ul {
             padding-left: 20px;
+            margin-top: 10px;
         }
         .accordion-content li {
             margin-bottom: 5px;
             list-style: disc;
+            color: #555;
         }
+        .bold-text {
+            font-weight: 600;
+            color: #000;
+        }
+        .note-text {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* 문의 박스 스타일 */
         .contact-box {
             margin-top: 30px;
-            background-color: #e9f7ff; /* 색상 변경 */
+            background-color: #e9f7ff;
             padding: 15px;
             border-radius: 8px;
             border: 1px solid #cce5ff;
@@ -157,165 +169,161 @@
             color: #007bff;
             margin-bottom: 10px;
             font-size: 1.1em;
+            display: flex;
+            align-items: center;
         }
-        .contact-box p {
+        .contact-box h3 i {
+            margin-right: 8px;
+        }
+        .contact-info p {
             margin: 5px 0;
         }
-        .contact-box a {
+        .contact-info a {
             text-decoration: none;
             color: #333;
         }
-        .contact-box a:hover {
+        .contact-info a:hover {
             color: #007bff;
         }
     </style>
 </head>
 <body>
-    <div class="background-wrap">
-        <div class="container">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
-            </a>
+    <div class="container">
+        <a href="#" class="back-link">
+            ← 메인으로 돌아가기
+        </a>
 
-            <div class="page-hero">
-                <i class="fas fa-edit"></i>
-                <h1>성적 입력 및 제출서류 안내</h1>
-                <p>성적 입력 방법 및 필수 제출 서류 안내</p>
+        <div class="page-hero">
+            <i class="fas fa-edit" style="color: #007bff;"></i>
+            <h1>성적 입력 및 제출서류 안내</h1>
+            <p>성적 입력 방법 및 필수 제출 서류 안내</p>
+        </div>
+
+        <div class="search-input-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)">
+        </div>
+
+        <div class="tab-menu-container">
+            <div class="tab-title">
+                <i class="fas fa-th-list"></i> 빠른 메뉴
             </div>
+            <ul class="tab-list" id="score-tab-list">
+                <li><button data-target="tabA">성적평가 기준</button></li>
+                <li><button data-target="tabB">성적 입력 기준</button></li>
+                <li><button data-target="tabC" class="active">성적 제출 서류</button></li>
+                <li><button data-target="tabD">제출 방법 및 기한</button></li>
+            </ul>
+        </div>
 
-            <div class="search-box">
-                <div class="search-input-wrap">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 물증서, 기한 등)">
-                </div>
-            </div>
+        <div id="tab-content-wrapper">
+                        <div class="tab-content" id="tabA"></div>
+            <div class="tab-content" id="tabB"></div>
+            <div class="tab-content" id="tabD"></div>
 
-            <div class="tab-menu-container">
-                <div class="tab-title">
-                    <i class="fas fa-th-list"></i> 빠른 메뉴
-                </div>
-                <ul class="tab-list" id="score-tab-list">
-                    <li><button data-target="tabA">성적평가 기준</button></li>
-                    <li><button data-target="tabB">성적 입력 기준</button></li>
-                    <li><button data-target="tabC" class="active">성적 제출 서류</button></li>
-                    <li><button data-target="tabD">제출 방법 및 기한</button></li>
-                </ul>
-            </div>
-
-            <div id="tab-content-wrapper">
-                                <div class="tab-content" id="tabA">
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-content="accA1">
-                            성적 등급 및 평점 기준
-                            <i class="fas fa-angle-up toggle-icon"></i>
-                        </div>
-                        <div class="accordion-content show" id="accA1">
-                            <p>내용은 이전 답변을 참고하여 성적 등급표, P/F 평가 기준, 상대평가 제외 기준 등을 포함합니다.</p>
-                        </div>
+                        <div class="tab-content active" id="tabC">
+                <div class="accordion-item">
+                    <div class="accordion-header" data-content="accC1">
+                        필수 제출 서류 목록
+                        <i class="fas fa-angle-up toggle-icon"></i>
+                    </div>
+                    <div class="accordion-content show" id="accC1">
+                        <span class="bold-text">필수 제출 서류 (교무처)</span> [cite: 40, 41]
+                        <ul>
+                            <li>**성적 보고서 1부**: 성적 정정 마감일 이후 출력하여 ‘담당교수’란에 서명 후 제출[cite: 42].</li>
+                            <li>**출석부 1부**: 전자출결시스템에서 출력하여 ‘서명’란에 서명 후 제출[cite: 43].</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><span class="bold-text">입력만 필요 (제출 불필요)</span></p>
+                        <ul>
+                            <li>**강의개선보고서(CQI)**: 학사인트라넷에서 입력[cite: 44].</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><span class="bold-text">해당 교수 제출 서류 (조기취업 학생)</span></p>
+                        <ul>
+                            <li>조기취업 학생 관련 자료 (성적 보고서 및 출석부 제출 때 같이 제출)[cite: 46].</li>
+                            <li>포함 내용: 1) 출석인정확인서, 2) 재직증빙서류[cite: 47].</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="tab-content" id="tabB">
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-content="accB1">
-                            상대평가 등급별 분포 비율 및 F 처리 기준
-                            <i class="fas fa-angle-up toggle-icon"></i>
-                        </div>
-                        <div class="accordion-content show" id="accB1">
-                            <p>내용은 이전 답변을 참고하여 상대평가 비율표, 출석 미달(1/3 이상 결석) F 처리 기준 등을 포함합니다.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                                <div class="tab-content active" id="tabC">
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-content="accC1">
-                            필수 제출 서류 목록
-                            <i class="fas fa-angle-up toggle-icon"></i>
-                        </div>
-                        <div class="accordion-content show" id="accC1">
-                            <h4>필수 제출 서류 (교무처 제출)</h4>
-                            <ul>
-                                <li>**성적 보고서 1부**: 성적 정정 마감일 이후 출력하여 ‘담당교수’란에 **서명 후 제출**[cite: 42, 61].</li>
-                                <li>**출석부 1부**: 전자출결시스템에서 출력하여 ‘서명’란에 **서명 후 제출**[cite: 43].</li>
-                                <li>**강의개선보고서(CQI)**: 학사인트라넷에서 **입력 (입력 완료 후 제출 불필요)**[cite: 44].</li>
-                            </ul>
 
-                            <h4 style="margin-top: 15px;">해당 교수 제출 서류 (조기취업 학생)</h4>
-                            <ul>
-                                <li>**조기취업 학생 관련 자료**: 성적 보고서 및 출석부 제출 시 같이 제출[cite: 46].</li>
-                                <li>포함 내용: 1) 출석인정확인서 2) 재직증빙서류[cite: 47].</li>
-                            </ul>
-                        </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" data-content="accC2">
+                        성적 관리 및 자료 보관
+                        <i class="fas fa-angle-up toggle-icon"></i>
                     </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-content="accC2">
-                            성적 관리 및 자료 보관
-                            <i class="fas fa-angle-up toggle-icon"></i>
-                        </div>
-                        <div class="accordion-content show" id="accC2">
-                            <p>교무처에 제출하는 성적보고서와 출석부를 제외한 **과제물, 중간/기말고사 등의 성적 근거 자료**는 반드시 **10년간 교수님께서 보관**해야 합니다. (성적 이의 제기 시 확인용) [cite: 60].</p>
-                            <p style="margin-top: 10px;">
-                                ※ 조기취업 학생의 **대체학습 성과물**도 **10년간 보관**해야 합니다[cite: 63].
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content" id="tabD">
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-content="accD1">
-                            성적 보고서 및 출석부 제출 방법
-                            <i class="fas fa-angle-up toggle-icon"></i>
-                        </div>
-                        <div class="accordion-content show" id="accD1">
-                            <p>내용은 이전 답변을 참고하여 제출 방법 및 주소 등을 포함합니다.</p>
-                        </div>
+                    <div class="accordion-content show" id="accC2">
+                        <p class="bold-text">모든 성적 근거 자료는 10년간 보관해야 합니다. [cite: 54]</p>
+                        <p class="note-text" style="margin-top: 8px;">
+                            (성적 근거 자료: 과제물, 중간/기말고사 시험지 등) [cite: 59]
+                        </p>
+                        <p class="note-text">
+                            조기취업 학생의 대체학습 성과물도 반드시 **10년간 보관**해야 합니다[cite: 63].
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="contact-box">
-                <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
+        <div class="contact-box">
+            <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
+            <div class="contact-info">
                 <p>자세한 내용은 교무처 수업담당자에게 문의 바랍니다.</p>
                 <p>
-                    <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> | 
-                    <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+                    <i class="fas fa-phone-alt"></i> 전화: <a href="tel:0226002453">02-2600-2453</a> | 
+                    <i class="fas fa-envelope"></i> 이메일: <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
                 </p>
             </div>
         </div>
     </div>
 
     <script>
-        // 탭 기능 스크립트 (Tab C: 성적 제출 서류가 기본 활성화되도록 설정)
-        document.querySelectorAll('#score-tab-list button').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('#score-tab-list button').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        // 탭 전환 기능
+        const tabList = document.getElementById('score-tab-list');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-                button.classList.add('active');
-                const target = button.getAttribute('data-target');
-                document.getElementById(target).classList.add('active');
-            });
+        tabList.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const targetTabId = e.target.getAttribute('data-target');
+
+                // 탭 버튼 활성화 상태 변경
+                tabList.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // 탭 콘텐츠 표시 변경
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === targetTabId) {
+                        content.classList.add('active');
+                        
+                        // 활성화된 탭의 아코디언은 기본적으로 열어두기 (캡처 화면처럼)
+                        content.querySelectorAll('.accordion-content').forEach(acc => {
+                            acc.classList.add('show');
+                        });
+                        content.querySelectorAll('.accordion-header i').forEach(icon => {
+                            icon.classList.remove('fa-angle-down');
+                            icon.classList.add('fa-angle-up');
+                        });
+
+                    } else {
+                        // 비활성화된 탭의 아코디언은 닫아두기
+                        content.querySelectorAll('.accordion-content').forEach(acc => {
+                            acc.classList.remove('show');
+                        });
+                        content.querySelectorAll('.accordion-header i').forEach(icon => {
+                            icon.classList.remove('fa-angle-up');
+                            icon.classList.add('fa-angle-down');
+                        });
+                    }
+                });
+            }
         });
 
-        // 아코디언 기능 스크립트 (모든 아코디언이 기본적으로 열려있도록 설정)
+        // 아코디언 토글 기능
         document.querySelectorAll('.accordion-header').forEach(button => {
-            const contentId = button.getAttribute('data-content');
-            const content = document.getElementById(contentId);
-            const icon = button.querySelector('.toggle-icon');
-
-            // 초기 상태: Tab C의 아코디언은 열려있고, 아이콘은 fa-angle-up
-            // 나머지 탭의 아코디언은 닫혀있고, 아이콘은 fa-angle-down
-            if (button.closest('.tab-content.active')) {
-                content.classList.add('show');
-                icon.classList.add('fa-angle-up');
-            } else {
-                content.classList.remove('show');
-                icon.classList.add('fa-angle-down');
-            }
-
             button.addEventListener('click', () => {
+                const contentId = button.getAttribute('data-content');
+                const content = document.getElementById(contentId);
+                const icon = button.querySelector('.toggle-icon');
+
                 if (content.classList.contains('show')) {
                     content.classList.remove('show');
                     icon.classList.remove('fa-angle-up');
@@ -326,6 +334,12 @@
                     icon.classList.add('fa-angle-up');
                 }
             });
+        });
+
+        // 초기 로딩 시 tabC 활성화 및 아코디언 열기
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab C 활성화
+            document.querySelector('button[data-target="tabC"]').click();
         });
     </script>
 </body>
