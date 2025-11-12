@@ -186,10 +186,10 @@
     <div class="container">
         <header class="header">
             <h1><i class="fas fa-graduation-cap"></i> 강서대학교 수업 문의 안내</h1>
-            <p class="subtitle">출석, 성적, 휴·보강 등 수업 관련 안내를 한눈에 확인하세요.</p>
+            <p class="subtitle">출석, 시험, 성적, 휴·보강 등 수업 관련 안내를 한눈에 확인하세요.</p>
 
             <div class="search-box">
-                <input type="text" id="globalSearch" placeholder="예: 출석인정, 보강 신청, 성적 정정 등으로 검색">
+                <input type="text" id="globalSearch" placeholder="예: 시험시간, 보강 신청, 성적 정정 등으로 검색">
             </div>
         </header>
 
@@ -213,6 +213,13 @@
                 <h2>성적 관련</h2>
                 <p>성적평가 기준, 입력·정정, 제출서류 안내</p>
             </a>
+
+            <!-- 🆕 시험 관련 안내 추가 -->
+            <a href="exam.html" class="menu-card">
+                <i class="fas fa-pen-to-square"></i>
+                <h2>시험 관련</h2>
+                <p>중간·기말시험 운영, 부정행위 예방, 재시험 및 유의사항 안내</p>
+            </a>
         </main>
 
         <div class="footer">
@@ -222,21 +229,20 @@
 
     <script>
         const searchableItems = [
-            // 🔹 출석 관련
+            // 출석
             { keywords: "출석 결석 지각 공결 유고결석 전자출결 인정", icon: "fa-user-check", title: "출석 관련 안내", summary: "출석기준, 결석·지각 처리, 유고결석 및 전자출결 오류 대응 절차", link: "attendance.html" },
             { keywords: "출석인정 조기취업 장애학생 행사참여", icon: "fa-user-shield", title: "출석인정 신청 절차", summary: "조기취업자·장애학생·학교행사 참여자의 출석인정 방법", link: "attendance.html#recognition" },
-            { keywords: "전자출결 앱 비콘 QR 오류", icon: "fa-wifi", title: "전자출결 시스템 안내", summary: "비콘·QR을 이용한 출석체크 및 오류 시 처리방법", link: "attendance.html#system" },
-            { keywords: "결석 3분의1 F 처리 지각3회", icon: "fa-list-ol", title: "출석 기준 및 결석 처리", summary: "결석 1/3 이상 F처리, 지각 3회는 1결석으로 간주", link: "attendance.html#rule" },
-
-            // 🔹 휴보강 관련
+            
+            // 휴보강
             { keywords: "휴강 보강 계획서 보고서 교무처", icon: "fa-calendar-alt", title: "휴보강 절차 안내", summary: "휴보강 신청 및 보고서 제출 절차", link: "adjust.html" },
             { keywords: "헤이영 시스템 휴보강 등록", icon: "fa-desktop", title: "헤이영 시스템 사용법", summary: "헤이영을 통한 휴보강 신청 및 변경 방법", link: "adjust.html#헤이영" },
-            { keywords: "보강결과 보고서 첨부자료", icon: "fa-check-circle", title: "보강 결과보고서 제출", summary: "보강 후 증빙자료 및 사진 첨부 방법", link: "adjust.html#보고서" },
 
-            // 🔹 성적 관련
+            // 성적
             { keywords: "성적평가 상대평가 절대평가 기준", icon: "fa-percent", title: "성적평가 기준", summary: "상대평가 비율 및 절대평가 예외 조건 안내", link: "score.html" },
             { keywords: "제출서류 성적보고서 출석부 CQI", icon: "fa-file-alt", title: "성적 제출 서류", summary: "성적보고서, 출석부, CQI 작성 및 제출 절차", link: "score.html#tabC" },
-            { keywords: "성적정정 낙제 F 처리 출석미달", icon: "fa-times-circle", title: "성적 입력 및 낙제 기준", summary: "60점 미만·출석미달은 F처리, 성적정정 절차 안내", link: "score.html#tabB" },
+
+            // 🆕 시험 관련
+            { keywords: "시험 중간고사 기말고사 재시험 부정행위 응시", icon: "fa-pen-to-square", title: "시험 관련 안내", summary: "중간·기말시험 일정, 감독, 부정행위 및 재시험 절차 안내", link: "exam.html" },
         ];
 
         document.getElementById('globalSearch').addEventListener('input', function () {
