@@ -8,19 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --gsu-purple: #662D91; /* GSU Purple */
+            --gsu-purple: #662D91;
             --gsu-black: #000000;
-            --gsu-warm-gray: #DCE0D3; /* GSU Warm Gray */
-            --gsu-silver: #7A8087; /* GSU Silver */
+            --gsu-warm-gray: #DCE0D3;
+            --gsu-silver: #7A8087;
             --gsu-white: #FFFFFF;
             --gsu-light-bg: #F5F5F5;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
@@ -30,10 +26,7 @@
             padding: 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .container { max-width: 800px; margin: 0 auto; }
 
         .header {
             text-align: center;
@@ -59,7 +52,6 @@
             line-height: 1.5;
         }
 
-        /* 검색창 */
         .search-box {
             margin: 30px auto 25px;
             max-width: 600px;
@@ -82,10 +74,7 @@
             box-shadow: 0 0 0 3px rgba(102, 45, 145, 0.15);
         }
 
-        /* 검색 결과 */
-        #searchResults {
-            margin-top: 20px;
-        }
+        #searchResults { margin-top: 20px; }
 
         .search-result-item {
             display: block;
@@ -103,7 +92,7 @@
         .search-result-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(102, 45, 145, 0.15);
-            background: #f9f4ff; /* GSU Purple 연한 배경 */
+            background: #f9f4ff;
         }
 
         .search-result-item strong {
@@ -129,7 +118,6 @@
             font-style: italic;
         }
 
-        /* 메인 메뉴 카드 */
         .main-menu {
             display: grid;
             grid-template-columns: 1fr;
@@ -138,9 +126,7 @@
         }
 
         @media (min-width: 600px) {
-            .main-menu {
-                grid-template-columns: 1fr 1fr;
-            }
+            .main-menu { grid-template-columns: 1fr 1fr; }
         }
 
         .menu-card {
@@ -173,10 +159,7 @@
             transition: transform 0.3s;
         }
 
-        .menu-card:hover i {
-            transform: scale(1.15);
-            color: var(--gsu-purple);
-        }
+        .menu-card:hover i { transform: scale(1.15); }
 
         .menu-card h2 {
             font-size: 1.4em;
@@ -190,29 +173,16 @@
             color: #666;
             line-height: 1.5;
         }
-
-        /* 추가: 하단 푸터 (선택) */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: var(--gsu-silver);
-            font-size: 0.9em;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>
-                <i class="fas fa-graduation-cap"></i>
-                강서대학교 수업 문의 안내
-            </h1>
-            <p class="subtitle">
-                성적, 휴·보강, 제출 서류 등 수업 관련 안내를 한눈에 확인하세요.
-            </p>
+            <h1><i class="fas fa-graduation-cap"></i> 강서대학교 수업 문의 안내</h1>
+            <p class="subtitle">성적, 휴·보강, 유고결석, 제출 서류 등 수업 관련 안내를 한눈에 확인하세요.</p>
 
             <div class="search-box">
-                <input type="text" id="globalSearch" placeholder="예: 보강 신청, 성적 정정, CQI, 빠른등기 등으로 검색">
+                <input type="text" id="globalSearch" placeholder="예: 유고결석, 보강 신청, 성적 정정 등으로 검색">
             </div>
         </header>
 
@@ -228,37 +198,30 @@
             <a href="adjust.html" class="menu-card">
                 <i class="fas fa-calendar-alt"></i>
                 <h2>휴·보강 관련</h2>
-                <p>휴강/복학, 보강 신청, 계획서 제출 안내</p>
+                <p>휴강·보강 신청, 계획서 및 결과보고서 안내</p>
+            </a>
+
+            <a href="excused_absence.html" class="menu-card">
+                <i class="fas fa-user-clock"></i>
+                <h2>유고결석 관련</h2>
+                <p>질병·경조사·공무수행 등 공결 인정 절차 및 증빙서류 안내</p>
             </a>
         </main>
-
-        <!--
-        <div class="footer">
-            © 2025 강서대학교 교무처 | 수업관리시스템
-        </div>
-        -->
     </div>
 
     <script>
         const searchableItems = [
-            // adjust.html 항목
-            { keywords: "원칙 휴강 보강 승인 교무처", icon: "fa-exclamation-circle", title: "휴강 및 보강의 원칙", summary: "정당한 사유 외 휴강 불가, 반드시 교무처장 사전 승인 필요", link: "adjust.html#원칙" },
-            { keywords: "헤이영 시스템 휴보강 등록 변경", icon: "fa-desktop", title: "헤이영 시스템 사용 안내", summary: "PC/모바일에서 휴강·보강 신청 및 지정보강일 변경 방법", link: "adjust.html#헤이영" },
-            { keywords: "계획서 서명 제출 학과장", icon: "fa-file-alt", title: "휴보강계획서 제출", summary: "헤이영에서 출력 후 학과장·교무처 서명 제출 절차", link: "adjust.html#계획서" },
+            // adjust.html
+            { keywords: "원칙 휴강 보강 승인 교무처", icon: "fa-exclamation-circle", title: "휴강 및 보강의 원칙", summary: "정당한 사유 외 휴강 불가, 교무처장 사전 승인 필요", link: "adjust.html#원칙" },
+            { keywords: "헤이영 시스템 휴보강 등록 변경", icon: "fa-desktop", title: "헤이영 시스템 사용 안내", summary: "PC/모바일에서 휴강·보강 신청 및 변경 방법", link: "adjust.html#헤이영" },
+            { keywords: "계획서 서명 제출 학과장", icon: "fa-file-alt", title: "휴보강계획서 제출", summary: "헤이영 출력 후 학과장·교무처 서명 제출 절차", link: "adjust.html#계획서" },
             { keywords: "보고서 보강결과 첨부 증빙", icon: "fa-check-circle", title: "보강 결과보고서 제출", summary: "보강 후 1주일 이내 제출, 대면/온라인 별 첨부 자료 안내", link: "adjust.html#보고서" },
-            { keywords: "문의 연락처 교무처 전화 이메일", icon: "fa-headset", title: "교무처 문의처", summary: "수업 관련 문의: 02-2600-2453 또는 kyomu@gangseo.ac.kr", link: "adjust.html#문의" },
 
-            // score.html 항목
-            { keywords: "평가기준 상대평가 등급 분포 A+ B F", icon: "fa-percent", title: "성적평가 기준", summary: "상대평가 등급별 분포 비율 및 소수점 처리 규정", link: "score.html#평가기준" },
-            { keywords: "상대평가 절대평가 예외 실습 수강인원", icon: "fa-ban", title: "상대평가 제외 과목", summary: "실습·캡스톤·소인원 등 상대평가 적용 제외 조건", link: "score.html#절대평가" },
-            { keywords: "평가요소 중간 기말 출석 참여도", icon: "fa-list-ol", title: "평가 요소 및 비율", summary: "출석은 20% 이내 필수 반영, 강의계획서와 반드시 일치해야 함", link: "score.html#평가요소" },
-            { keywords: "낙제 F 60점 결석 1/3", icon: "fa-times-circle", title: "낙제 및 금제 기준", summary: "60점 미만 또는 결석 1/3 초과 시 낙제(F) 처리", link: "score.html#낙제기준" },
-            { keywords: "제출서류 성적보고서 출석부 CQI", icon: "fa-file-contract", title: "성적 제출 서류", summary: "성적보고서, 출석부, CQI는 담당교수 서명 필수", link: "score.html#제출서류" },
-            { keywords: "출석수기 온라인 LMS 헤이영 수기 입력", icon: "fa-keyboard", title: "온라인 수업 출석 수기 입력", summary: "LMS와 헤이영 미연동 시 수기 입력 및 출결 확정 필수", link: "score.html#출석수기" },
-            { keywords: "제출기한 제출방법 우편 빠른등기", icon: "fa-mail-bulk", title: "제출 방법 및 기한", summary: "서명된 서류를 빠른등기로 교무처에 마감일 2일 이내 도착", link: "score.html#제출기한" },
-            { keywords: "자료보관 10년 보관 성적근거", icon: "fa-archive", title: "성적 자료 보관", summary: "시험지·과제물 등 성적 근거 자료 10년 보관 의무", link: "score.html#자료보관" },
-            { keywords: "민원사례 오류 성적오기재 결석 F", icon: "fa-exclamation-triangle", title: "성적 관련 민원 사례", summary: "흔한 오류: 결석 1/3 초과 학생에 성적 부여, 상대평가 미준수 등", link: "score.html#민원사례" },
-            { keywords: "기타유의 CQI 조기취업 대체학습", icon: "fa-info-circle", title: "기타 유의사항", summary: "CQI 중요성, 조기취업자 대체학습 확인 및 보관 의무", link: "score.html#기타유의" }
+            // score.html
+            { keywords: "성적 평가 등급 상대평가 절대평가", icon: "fa-chart-bar", title: "성적평가 기준", summary: "상대평가 비율, 낙제 기준, 평가요소별 비율 안내", link: "score.html" },
+
+            // excused_absence.html
+            { keywords: "유고결석 질병 경조사 공결 증빙", icon: "fa-user-clock", title: "유고결석 안내", summary: "공결 인정 사유, 신청 절차 및 증빙서류 안내", link: "excused_absence.html" }
         ];
 
         document.getElementById('globalSearch').addEventListener('input', function () {
@@ -279,10 +242,7 @@
                     const a = document.createElement('a');
                     a.href = item.link;
                     a.className = 'search-result-item';
-                    a.innerHTML = `
-                        <strong><i class="fas ${item.icon}"></i> ${item.title}</strong>
-                        <p>${item.summary}</p>
-                    `;
+                    a.innerHTML = `<strong><i class="fas ${item.icon}"></i> ${item.title}</strong><p>${item.summary}</p>`;
                     resultsContainer.appendChild(a);
                 });
             }
