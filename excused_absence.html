@@ -17,11 +17,11 @@
         <div class="page-hero">
             <i class="fas fa-user-clock"></i>
             <h1>유고결석 안내</h1>
-            <p>공결 인정 사유, 절차 및 증빙서류 안내</p>
+            <p>공결 인정 사유, 신청 절차 및 증빙서류 안내</p>
         </div>
 
         <div class="info-box-header">
-            <p><strong>안내:</strong> 학생이 질병, 경조사 등 불가피한 사유로 결석할 경우, 정해진 절차에 따라 <mark>유고결석</mark>으로 인정받을 수 있습니다.</p>
+            <p><strong>안내:</strong> 학생이 질병, 경조사, 공무수행 등 불가피한 사유로 결석할 경우, 정해진 절차에 따라 <mark>유고결석</mark>으로 인정받을 수 있습니다.</p>
         </div>
 
         <button class="accordion-header-new" data-content-id="reason">
@@ -41,9 +41,9 @@
         </button>
         <div class="accordion-content-new" id="procedure">
             <ol>
-                <li><strong>유고결석신청서</strong> 작성 (학사인트라넷 → 학생서비스 → 유고결석 신청)</li>
-                <li>결석 사유에 해당하는 <strong>증빙서류 첨부</strong> (예: 진단서, 가족관계증명서, 사망진단서 등)</li>
-                <li><strong>지도교수 승인</strong> → 학과장 확인 → <mark>교무처 승인</mark></li>
+                <li>학사인트라넷 → 학생서비스 → <strong>유고결석 신청</strong></li>
+                <li>결석 사유에 해당하는 <strong>증빙서류 첨부</strong> (예: 진단서, 가족관계증명서 등)</li>
+                <li><strong>지도교수 승인</strong> → <strong>학과장 확인</strong> → <mark>교무처 승인</mark></li>
             </ol>
         </div>
 
@@ -54,9 +54,21 @@
             <ul>
                 <li><strong>질병:</strong> 진단서, 입퇴원확인서</li>
                 <li><strong>경조사:</strong> 가족관계증명서, 사망진단서, 청첩장 등</li>
-                <li><strong>공무 수행:</strong> 공문서 또는 증빙 공문</li>
-                <li><strong>기타:</strong> 관련 증빙자료</li>
+                <li><strong>공무수행:</strong> 공문서 또는 관련 증빙자료</li>
+                <li><strong>기타:</strong> 해당 사유를 증명할 수 있는 자료</li>
             </ul>
+        </div>
+
+        <button class="accordion-header-new" data-content-id="download">
+            <i class="fas fa-download"></i> 유고결석신청서 다운로드 <i class="fas fa-angle-down toggle-icon"></i>
+        </button>
+        <div class="accordion-content-new" id="download">
+            <p>아래 양식을 내려받아 작성 후 학과사무실 또는 교무처로 제출해 주세요.</p>
+            <div style="text-align:center; margin:10px 0;">
+                <a href="report_form (2).hwp" download class="content-link">
+                    <i class="fas fa-file-download"></i> 유고결석신청서.hwp 다운로드
+                </a>
+            </div>
         </div>
 
         <button class="accordion-header-new" data-content-id="note">
@@ -64,46 +76,24 @@
         </button>
         <div class="accordion-content-new" id="note">
             <ul>
-                <li>신청은 <mark>결석일 전 또는 사유 발생 즉시</mark> 해야 합니다.</li>
+                <li><mark>결석일 전 또는 사유 발생 즉시</mark> 신청해야 합니다.</li>
                 <li>증빙이 불충분하거나 허위일 경우 유고결석으로 인정되지 않습니다.</li>
-                <li>유고결석은 출석으로 인정되지만, <strong>성적 평가에는 반영되지 않습니다.</strong></li>
+                <li>유고결석은 출석으로 인정되지만 <strong>성적 평가에는 반영되지 않습니다.</strong></li>
+                <li>승인 여부는 학사인트라넷에서 확인 가능합니다.</li>
             </ul>
         </div>
 
         <div class="contact-box">
             <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
             <p>유고결석 신청 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
-            <p><i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> | 
-               <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+            <p>
+                <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> | 
+                <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
             </p>
         </div>
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const headers = document.querySelectorAll('.accordion-header-new');
-    headers.forEach(header => {
-        header.addEventListener('click', function() {
-            const content = document.getElementById(this.getAttribute('data-content-id'));
-            const isActive = this.classList.contains('active');
-
-            document.querySelectorAll('.accordion-header-new').forEach(h => h.classList.remove('active'));
-            document.querySelectorAll('.accordion-content-new').forEach(c => {
-                c.style.maxHeight = null;
-                c.style.paddingTop = '0';
-                c.style.paddingBottom = '0';
-            });
-
-            if (!isActive) {
-                this.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.style.paddingTop = '20px';
-                content.style.paddingBottom = '20px';
-            }
-        });
-    });
-});
-</script>
+<script src="scripts.js"></script>
 </body>
 </html>
