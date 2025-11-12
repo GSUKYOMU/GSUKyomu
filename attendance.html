@@ -3,54 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>강서대학교 교무처 - 출석 안내</title>
+  <title>강서대학교 교무처 - 출석 관련 안내</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 기본 레이아웃 및 폰트 */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f5f7fa;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #007bff;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+
+    /* 1. 페이지 헤더 */
+    .page-hero {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f0f8ff;
+      border: 1px solid #cce5ff;
+    }
+    .page-hero i {
+      color: #007bff;
+      margin-bottom: 5px;
+      font-size: 1.5em;
+    }
+    .page-hero h1 {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .page-hero p {
+      font-size: 1em;
+      color: #555;
+    }
+    
+    /* 2. 안내 박스 */
+    .info-box-header {
+      background-color: #fff3cd; 
+      color: #856404;
+      padding: 10px 15px;
+      border: 1px solid #ffeeba;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 0.95em;
+    }
+
+    /* 3. 아코디언 */
+    .accordion-header-new {
+      width: 100%;
+      background-color: #f8f8f8;
+      padding: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+    .accordion-header-new.active {
+      background-color: #e6f0ff;
+      border-color: #007bff;
+    }
+    .accordion-header-new i.fas:first-child {
+      margin-right: 10px;
+      color: #007bff;
+    }
+    .toggle-icon { transition: transform 0.3s; }
+    .accordion-header-new.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+    .accordion-content-new {
+      max-height: 0;
+      overflow: hidden;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: #fff;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      border-radius: 0 0 6px 6px;
+      transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+      font-size: 0.95em;
+    }
+    .accordion-content-new ol, .accordion-content-new ul {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .accordion-content-new li {
+      margin-bottom: 5px;
+      color: #555;
+    }
+    .accordion-content-new mark {
+      background-color: #ffc;
+      padding: 2px 4px;
+    }
+
+    /* 4. 문의 박스 */
+    .contact-box {
+      margin-top: 30px;
+      background-color: #f7f7f7;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .contact-box h3 {
+      margin-top: 0;
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+    }
+    .contact-box h3 i {
+      margin-right: 8px;
+      color: #007bff;
+    }
+    .contact-box p { margin: 5px 0; font-size: 0.95em; }
+    .contact-box a { text-decoration: none; color: #333; }
+    .contact-box a:hover { color: #007bff; }
+  </style>
 </head>
 <body>
   <div class="background-wrap">
     <div class="container adjust-page">
-
-      <!-- 상단 돌아가기 -->
       <a href="index.html" class="back-link">
         <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
       </a>
 
-      <!-- 페이지 헤더 -->
       <div class="page-hero">
         <i class="fas fa-user-check"></i>
         <h1>출석 관련 안내</h1>
         <p>출석기준, 전자출결, 유고결석 및 출석인정 절차 안내</p>
       </div>
 
-      <!-- 안내문 박스 -->
       <div class="info-box-header">
-        <p>
-          <strong>안내:</strong>
-          출석은 학점 인정의 기본 요건입니다.
-          결석이 수업시간의 <mark>3분의 1 이상</mark>이면 학점이 부여되지 않으며,
-          출석관리는 <strong>전자출결시스템</strong>을 통해 자동 관리됩니다.
-        </p>
+        <p><strong>안내:</strong> 출석은 학점 인정의 기본 요건입니다. 결석이 수업시간의 <mark>3분의 1 이상</mark>이면 학점이 부여되지 않으며, 출석관리는 <strong>전자출결시스템</strong>을 통해 자동 관리됩니다.</p>
       </div>
 
-      <!-- 1️⃣ 출석 기준 -->
-      <button class="accordion-header-new" data-content-id="content1" id="rule">
-        <i class="fas fa-list-ol"></i> 출석 기준 및 결석 처리
-        <i class="fas fa-angle-down toggle-icon"></i>
+      <!-- 출석 기준 -->
+      <button class="accordion-header-new" data-content-id="content1">
+        <i class="fas fa-list-ol"></i> 출석 기준 및 결석 처리 <i class="fas fa-angle-down toggle-icon"></i>
       </button>
       <div class="accordion-content-new" id="content1">
         <ul>
           <li>출석은 전자출결시스템을 통해 자동으로 관리됩니다.</li>
           <li><mark>수업시수의 3분의 1 이상 결석</mark> 시, 성적이 인정되지 않으며 <strong>F 처리</strong>됩니다.</li>
-          <li>지각 <strong>3회 = 1회 결석</strong>으로 간주됩니다.</li>
+          <li>지각 <strong>3회는 1회 결석</strong>으로 간주됩니다.</li>
           <li>출석체크 누락·오류 발생 시, 담당 교수님께 즉시 확인 요청 바랍니다.</li>
         </ul>
       </div>
 
-      <!-- 2️⃣ 전자출결 -->
-      <button class="accordion-header-new" data-content-id="content2" id="system">
-        <i class="fas fa-wifi"></i> 전자출결 시스템 이용 안내
-        <i class="fas fa-angle-down toggle-icon"></i>
+      <!-- 전자출결 -->
+      <button class="accordion-header-new" data-content-id="content2">
+        <i class="fas fa-wifi"></i> 전자출결 시스템 이용 안내 <i class="fas fa-angle-down toggle-icon"></i>
       </button>
       <div class="accordion-content-new" id="content2">
         <p>출석은 <strong>강의실 비콘(Beacon)</strong> 또는 <strong>QR코드</strong>를 통해 자동 인식됩니다.</p>
@@ -62,10 +195,9 @@
         <p>출석 오류는 수업일 또는 다음날까지 확인 요청해야 합니다.</p>
       </div>
 
-      <!-- 3️⃣ 유고결석 -->
-      <button class="accordion-header-new" data-content-id="content3" id="excused">
-        <i class="fas fa-clipboard-check"></i> 유고결석(공결) 인정 절차
-        <i class="fas fa-angle-down toggle-icon"></i>
+      <!-- 유고결석 -->
+      <button class="accordion-header-new" data-content-id="content3">
+        <i class="fas fa-clipboard-check"></i> 유고결석(공결) 인정 절차 <i class="fas fa-angle-down toggle-icon"></i>
       </button>
       <div class="accordion-content-new" id="content3">
         <ol>
@@ -73,16 +205,12 @@
           <li>결석 사유 증빙서류 첨부 (진단서, 가족관계증명서, 사망진단서 등)</li>
           <li><strong>지도교수 승인</strong> → <strong>학과장 확인</strong> → <mark>교무처 승인</mark></li>
         </ol>
-        <p>
-          공결로 인정되면 해당 결석은 출석으로 처리되지만,
-          <strong>성적평가에는 반영되지 않습니다.</strong>
-        </p>
+        <p>공결로 인정되면 해당 결석은 출석으로 처리되지만, <strong>성적평가에는 반영되지 않습니다.</strong></p>
       </div>
 
-      <!-- 4️⃣ 출석인정 -->
-      <button class="accordion-header-new" data-content-id="content4" id="recognition">
-        <i class="fas fa-user-shield"></i> 출석인정 신청 절차 (조기취업·장애학생 등)
-        <i class="fas fa-angle-down toggle-icon"></i>
+      <!-- 출석인정 -->
+      <button class="accordion-header-new" data-content-id="content4">
+        <i class="fas fa-user-shield"></i> 출석인정 신청 절차 (조기취업·장애학생 등) <i class="fas fa-angle-down toggle-icon"></i>
       </button>
       <div class="accordion-content-new" id="content4">
         <ul>
@@ -92,25 +220,11 @@
         </ul>
       </div>
 
-      <!-- 5️⃣ 관련 양식 -->
-      <button class="accordion-header-new" data-content-id="content5" id="form">
-        <i class="fas fa-file-download"></i> 관련 양식 다운로드
-        <i class="fas fa-angle-down toggle-icon"></i>
+      <!-- 유의사항 -->
+      <button class="accordion-header-new" data-content-id="content5">
+        <i class="fas fa-exclamation-triangle"></i> 유의사항 <i class="fas fa-angle-down toggle-icon"></i>
       </button>
       <div class="accordion-content-new" id="content5">
-        <div style="text-align:center; margin:10px 0;">
-          <a href="report_form (2).hwp" download class="content-link">
-            <i class="fas fa-download"></i> 출석 관련 신청서 양식 다운로드 (HWP)
-          </a>
-        </div>
-      </div>
-
-      <!-- 6️⃣ 유의사항 -->
-      <button class="accordion-header-new" data-content-id="content6" id="note">
-        <i class="fas fa-exclamation-triangle"></i> 유의사항
-        <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content6">
         <ul>
           <li>수업 시작 <strong>15분 이후</strong> 입실 시 지각으로 처리됩니다.</li>
           <li>출석 오류 정정은 <mark>수업 주차 내</mark>에서만 가능합니다.</li>
@@ -119,21 +233,51 @@
       </div>
 
       <!-- 문의 -->
-      <div class="contact-box" id="문의">
+      <div class="contact-box">
         <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
         <p>출석 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
         <p>
-          <i class="fas fa-phone-alt"></i>
-          <strong>전화:</strong>
-          <a href="tel:0226002453">02-2600-2453</a> |
-          <i class="fas fa-envelope"></i>
-          <strong>이메일:</strong>
-          <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+          <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> |
+          <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
         </p>
       </div>
     </div>
   </div>
 
-  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const headers = document.querySelectorAll('.accordion-header-new');
+      const contents = document.querySelectorAll('.accordion-content-new');
+
+      headers.forEach(header => {
+        header.addEventListener('click', function() {
+          const contentId = this.getAttribute('data-content-id');
+          const content = document.getElementById(contentId);
+          const isOpening = !this.classList.contains('active');
+
+          if (isOpening) {
+            headers.forEach(h => h.classList.remove('active'));
+            contents.forEach(c => {
+              c.style.maxHeight = '0px';
+              c.style.paddingTop = '0';
+              c.style.paddingBottom = '0';
+            });
+          }
+
+          this.classList.toggle('active');
+
+          if (this.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + 40 + 'px';
+            content.style.paddingTop = '20px';
+            content.style.paddingBottom = '20px';
+          } else {
+            content.style.maxHeight = '0px';
+            content.style.paddingTop = '0';
+            content.style.paddingBottom = '0';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
