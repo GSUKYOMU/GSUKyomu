@@ -8,110 +8,111 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="background-wrap">
-  <div class="container adjust-page">
-    <a href="index.html" class="back-link">
-      <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
-    </a>
+  <div class="background-wrap">
+    <div class="container adjust-page">
 
-    <div class="page-hero">
-      <i class="fas fa-user-check"></i>
-      <h1>출석 관련 안내</h1>
-      <p>출석기준, 전자출결, 공결·유고결석 및 인정 절차 안내</p>
-    </div>
+      <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
+      </a>
 
-    <div class="info-box-header">
-      <p><strong>안내:</strong> 출석은 학점인정의 기본 요건으로, 수업시간의 <mark>3분의 1 이상 결석</mark> 시 학점이 부여되지 않습니다. 전자출결 시스템을 통해 자동 관리되며, 결석·지각 처리 기준을 꼭 확인하시기 바랍니다.</p>
-    </div>
+      <div class="page-hero">
+        <i class="fas fa-user-check"></i>
+        <h1>출석 관련 안내</h1>
+        <p>출석기준, 전자출결, 유고결석 및 출석인정 절차 안내</p>
+      </div>
 
-    <!-- 1️⃣ 출석 기준 -->
-    <button class="accordion-header-new" data-content-id="rule" id="rule">
-      <i class="fas fa-list-ol"></i> 출석 기준 및 결석 처리 <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-rule">
-      <ul>
-        <li>출석은 전자출결시스템을 통해 관리됩니다.</li>
-        <li><mark>결석이 수업시수의 3분의 1 이상</mark>인 경우 성적이 인정되지 않으며 <strong>F 처리</strong>됩니다.</li>
-        <li>지각 <strong>3회 = 1회 결석</strong>으로 간주됩니다.</li>
-        <li>출석체크 누락·오류 발생 시, 해당 교수님께 <strong>즉시 확인 요청</strong> 바랍니다.</li>
-      </ul>
-    </div>
+      <div class="info-box-header">
+        <p><strong>안내:</strong> 출석은 학점 인정의 기본 요건입니다. 결석이 수업시간의 <mark>3분의 1 이상</mark>이면 학점이 부여되지 않으며, 출석관리는 <strong>전자출결시스템</strong>을 통해 자동 관리됩니다.</p>
+      </div>
 
-    <!-- 2️⃣ 전자출결 -->
-    <button class="accordion-header-new" data-content-id="system" id="system">
-      <i class="fas fa-wifi"></i> 전자출결 시스템 이용 안내 <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-system">
-      <p>출석은 <mark>비콘(Beacon)</mark> 또는 <mark>QR코드</mark>를 통해 자동 인식됩니다.</p>
-      <ol>
-        <li>스마트폰의 <strong>블루투스·위치정보</strong> 기능을 켭니다.</li>
-        <li>전자출결 앱 실행 → 강의 선택 → 자동 출석 확인</li>
-        <li>출석 누락 시 교수님께 요청하여 <strong>수동 출석 인정</strong> 가능</li>
-      </ol>
-      <p>출석 오류는 <mark>수업일 또는 익일 내</mark>에 반드시 확인 요청해야 합니다.</p>
-    </div>
+      <!-- 출석 기준 -->
+      <button class="accordion-header-new" data-content-id="content1" id="rule">
+        <i class="fas fa-list-ol"></i> 출석 기준 및 결석 처리 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content1">
+        <ul>
+          <li>출석은 전자출결시스템을 통해 자동으로 관리됩니다.</li>
+          <li><mark>수업시수의 3분의 1 이상 결석</mark> 시, 해당 과목은 성적이 인정되지 않으며 <strong>F 처리</strong>됩니다.</li>
+          <li>지각 <strong>3회는 1회 결석</strong>으로 간주됩니다.</li>
+          <li>출석체크 누락·오류 발생 시, 담당 교수님께 즉시 확인 요청 바랍니다.</li>
+        </ul>
+      </div>
 
-    <!-- 3️⃣ 유고결석 -->
-    <button class="accordion-header-new" data-content-id="excused" id="excused">
-      <i class="fas fa-clipboard-check"></i> 유고결석(공결) 인정 절차 <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-excused">
-      <ol>
-        <li>학사인트라넷 → <strong>학생서비스 → 유고결석 신청</strong></li>
-        <li>결석 사유 증빙서류 첨부 (예: 진단서, 가족관계증명서, 사망진단서 등)</li>
-        <li><strong>지도교수 승인</strong> → <strong>학과장 확인</strong> → <mark>교무처 승인</mark></li>
-      </ol>
-      <p>유고결석이 승인되면 해당 결석은 출석으로 처리되지만, <strong>성적 평가에는 반영되지 않습니다.</strong></p>
-    </div>
+      <!-- 전자출결 시스템 -->
+      <button class="accordion-header-new" data-content-id="content2" id="system">
+        <i class="fas fa-wifi"></i> 전자출결 시스템 이용 안내 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content2">
+        <p>출석은 <strong>강의실 비콘(Beacon)</strong> 또는 <strong>QR코드</strong>를 통해 자동 인식됩니다.</p>
+        <ol>
+          <li>스마트폰의 블루투스와 위치정보를 활성화합니다.</li>
+          <li>전자출결 앱 접속 → 강의 선택 → 자동 출석 확인</li>
+          <li>출석 누락 시, 교수님 확인 후 <mark>수동 출석 인정</mark>을 받을 수 있습니다.</li>
+        </ol>
+        <p>출석 오류는 수업일 또는 다음날까지 확인 요청해야 합니다.</p>
+      </div>
 
-    <!-- 4️⃣ 출석인정 -->
-    <button class="accordion-header-new" data-content-id="recognition" id="recognition">
-      <i class="fas fa-user-shield"></i> 출석인정 신청 절차 (조기취업·장애학생 등) <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-recognition">
-      <ul>
-        <li><strong>조기취업자:</strong> 조기취업계 및 재직증명서 제출 → 학과 및 교무처 승인</li>
-        <li><strong>장애학생:</strong> 장애학생지원센터 확인 후 학과 승인</li>
-        <li><strong>학교 공식행사:</strong> 담당 부서의 공문 또는 참석확인서로 인정 가능</li>
-      </ul>
-    </div>
+      <!-- 유고결석 -->
+      <button class="accordion-header-new" data-content-id="content3" id="excused">
+        <i class="fas fa-clipboard-check"></i> 유고결석(공결) 인정 절차 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content3">
+        <ol>
+          <li>학사인트라넷 → <strong>학생서비스 → 유고결석 신청</strong></li>
+          <li>결석 사유 증빙서류 첨부 (진단서, 가족관계증명서, 사망진단서 등)</li>
+          <li><strong>지도교수 승인</strong> → <strong>학과장 확인</strong> → <mark>교무처 승인</mark></li>
+        </ol>
+        <p>공결로 인정되면 해당 결석은 출석으로 처리되지만, <strong>성적평가에는 반영되지 않습니다.</strong></p>
+      </div>
 
-    <!-- 5️⃣ 양식 다운로드 -->
-    <button class="accordion-header-new" data-content-id="form" id="form">
-      <i class="fas fa-download"></i> 관련 양식 다운로드 <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-form">
-      <div style="text-align:center; margin:10px 0;">
-        <a href="report_form (2).hwp" download class="content-link">
-          <i class="fas fa-file-download"></i> 출석 관련 신청서 양식 다운로드 (HWP)
-        </a>
+      <!-- 출석인정 -->
+      <button class="accordion-header-new" data-content-id="content4" id="recognition">
+        <i class="fas fa-user-shield"></i> 출석인정 신청 절차 (조기취업·장애학생 등) <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content4">
+        <ul>
+          <li><strong>조기취업자:</strong> 조기취업계 및 재직증명서 제출 → 학과·교무처 승인</li>
+          <li><strong>장애학생:</strong> 장애학생지원센터 확인 후 학과 승인</li>
+          <li><strong>학교 공식행사:</strong> 담당 부서의 공문 또는 참석확인서로 인정 가능</li>
+        </ul>
+      </div>
+
+      <!-- 관련 양식 다운로드 -->
+      <button class="accordion-header-new" data-content-id="content5" id="form">
+        <i class="fas fa-file-download"></i> 관련 양식 다운로드 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content5">
+        <div style="text-align:center; margin:10px 0;">
+          <a href="report_form (2).hwp" download class="content-link">
+            <i class="fas fa-download"></i> 출석 관련 신청서 양식 다운로드 (HWP)
+          </a>
+        </div>
+      </div>
+
+      <!-- 유의사항 -->
+      <button class="accordion-header-new" data-content-id="content6" id="note">
+        <i class="fas fa-exclamation-triangle"></i> 유의사항 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="content6">
+        <ul>
+          <li>수업 시작 <strong>15분 이후</strong> 입실 시 지각으로 처리됩니다.</li>
+          <li>출석 오류 정정은 <mark>수업 주차 내</mark>에서만 가능합니다.</li>
+          <li>유고결석 신청은 사유 발생 즉시 제출해야 하며, 사후 제출은 불인정될 수 있습니다.</li>
+        </ul>
+      </div>
+
+      <!-- 문의 -->
+      <div class="contact-box" id="문의">
+        <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
+        <p>출석 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
+        <p>
+          <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> |
+          <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+        </p>
       </div>
     </div>
-
-    <!-- 6️⃣ 유의사항 -->
-    <button class="accordion-header-new" data-content-id="note" id="note">
-      <i class="fas fa-exclamation-triangle"></i> 유의사항 <i class="fas fa-angle-down toggle-icon"></i>
-    </button>
-    <div class="accordion-content-new" id="content-note">
-      <ul>
-        <li>수업 시작 <strong>15분 이후</strong> 입실 시 ‘지각’ 처리됩니다.</li>
-        <li>출석 오류 정정은 <mark>수업 주차 내</mark>에서만 가능합니다.</li>
-        <li>유고결석 신청은 사유 발생 즉시 제출해야 하며, <strong>사후 제출은 불인정</strong>될 수 있습니다.</li>
-      </ul>
-    </div>
-
-    <!-- 문의 박스 -->
-    <div class="contact-box">
-      <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
-      <p>출석 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
-      <p>
-        <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> | 
-        <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
-      </p>
-    </div>
   </div>
-</div>
 
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
