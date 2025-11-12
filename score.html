@@ -17,149 +17,92 @@
       <div class="page-hero">
         <i class="fas fa-chart-bar"></i>
         <h1>성적 입력 및 제출서류 안내</h1>
-        <p>성적 입력 방법 및 필수 제출 서류 안내</p>
+        <p>성적 평가, 입력기준, 제출 서류 및 기한 안내</p>
       </div>
 
-      <!-- 빠른 메뉴 -->
-      <div class="tab-menu-container">
-        <div><i class="fas fa-th-list"></i> 빠른 메뉴</div>
-        <ul class="tab-list" id="score-tab-list">
-          <li><button data-target="tabA" class="active">성적평가 기준</button></li>
-          <li><button data-target="tabB">성적 입력 기준</button></li>
-          <li><button data-target="tabC">성적 제출 서류</button></li>
-          <li><button data-target="tabD">제출 방법 및 기한</button></li>
-          <li><button data-target="tabE">기타</button></li>
+      <!-- 🔍 검색창 -->
+      <div class="search-box">
+        <div>
+          <i class="fas fa-search"></i>
+          <input type="text" id="pageSearch" placeholder="찾고 싶은 내용을 입력하세요 (예: 성적 입력, 평가 기준, 제출)">
+        </div>
+      </div>
+
+      <!-- 1️⃣ 성적평가 기준 -->
+      <button class="accordion-header-new" data-content-id="acc1">
+        <i class="fas fa-list"></i> 성적평가 기준 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="acc1">
+        <p>성적 평가는 아래의 기준으로 이루어지며, 평점평균(GPA)은 각 과목 평점×학점수를 합산 후 총 학점수로 나눈 값으로 계산됩니다.</p>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+          <tr style="background-color:#f8f8f8;">
+            <th>등급</th><th>점수</th><th>평점</th>
+          </tr>
+          <tr><td>A+</td><td>95–100</td><td>4.5</td></tr>
+          <tr><td>A0</td><td>90–94</td><td>4.0</td></tr>
+          <tr><td>B+</td><td>85–89</td><td>3.5</td></tr>
+          <tr><td>B0</td><td>80–84</td><td>3.0</td></tr>
+          <tr><td>C+</td><td>75–79</td><td>2.5</td></tr>
+          <tr><td>C0</td><td>70–74</td><td>2.0</td></tr>
+          <tr><td>D+</td><td>65–69</td><td>1.5</td></tr>
+          <tr><td>D0</td><td>60–64</td><td>1.0</td></tr>
+          <tr><td>F</td><td>60 미만</td><td>0.0</td></tr>
+        </table>
+
+        <p><mark>P/F 평가</mark> : 현장 실습 등은 <strong>P(합격)</strong> 또는 <strong>F(불합격)</strong>으로 평가하며, <mark>'P'는 GPA 계산에서 제외</mark>됩니다.</p>
+        <p><strong>※ 결석 3분의 1 이상 시 F 처리됩니다.</strong><br>또한 <mark>지각 3회는 결석 1회</mark>로 간주됩니다.</p>
+      </div>
+
+      <!-- 2️⃣ 성적입력 기준 -->
+      <button class="accordion-header-new" data-content-id="acc2">
+        <i class="fas fa-keyboard"></i> 성적입력 기준 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="acc2">
+        <ul>
+          <li><strong>중간·기말고사, 과제, 출석 점수 합계는 100점</strong>이 되도록 입력합니다.</li>
+          <li><mark>출석미달(결석 1/3 이상)</mark>인 학생은 반드시 F 처리 후 비고란에 ‘출석미달’ 표기.</li>
+          <li>“_”(미정)은 출결 미진행으로 간주 → 반드시 O/X/△ 중 하나로 수정.</li>
+          <li>상대평가 제외 교과: 실습·실기·캡스톤·마이크로디그리 교과, 수강생 10명 이하 등.</li>
         </ul>
       </div>
 
-      <!-- 탭 A -->
-      <div class="tab-content active" id="tabA">
-        <button class="accordion-header-new" data-content-id="accA1">
-          <i class="fas fa-list"></i> 성적평가 기준 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accA1">
-          <p>성적 평가는 다음과 같은 등급으로 분류되며, 평점평균(GPA) 계산은 각 과목의 평점에 학점수를 곱하여 합산한 후 총 신청 학점수의 합계로 나눈 값으로 산출됩니다.</p>
-          <table style="width:100%; border-collapse:collapse; margin-top:10px;">
-            <thead>
-              <tr><th>등급</th><th>점수</th><th>평점</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>A+</td><td>95 - 100</td><td>4.5</td></tr>
-              <tr><td>A0</td><td>90 - 94</td><td>4.0</td></tr>
-              <tr><td>B+</td><td>85 - 89</td><td>3.5</td></tr>
-              <tr><td>B0</td><td>80 - 84</td><td>3.0</td></tr>
-              <tr><td>C+</td><td>75 - 79</td><td>2.5</td></tr>
-              <tr><td>C0</td><td>70 - 74</td><td>2.0</td></tr>
-              <tr><td>D+</td><td>65 - 69</td><td>1.5</td></tr>
-              <tr><td>D0</td><td>60 - 64</td><td>1.0</td></tr>
-              <tr><td>F</td><td>-----------</td><td>0.0</td></tr>
-            </tbody>
-          </table>
-          <p>• <mark>P/F 평가</mark>: 현장 실습 등 등급별 평가가 어려운 과목은 <strong>P(합격)</strong> 또는 <strong>F(불합격)</strong>으로 평가하며, <mark>'P'는 평점평균 산출에서 제외</mark>됩니다.</p>
-        </div>
-
-        <button class="accordion-header-new" data-content-id="accA2">
-          <i class="fas fa-question-circle"></i> 자주 들어오는 질문 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accA2">
-          <p><strong>몇 회 결석부터 F인가요?</strong></p>
-          <p>- 수업의 <mark>3분의 1 이상 결석</mark> 시 학점이 인정되지 않으며, 교무처에서 <strong>직권 과락(F)</strong> 처리됩니다.</p>
-          <p>- <mark>지각 3회는 결석 1회</mark>로 간주됩니다.</p>
-        </div>
+      <!-- 3️⃣ 제출 서류 -->
+      <button class="accordion-header-new" data-content-id="acc3">
+        <i class="fas fa-file-alt"></i> 성적 제출 서류 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="acc3">
+        <ul>
+          <li><mark>성적보고서 1부</mark> – 정정마감 이후 출력본, 교수 서명 필수</li>
+          <li><mark>출석부 1부</mark> – 전자출결시스템 출력, 서명 필수</li>
+          <li><mark>CQI(강의개선보고서)</mark> – 인트라넷 입력 (별도 제출 불필요)</li>
+          <li>조기취업학생: <mark>출석인정확인서</mark> 및 <mark>재직증빙서류</mark> 동시 제출</li>
+        </ul>
       </div>
 
-      <!-- 탭 B -->
-      <div class="tab-content" id="tabB">
-        <button class="accordion-header-new" data-content-id="accB1">
-          <i class="fas fa-keyboard"></i> 성적입력 안내 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accB1">
-          <ol>
-            <li><strong>중간·기말·과제·출석 합이 100점</strong>이 되도록 기재합니다.<br>
-              예) 출석 10% / 중간 30% / 기말 40% / 과제 20% → 합계 100%
-            </li>
-            <li><mark>결석이 수업일수의 1/3 이상</mark>이면 반드시 F 처리 후 ‘출석미달’로 표기합니다.</li>
-          </ol>
-        </div>
-
-        <button class="accordion-header-new" data-content-id="accB2">
-          <i class="fas fa-percent"></i> 상대평가 제외 과목 기준 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accB2">
-          <ul>
-            <li>실습/실기 과목, 캡스톤디자인, 마이크로디그리 교과</li>
-            <li>외부평가 30% 이상 반영 교과</li>
-            <li>수강인원 10명 이하</li>
-            <li>총장이 인정하는 과목</li>
-          </ul>
-        </div>
-
-        <button class="accordion-header-new" data-content-id="accB3">
-          <i class="fas fa-chart-pie"></i> 평가 요소 및 비율 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accB3">
-          <p><strong>성적평가는 상대평가를 원칙</strong>으로 합니다.</p>
-          <table style="width:100%; border-collapse:collapse; margin-top:10px;">
-            <thead>
-              <tr><th>등급</th><th>평점</th><th>점수</th><th>교양</th><th>전공</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>A+</td><td>4.5</td><td>95-100</td><td>30%</td><td>35%</td></tr>
-              <tr><td>B+</td><td>3.5</td><td>85-89</td><td>40%</td><td>45%</td></tr>
-              <tr><td>C+</td><td>2.5</td><td>75-79</td><td>30%</td><td>20%</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <!-- 4️⃣ 제출 방법 및 기한 -->
+      <button class="accordion-header-new" data-content-id="acc4">
+        <i class="fas fa-calendar-check"></i> 제출 방법 및 기한 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="acc4">
+        <p>모든 서류는 <mark>서명·날인 후</mark> 교무처로 <strong>직접 또는 우편 제출</strong>합니다.</p>
+        <p><strong>주소:</strong> (07661) 서울시 강서구 까치산로24길 47 본관 1층 교무과 수업담당자</p>
+        <p>제출기한은 성적 정정 마감일 기준 <mark>2일 이내 도착</mark>분까지 인정됩니다.</p>
       </div>
 
-      <!-- 탭 C -->
-      <div class="tab-content" id="tabC">
-        <button class="accordion-header-new" data-content-id="accC1">
-          <i class="fas fa-file-alt"></i> 제출 서류 목록 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accC1">
-          <ul>
-            <li><mark>성적보고서</mark> (정정 마감 이후 출력, 서명 필수)</li>
-            <li><mark>출석부</mark> (전자출결 출력, 서명 필수)</li>
-            <li><mark>강의개선보고서(CQI)</mark> (인트라넷 입력)</li>
-            <li>조기취업 학생의 경우 <strong>출석인정확인서</strong>와 <strong>재직증빙</strong> 동시 제출</li>
-          </ul>
-        </div>
+      <!-- 5️⃣ 기타 안내 -->
+      <button class="accordion-header-new" data-content-id="acc5">
+        <i class="fas fa-info-circle"></i> 기타 안내 <i class="fas fa-angle-down toggle-icon"></i>
+      </button>
+      <div class="accordion-content-new" id="acc5">
+        <ul>
+          <li>성적 입력 기한을 지키지 않으면 해당 과목은 <mark>F 처리</mark>될 수 있습니다.</li>
+          <li>모든 성적 근거 자료는 <mark>10년간 보관</mark>해야 합니다.</li>
+          <li>CQI는 대학 평가 및 교육과정 개선에 활용되므로 성실히 작성 바랍니다.</li>
+        </ul>
       </div>
 
-      <!-- 탭 D -->
-      <div class="tab-content" id="tabD">
-        <button class="accordion-header-new" data-content-id="accD1">
-          <i class="fas fa-calendar-check"></i> 성적보고서 및 출석부 제출 안내 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accD1">
-          <p>모든 서류는 <strong>서명·날인 후</strong> <mark>교무처로 직접 또는 우편 제출</mark> 바랍니다.</p>
-          <p><strong>주소:</strong> (07661) 서울시 강서구 까치산로 24길 47 강서대학교 본관 1층 교무과</p>
-        </div>
-      </div>
-
-      <!-- 탭 E -->
-      <div class="tab-content" id="tabE">
-        <button class="accordion-header-new" data-content-id="accE1">
-          <i class="fas fa-archive"></i> 성적 관리 및 자료 보관 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accE1">
-          <p><mark>모든 성적 근거 자료는 10년간 교수님이 보관</mark>하셔야 합니다.</p>
-        </div>
-
-        <button class="accordion-header-new" data-content-id="accE2">
-          <i class="fas fa-info-circle"></i> 기타 안내 <i class="fas fa-angle-down toggle-icon"></i>
-        </button>
-        <div class="accordion-content-new" id="accE2">
-          <ul>
-            <li>과제 성적은 입력 마감 전까지 완료해야 합니다.</li>
-            <li>성적 미입력 시 F 처리됩니다.</li>
-            <li>보고서 등 증빙자료는 <mark>10년간 보관</mark>해야 합니다.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 문의 박스 -->
+      <!-- 📞 문의 -->
       <div class="contact-box">
         <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
         <p>성적 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
@@ -172,34 +115,39 @@
   </div>
 
   <script>
-    // 탭 전환
-    document.querySelectorAll('#score-tab-list button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('#score-tab-list button').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.dataset.target).classList.add('active');
-      });
-    });
-
     // 아코디언
-    document.querySelectorAll('.accordion-header-new').forEach(header => {
-      header.addEventListener('click', () => {
-        const content = document.getElementById(header.getAttribute('data-content-id'));
-        const open = header.classList.contains('active');
-        document.querySelectorAll('.accordion-header-new').forEach(h => h.classList.remove('active'));
-        document.querySelectorAll('.accordion-content-new').forEach(c => {
-          c.style.maxHeight = '0';
-          c.style.paddingTop = '0';
-          c.style.paddingBottom = '0';
+    document.addEventListener('DOMContentLoaded', () => {
+      const headers = document.querySelectorAll('.accordion-header-new');
+      const contents = document.querySelectorAll('.accordion-content-new');
+      headers.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = document.getElementById(header.dataset.contentId);
+          const isOpen = header.classList.contains('active');
+          headers.forEach(h => h.classList.remove('active'));
+          contents.forEach(c => {
+            c.style.maxHeight = '0';
+            c.style.paddingTop = '0';
+            c.style.paddingBottom = '0';
+          });
+          if (!isOpen) {
+            header.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 40 + 'px';
+            content.style.paddingTop = '20px';
+            content.style.paddingBottom = '20px';
+          }
         });
-        if (!open) {
-          header.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 40 + 'px';
-          content.style.paddingTop = '20px';
-          content.style.paddingBottom = '20px';
-        }
       });
+
+      // 🔍 페이지 내 검색
+      const searchInput = document.getElementById('pageSearch');
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          const keyword = this.value.toLowerCase();
+          document.querySelectorAll('.accordion-header-new, .accordion-content-new').forEach(el => {
+            el.style.display = el.textContent.toLowerCase().includes(keyword) ? '' : 'none';
+          });
+        });
+      }
     });
   </script>
 </body>
