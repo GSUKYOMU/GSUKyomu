@@ -4,263 +4,179 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>강서대학교 교무처 - 시험 관련 안내</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: #f5f7fa;
-      line-height: 1.6;
-      color: #333;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: #007bff;
-      margin-bottom: 20px;
-      font-weight: 500;
-      font-size: 0.9em;
-    }
-
-    .page-hero {
-      text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      background: #f0f8ff;
-      border: 1px solid #cce5ff;
-    }
-    .page-hero i {
-      color: #007bff;
-      margin-bottom: 5px;
-      font-size: 1.6em;
-    }
-    .page-hero h1 {
-      font-size: 1.9em;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 5px;
-    }
-    .page-hero p { font-size: 1em; color: #555; }
-
-    .info-box-header {
-      background-color: #fff3cd;
-      color: #856404;
-      padding: 10px 15px;
-      border: 1px solid #ffeeba;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      font-size: 0.95em;
-    }
-
-    .accordion-header-new {
-      width: 100%;
-      background-color: #f8f8f8;
-      padding: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #333;
-      border: 1px solid #ddd;
+    /* 페이지 전용 스타일 */
+    .exam-note {
+      background: #f8f9ff;
+      padding: 12px 18px;
+      border-left: 4px solid #007bff;
       border-radius: 6px;
-      margin-bottom: 10px;
-      transition: all 0.3s ease;
-    }
-    .accordion-header-new.active {
-      background-color: #e6f0ff;
-      border-color: #007bff;
-    }
-    .accordion-header-new i.fas:first-child {
-      margin-right: 10px;
-      color: #007bff;
-    }
-    .toggle-icon { transition: transform 0.3s; }
-    .accordion-header-new.active .toggle-icon { transform: rotate(180deg); }
-
-    .accordion-content-new {
-      max-height: 0;
-      overflow: hidden;
-      padding-left: 15px;
-      padding-right: 15px;
-      background-color: #fff;
-      border-left: 1px solid #eee;
-      border-right: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      margin-top: -10px;
-      margin-bottom: 20px;
-      border-radius: 0 0 6px 6px;
-      transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-      font-size: 0.95em;
-    }
-
-    .accordion-content-new h4 {
-      margin-top: 20px;
-      color: #007bff;
-      font-size: 1.05em;
-    }
-    .accordion-content-new ul, .accordion-content-new ol {
-      margin-left: 20px;
-      margin-top: 10px;
       margin-bottom: 15px;
     }
-    .accordion-content-new li { margin-bottom: 6px; color: #555; }
-
-    .contact-box {
-      margin-top: 30px;
-      background-color: #f7f7f7;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-    .contact-box h3 {
-      margin-top: 0;
-      color: #333;
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      display: flex;
-      align-items: center;
-    }
-    .contact-box h3 i { margin-right: 8px; color: #007bff; }
-    .contact-box p { margin: 5px 0; font-size: 0.95em; }
-    .contact-box a { text-decoration: none; color: #333; }
-    .contact-box a:hover { color: #007bff; }
   </style>
 </head>
+
 <body>
-  <div class="background-wrap">
-    <div class="container adjust-page">
-      <a href="index.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
-      </a>
+<div class="background-wrap">
+  <div class="container">
 
-      <div class="page-hero">
-        <i class="fas fa-pen-to-square"></i>
-        <h1>시험 관련 안내</h1>
-        <p>중간·기말시험 운영, 부정행위 예방 및 추가시험 절차 안내</p>
-      </div>
+    <!-- 돌아가기 -->
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
+    </a>
 
-      <div class="info-box-header">
-        <p><strong>안내:</strong> 모든 시험은 학사일정에 따라 공정하게 실시되며, 부정행위 방지 및 성적 공정성 확보를 위해 아래 내용을 반드시 확인하시기 바랍니다.</p>
-      </div>
+    <!-- 헤더 -->
+    <div class="page-hero">
+      <i class="fas fa-pen-to-square"></i>
+      <h1>시험 관련 안내</h1>
+      <p>중간·기말시험 운영 기준 및 부정행위 처리 안내</p>
+    </div>
 
-      <!-- 1. 시험 일정 -->
-      <button class="accordion-header-new" data-content-id="content1">
-        <i class="fas fa-calendar-alt"></i> 시험 일정 및 시행 원칙 <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content1">
-        <ul>
-          <li>중간고사는 <mark>7~8주차</mark>에, 학기말시험은 <mark>15주차</mark>에 학사력에 지정된 기간 내 반드시 실시해야 합니다.</li>
-          <li>동일 과목을 2강좌 이상 담당하는 교원은 <strong>부정사례 방지를 위해 문제 유형을 각기 다르게 출제</strong>해야 합니다.</li>
-          <li>수강인원이 많거나 강의실이 협소하여 분반이 필요한 경우, <strong>교무처 수업담당자에게 사전 문의</strong>하시기 바랍니다.</li>
-        </ul>
-      </div>
+    <!-- 안내 박스 -->
+    <div class="info-box-header">
+      <p><strong>안내:</strong> 모든 시험은 학사일정에 따라 공정하게 운영됩니다.  
+      아래 기준을 따라 시험을 시행해 주시기 바랍니다.</p>
+    </div>
 
-      <!-- 2. 대면수업 -->
-      <button class="accordion-header-new" data-content-id="content2">
-        <i class="fas fa-school"></i> 대면수업 시험 실시 기준 <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content2">
-        <ol>
-      <li>대면수업은 원칙적으로 <strong>대면시험</strong>으로 실시합니다.</li>
-      <li>과제형 시험으로 진행할 경우, <mark>중간고사 기간 중에도 정상적으로 수업</mark>을 진행해야 합니다.</li>
-      <li>시험지 출력 및 복사 지원은 제공되지 않으며, 비전임교원은 <strong>본관 1층 강사실 프린터</strong>를 이용할 수 있습니다.</li>
-      <li><strong>학생 답안지는 본관 1층 교무과에 비치</strong>되어 있으며, 
-          <mark>필요 시 반드시 담당교수가 직접 방문하여 수령</mark>해야 합니다. 
-          학생이 대신 가져가거나 대리수령하는 것은 허용되지 않습니다.</li>
-      <li>법정공휴일로 인해 시험이 불가한 경우, <strong>지정보강일에 보강시험</strong>을 실시해 주시기 바랍니다.</li>
-    </ol>
-  </div>
+    <!-- 1. 시험 일정 -->
+    <button class="accordion-header-new" data-content-id="acc1">
+      <i class="fas fa-calendar-alt"></i> 시험 일정 및 기본 원칙
+      <i class="fas fa-angle-down toggle-icon"></i>
+    </button>
 
-      <!-- 3. 온라인수업 -->
-      <button class="accordion-header-new" data-content-id="content3">
-        <i class="fas fa-laptop"></i> 온라인수업 시험 실시 기준 <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content3">
-        <ol>
-          <li>온라인수업(운영 승인 교과에 한함)은 <strong>LMS를 통한 비대면 시험</strong> 또는 <strong>대면시험</strong>으로 실시할 수 있습니다.</li>
-          <li>대면시험으로 전환하고자 할 경우, 반드시 <strong>교무처 수업담당자(02-2600-2453)</strong>에게 사전 문의 바랍니다.</li>
-        </ol>
-      </div>
+    <div class="accordion-content-new" id="acc1">
+      <ul>
+        <li>중간고사: <mark>7~8주차</mark></li>
+        <li>기말고사: <mark>15주차</mark></li>
+        <li>여러 분반을 담당할 경우 <strong>시험 문제는 반드시 분반별로 다르게 출제</strong></li>
+        <li>강의실 부족 시 교무처와 협의하여 분반 시험 가능</li>
+      </ul>
+    </div>
 
-      <!-- 4. 추가시험 -->
-      <button class="accordion-header-new" data-content-id="content4">
-        <i class="fas fa-file-medical"></i> 추가시험(유고결석자 등) 안내 <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content4">
-        <ul>
-          <li>질병이나 기타 부득이한 사유로 시험에 응할 수 없는 경우, <strong>증빙서류를 첨부하여 교무처장의 승인을 받은 후 추가시험</strong>에 응할 수 있습니다.</li>
-          <li>증빙 예시: 병원 진단서(신병), 병무소집 통지서(입대), 직계가족 사망 증빙서류 등</li>
-          <li>추가시험을 통해서는 <mark>B+ 이상의 성적을 부여할 수 없습니다.</mark></li>
-          <li>중간·기말시험 중 하나를 유고결석으로 인정받은 경우, <mark>기 응시한 시험 성적의 80%</mark>를 인정합니다.</li>
-        </ul>
-      </div>
+    <!-- 2. 대면수업 시험 -->
+    <button class="accordion-header-new" data-content-id="acc2">
+      <i class="fas fa-school"></i> 대면수업 시험 실시 기준
+      <i class="fas fa-angle-down toggle-icon"></i>
+    </button>
 
-      <!-- 5. 부정행위 및 성적 취소 -->
-      <button class="accordion-header-new" data-content-id="content5">
-        <i class="fas fa-user-times"></i> 부정행위 및 성적 취소 안내 <i class="fas fa-angle-down toggle-icon"></i>
-      </button>
-      <div class="accordion-content-new" id="content5">
-        <ul>
-          <li>성적이 <strong>과오 또는 부정행위</strong>로 인정될 때에는 해당 성적을 취소할 수 있습니다.</li>
-          <li>시험 중 부정행위를 한 학생은 <strong>학교 징계 대상</strong>이 되며, 징계는 <mark>견책·근신·유기정학·무기정학·퇴학</mark>으로 구분됩니다.</li>
-          <li>부정행위가 확인될 경우, <strong>해당 교과목은 낙제(F)</strong> 처리됩니다.</li>
-          <li><strong>대리 출석</strong>이 적발된 수강생의 해당 교과목 성적은 <mark>F 처리</mark>됩니다.</li>
-        </ul>
-      </div>
+    <div class="accordion-content-new" id="acc2">
+      <ol>
+        <li>대면 수업은 원칙적으로 <strong>대면시험</strong>으로 진행</li>
+        <li>중간고사 기간 중 과제 대체 시 → <mark>수업은 정상 진행</mark></li>
+        <li>시험지 출력·복사 지원 없음  
+            → 비전임의 경우 본관 1층 강사실 복합기 이용</li>
+        <li><strong>학생 답안지는 본관 1층 교무과에서 직접 수령</strong>  
+            (학생이 가져가는 것은 부정행위로 간주될 수 있음)</li>
+        <li>공휴일로 인해 시험이 불가할 시 지정 보강일에 시험 시행</li>
+      </ol>
 
-      <!-- 문의 -->
-      <div class="contact-box" id="문의">
-        <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
-        <p>시험 관련 문의는 교무처 수업담당자에게 문의 바랍니다.</p>
-        <p>
-          <i class="fas fa-phone-alt"></i> <strong>전화:</strong> <a href="tel:0226002453">02-2600-2453</a> |
-          <i class="fas fa-envelope"></i> <strong>이메일:</strong> <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
-        </p>
+      <div class="exam-note">
+        ⚠️ 대면시험 진행 시 감독 철저: 휴대폰 소지·타인 간 간섭·부정행위 방지
       </div>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const headers = document.querySelectorAll('.accordion-header-new');
-      const contents = document.querySelectorAll('.accordion-content-new');
-      headers.forEach(header => {
-        header.addEventListener('click', function() {
-          const contentId = this.getAttribute('data-content-id');
-          const content = document.getElementById(contentId);
-          const isOpening = !this.classList.contains('active');
-          if (isOpening) {
-            headers.forEach(h => h.classList.remove('active'));
-            contents.forEach(c => {
-              c.style.maxHeight = '0px';
-              c.style.paddingTop = '0';
-              c.style.paddingBottom = '0';
-            });
-          }
-          this.classList.toggle('active');
-          if (this.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 40 + 'px';
-            content.style.paddingTop = '20px';
-            content.style.paddingBottom = '20px';
-          } else {
-            content.style.maxHeight = '0px';
-            content.style.paddingTop = '0';
-            content.style.paddingBottom = '0';
-          }
-        });
+    <!-- 3. 온라인수업 시험 -->
+    <button class="accordion-header-new" data-content-id="acc3">
+      <i class="fas fa-laptop"></i> 온라인수업 시험 기준(LMS)
+      <i class="fas fa-angle-down toggle-icon"></i>
+    </button>
+
+    <div class="accordion-content-new" id="acc3">
+      <ul>
+        <li>온라인수업(승인된 교과)은 <strong>LMS 시험 또는 대면시험</strong> 가능</li>
+        <li>대면시험 시행 시 교무처 사전 문의 필수</li>
+      </ul>
+    </div>
+
+    <!-- 4. 추가시험 -->
+    <button class="accordion-header-new" data-content-id="acc4">
+      <i class="fas fa-file-medical"></i> 추가시험(유고결석자 등)
+      <i class="fas fa-angle-down toggle-icon"></i>
+    </button>
+
+    <div class="accordion-content-new" id="acc4">
+      <ul>
+        <li>질병·입대·경조사 등 불가피한 경우 증빙 제출 시 추가시험 가능</li>
+        <li>추가시험 성적은 <mark>B+ 이상 부여 불가</mark></li>
+        <li>중간·기말 중 1회만 유고 시 → 응시한 시험 성적의 <mark>80%</mark> 인정</li>
+      </ul>
+
+      <p><strong>증빙 예시:</strong> 진단서, 병무소집 통지서, 직계가족 사망확인 등</p>
+    </div>
+
+    <!-- 5. 부정행위 -->
+    <button class="accordion-header-new" data-content-id="acc5">
+      <i class="fas fa-user-times"></i> 부정행위 및 성적 취소 기준
+      <i class="fas fa-angle-down toggle-icon"></i>
+    </button>
+
+    <div class="accordion-content-new" id="acc5">
+      <ul>
+        <li>부정행위 적발 시 해당 교과목 <strong>F 처리</strong></li>
+        <li>학교 징계 가능: 견책·근신·유기정학·무기정학·퇴학</li>
+        <li>대리 출석 적발 시 → 해당 과목 성적 <mark>F 처리</mark></li>
+      </ul>
+      <p><strong>부정행위 방지:</strong> 시험 중 좌석 간 거리 유지, 감독 철저, 휴대폰 제출 안내</p>
+    </div>
+
+    <!-- 문의 -->
+    <div class="contact-box">
+      <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
+      <p>시험 관련 문의는 교무처로 연락해 주세요.</p>
+
+      <p>
+        <i class="fas fa-phone-alt"></i> <strong>전화:</strong>
+        <a href="tel:0226002453">02-2600-2453</a>
+        |
+        <i class="fas fa-envelope"></i> <strong>이메일:</strong>
+        <a href="mailto:kyomu@gangseo.ac.kr">kyomu@gangseo.ac.kr</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const headers = document.querySelectorAll('.accordion-header-new');
+    const contents = document.querySelectorAll('.accordion-content-new');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+
+        const content = document.getElementById(header.getAttribute('data-content-id'));
+        const opening = !header.classList.contains('active');
+
+        if (opening) {
+          headers.forEach(h => h.classList.remove('active'));
+          contents.forEach(c => {
+            c.style.maxHeight = '0';
+            c.style.paddingTop = '0';
+            c.style.paddingBottom = '0';
+          });
+        }
+
+        header.classList.toggle('active');
+        if (header.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 40 + 'px';
+          content.style.paddingTop = '20px';
+          content.style.paddingBottom = '20px';
+        } else {
+          content.style.maxHeight = '0';
+          content.style.paddingTop = '0';
+          content.style.paddingBottom = '0';
+        }
+
       });
     });
-  </script>
+
+  });
+</script>
+
 </body>
 </html>
