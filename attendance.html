@@ -6,10 +6,10 @@
   <title>강서대학교 교무처 - 출석 관련 안내</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* 이 페이지 전용 스타일만 유지 */
+    /* 이 페이지 전용 스타일 */
     .link-box {
       text-align: center;
       margin: 25px 0;
@@ -33,34 +33,39 @@
 
 <body>
   <div class="background-wrap">
-    <div class="container adjust-page">
+    <div class="container">
 
+      <!-- 돌아가기 -->
       <a href="index.html" class="back-link">
         <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
       </a>
 
+      <!-- 상단 헤더 -->
       <div class="page-hero">
         <i class="fas fa-user-check"></i>
         <h1>출석 관련 안내</h1>
         <p>전자출결 입력 기준 및 출결 관리 안내</p>
       </div>
 
+      <!-- 안내 박스 -->
       <div class="info-box-header">
-        <p><strong>안내:</strong> 출석은 학점 인정의 기본 요건입니다. 담당교수(또는 강사)는 
-          <mark>전자출결시스템(헤이영)</mark>을 통해 출석을 입력해야 합니다. 
-          <strong>수업 시작 전에 반드시 출석이 확인</strong>되어야 하며, 
-          <strong>당일 출석 처리를 진행하지 않으면 결강으로 간주</strong>됩니다.
+        <p>
+          <strong>안내:</strong>
+          출석은 학점 인정의 기본 요건입니다.
+          담당 교원은 <mark>전자출결시스템(헤이영)</mark>을 통해 출석을 입력해야 하며,
+          <strong>수업 시작 전까지 출석 확인이 완료</strong>되어야 합니다.  
+          <strong>출석 미처리 시 결강으로 간주</strong>될 수 있습니다.
         </p>
       </div>
 
-      <!-- 전자출결 바로가기 -->
+      <!-- 헤이영 바로가기 -->
       <div class="link-box">
         <a href="https://campus.heyoung.co.kr/" target="_blank">
           <i class="fas fa-link"></i> 전자출결(헤이영) 사이트 바로가기
         </a>
       </div>
 
-      <!-- 출결 입력 기준 -->
+      <!-- 1. 출결 입력 기준 -->
       <button class="accordion-header-new" data-content-id="acc1">
         <i class="fas fa-list-ol"></i> 출결 입력 기준
         <i class="fas fa-angle-down toggle-icon"></i>
@@ -76,7 +81,7 @@
 
           <tr>
             <td><strong>대면 강의</strong></td>
-            <td>수업 당일 <mark>수업 시작 전까지</mark></td>
+            <td>수업일 <mark>수업 시작 전까지</mark></td>
             <td>전자출결 자동 반영 여부 확인</td>
           </tr>
 
@@ -88,7 +93,7 @@
         </table>
       </div>
 
-      <!-- 전자출결 시스템 안내 -->
+      <!-- 2. 전자출결 시스템 안내 -->
       <button class="accordion-header-new" data-content-id="acc2">
         <i class="fas fa-wifi"></i> 전자출결 시스템 이용 안내
         <i class="fas fa-angle-down toggle-icon"></i>
@@ -99,20 +104,20 @@
 
         <h4 style="color:#007bff; margin-top:15px;">📱 앱 이용 시</h4>
         <ul>
-          <li>메인화면 → <strong>전자출결 보러가기 → 출결진행</strong></li>
+          <li>메인화면 → <strong>전자출결 보러가기 → 출결 진행</strong></li>
           <li><mark>수업 시작 10분 전부터</mark> 당일 수업 노출</li>
-          <li>시간 전에는 표시되지 않을 수 있음</li>
+          <li>이전 시간에는 표시되지 않음</li>
         </ul>
 
         <h4 style="color:#007bff; margin-top:15px;">💻 PC 이용 시</h4>
         <ul>
-          <li>강좌별출석관리 → 해당 과목 선택 → 출결 진행</li>
+          <li>강좌별 출석관리 → 해당 과목 선택 → 출결 진행</li>
         </ul>
 
         <p><strong>⚙️ 출석 처리는 반드시 수업 시작 전까지 완료해야 합니다.</strong></p>
       </div>
 
-      <!-- 출결 체크 표시 -->
+      <!-- 3. 출결 체크 상태 -->
       <button class="accordion-header-new" data-content-id="acc3">
         <i class="fas fa-clipboard-check"></i> 출결 체크 상태 표시
         <i class="fas fa-angle-down toggle-icon"></i>
@@ -120,20 +125,17 @@
 
       <div class="accordion-content-new" id="acc3">
         <table>
-          <tr>
-            <th>의미</th>
-            <th>표시</th>
-          </tr>
+          <tr><th>의미</th><th>표시</th></tr>
           <tr><td>출석</td><td>O</td></tr>
           <tr><td>결석</td><td>X</td></tr>
           <tr><td>지각</td><td>△</td></tr>
           <tr><td>미정</td><td>_</td></tr>
         </table>
 
-        <p>미정(<code>_</code>)은 출결 미입력 상태이므로 반드시 수정해야 합니다.</p>
+        <p>미정(<code>_</code>)은 출결이 입력되지 않은 상태이므로 반드시 정정해야 합니다.</p>
       </div>
 
-      <!-- 결석 및 지각 기준 -->
+      <!-- 4. 결석 및 지각 처리 기준 -->
       <button class="accordion-header-new" data-content-id="acc4">
         <i class="fas fa-exclamation-triangle"></i> 결석 및 지각 처리 기준
         <i class="fas fa-angle-down toggle-icon"></i>
@@ -147,10 +149,11 @@
         </ul>
       </div>
 
-      <!-- 문의 -->
+      <!-- 문의 박스 -->
       <div class="contact-box">
         <h3><i class="fas fa-headset"></i> 교무처 수업담당자 문의</h3>
         <p>출석 관련 문의는 교무처로 연락 바랍니다.</p>
+
         <p>
           <i class="fas fa-phone-alt"></i> <strong>전화:</strong>
           <a href="tel:0226002453">02-2600-2453</a>
@@ -163,39 +166,42 @@
     </div>
   </div>
 
+  <!-- 아코디언 공통 스크립트 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+
       const headers = document.querySelectorAll('.accordion-header-new');
       const contents = document.querySelectorAll('.accordion-content-new');
 
       headers.forEach(header => {
-        header.addEventListener('click', function() {
-          const contentId = this.getAttribute('data-content-id');
-          const content = document.getElementById(contentId);
-          const isOpening = !this.classList.contains('active');
+        header.addEventListener('click', () => {
 
-          if (isOpening) {
+          const content = document.getElementById(header.getAttribute('data-content-id'));
+          const opening = !header.classList.contains('active');
+
+          if (opening) {
             headers.forEach(h => h.classList.remove('active'));
             contents.forEach(c => {
-              c.style.maxHeight = '0px';
+              c.style.maxHeight = '0';
               c.style.paddingTop = '0';
               c.style.paddingBottom = '0';
             });
           }
 
-          this.classList.toggle('active');
-
-          if (this.classList.contains('active')) {
+          header.classList.toggle('active');
+          if (header.classList.contains('active')) {
             content.style.maxHeight = content.scrollHeight + 40 + 'px';
             content.style.paddingTop = '20px';
             content.style.paddingBottom = '20px';
           } else {
-            content.style.maxHeight = '0px';
+            content.style.maxHeight = '0';
             content.style.paddingTop = '0';
             content.style.paddingBottom = '0';
           }
+
         });
       });
+
     });
   </script>
 
