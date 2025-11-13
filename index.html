@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강서대학교 수업 문의 안내</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* index 페이지 전용 스타일만 유지 */
+        /* index 페이지 전용 스타일 */
+
         :root {
             --gsu-purple: #662D91;
-            --gsu-black: #000000;
             --gsu-warm-gray: #DCE0D3;
             --gsu-silver: #7A8087;
             --gsu-white: #FFFFFF;
@@ -19,29 +20,34 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--gsu-light-bg) 0%, var(--gsu-warm-gray) 100%);
+            background: linear-gradient(135deg, var(--gsu-light-bg), var(--gsu-warm-gray));
             padding: 20px;
         }
 
-        .header { text-align: center; padding: 30px 10px; }
+        .header {
+            text-align: center;
+            padding: 25px 5px 30px;
+        }
+
         .header h1 {
             font-size: 2em;
             font-weight: 700;
             color: var(--gsu-purple);
+            margin-bottom: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
+            gap: 8px;
         }
 
         .subtitle {
             font-size: 1rem;
             color: #555;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
+        /* 검색창 */
         .search-box {
             margin: 25px auto 15px;
             max-width: 600px;
@@ -54,44 +60,33 @@
             border: 2px solid var(--gsu-silver);
             border-radius: 50px;
             background: var(--gsu-white);
-            transition: all 0.3s;
+            transition: 0.3s;
         }
         #globalSearch:focus {
             border-color: var(--gsu-purple);
-            box-shadow: 0 0 0 3px rgba(102,45,145,0.15);
+            box-shadow: 0 0 0 4px rgba(102, 45, 145, 0.18);
         }
 
+        /* 검색 결과 */
         .search-result-item {
             background: #fff;
+            padding: 16px 20px;
             border-radius: 12px;
-            padding: 16px;
-            margin: 12px 0;
             border-left: 4px solid var(--gsu-purple);
+            margin: 12px 0;
             text-decoration: none;
             color: #000;
+            display: block;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             transition: 0.25s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .search-result-item:hover {
             transform: translateY(-3px);
-            background: #f8f3ff;
-            box-shadow: 0 4px 12px rgba(102,45,145,0.15);
-        }
-        .search-result-item strong {
-            font-size: 1.1rem;
-            color: var(--gsu-purple);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .search-result-item p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 4px;
+            background: #f8f1ff;
+            box-shadow: 0 5px 15px rgba(102,45,145,0.15);
         }
 
-        .no-result { text-align: center; padding: 20px; color: #777; }
-
+        /* 메뉴 카드 */
         .main-menu {
             display: grid;
             grid-template-columns: 1fr;
@@ -107,18 +102,18 @@
 
         .menu-card {
             background: var(--gsu-white);
-            border-radius: 16px;
-            padding: 25px 20px;
-            border: 1px solid var(--gsu-silver);
             text-align: center;
+            padding: 25px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--gsu-silver);
             text-decoration: none;
-            color: var(--gsu-black);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
         }
         .menu-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(102,45,145,0.18);
+            box-shadow: 0 8px 20px rgba(102,45,145,0.20);
             border-color: var(--gsu-purple);
         }
 
@@ -130,14 +125,14 @@
 
         .menu-card h2 {
             font-size: 1.3em;
-            font-weight: 700;
-            color: var(--gsu-purple);
             margin-bottom: 8px;
+            color: var(--gsu-purple);
+            font-weight: 700;
         }
 
         .menu-card p {
-            font-size: 0.95em;
             color: #666;
+            font-size: 0.95rem;
         }
 
         .footer {
@@ -150,54 +145,97 @@
 </head>
 
 <body>
+
     <div class="container">
 
         <header class="header">
             <h1><i class="fas fa-graduation-cap"></i> 강서대학교 수업 문의 안내</h1>
-            <p class="subtitle">출석, 성적, 휴·보강, 시험, 강의실 기자재 안내를 한눈에 확인하세요.</p>
+            <p class="subtitle">출석·휴보강·시험·성적·강의실 기자재 안내를 한눈에 확인하세요.</p>
 
             <div class="search-box">
-                <input id="globalSearch" type="text" placeholder="예: 출석인정, 시험 추가, 보드마카 등 검색">
+                <input id="globalSearch" type="text" placeholder="예: 출석인정, 시험, 보강, 기자재 등 검색">
             </div>
         </header>
 
         <div id="searchResults"></div>
 
+        <!-- 메뉴 -->
         <main class="main-menu">
+
             <a href="attendance.html" class="menu-card">
                 <i class="fas fa-user-check"></i>
                 <h2>출석 관련</h2>
-                <p>출석기준, 전자출결, 공결·유고결석 절차 안내</p>
+                <p>출석 기준, 전자출결, 공결·유고결석 안내</p>
             </a>
 
             <a href="adjust.html" class="menu-card">
                 <i class="fas fa-calendar-alt"></i>
                 <h2>휴·보강 관련</h2>
-                <p>휴보강 신청, 계획서 제출 및 결과보고 절차 안내</p>
+                <p>휴강·보강 신청 및 결과보고 절차 안내</p>
             </a>
 
             <a href="score.html" class="menu-card">
                 <i class="fas fa-chart-bar"></i>
                 <h2>성적 관련</h2>
-                <p>성적평가 기준, 입력·정정, 제출서류 안내</p>
+                <p>성적평가 기준, 성적 입력·제출 안내</p>
             </a>
 
             <a href="exam.html" class="menu-card">
                 <i class="fas fa-pen-to-square"></i>
                 <h2>시험 관련</h2>
-                <p>중간·기말 운영, 추가시험, 부정행위 안내</p>
+                <p>중간·기말시험, 부정행위, 추가시험 안내</p>
             </a>
 
             <a href="facility.html" class="menu-card">
                 <i class="fas fa-chalkboard"></i>
                 <h2>강의실·기자재</h2>
-                <p>보드마카·화이트보드 사용, 기자재 고장 신고</p>
+                <p>보드마카, 화이트보드, 장비 고장 신고 안내</p>
             </a>
+
         </main>
 
         <div class="footer">
-            © 2025 강서대학교 교무처 | 수업관리 안내
+            © 2025 강서대학교 교무처 | 수업 관리 안내
         </div>
+
     </div>
+
+    <script>
+        /* 전역 검색 기능 (index 페이지 전용) */
+        const data = [
+            { text: "출석", url: "attendance.html" },
+            { text: "휴보강", url: "adjust.html" },
+            { text: "시험", url: "exam.html" },
+            { text: "성적", url: "score.html" },
+            { text: "강의실", url: "facility.html" }
+        ];
+
+        const input = document.getElementById("globalSearch");
+        const resultsBox = document.getElementById("searchResults");
+
+        input.addEventListener("input", () => {
+            const keyword = input.value.trim();
+            resultsBox.innerHTML = "";
+
+            if (keyword === "") return;
+
+            const match = data.filter(item => item.text.includes(keyword));
+
+            if (match.length === 0) {
+                resultsBox.innerHTML = "<p class='no-result'>검색 결과가 없습니다.</p>";
+                return;
+            }
+
+            match.forEach(item => {
+                const el = document.createElement("a");
+                el.className = "search-result-item";
+                el.href = item.url;
+                el.innerHTML = `<strong><i class="fas fa-search"></i> ${item.text}</strong>
+                                <p>${item.url} 보기</p>`;
+                resultsBox.appendChild(el);
+            });
+        });
+    </script>
+
 </body>
 </html>
