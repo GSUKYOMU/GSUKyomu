@@ -6,7 +6,9 @@
     <title>강서대학교 수업 문의 안내</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
+        /* index 페이지 전용 스타일만 유지 */
         :root {
             --gsu-purple: #662D91;
             --gsu-black: #000000;
@@ -16,166 +18,146 @@
             --gsu-light-bg: #F5F5F5;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
             background: linear-gradient(135deg, var(--gsu-light-bg) 0%, var(--gsu-warm-gray) 100%);
-            color: var(--gsu-black);
-            min-height: 100vh;
             padding: 20px;
         }
 
-        .container { max-width: 800px; margin: 0 auto; }
-
-        .header { text-align: center; padding: 30px 20px; }
-
+        .header { text-align: center; padding: 30px 10px; }
         .header h1 {
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: 700;
             color: var(--gsu-purple);
-            margin-bottom: 12px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 10px;
+            margin-bottom: 12px;
         }
 
         .subtitle {
-            font-size: 1.1em;
+            font-size: 1rem;
             color: #555;
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.5;
         }
 
         .search-box {
-            margin: 30px auto 25px;
+            margin: 25px auto 15px;
             max-width: 600px;
         }
 
         #globalSearch {
             width: 100%;
             padding: 14px 20px;
-            font-size: 1.1em;
+            font-size: 1rem;
             border: 2px solid var(--gsu-silver);
             border-radius: 50px;
-            outline: none;
-            transition: all 0.3s;
             background: var(--gsu-white);
-            color: var(--gsu-black);
+            transition: all 0.3s;
         }
-
         #globalSearch:focus {
             border-color: var(--gsu-purple);
-            box-shadow: 0 0 0 3px rgba(102, 45, 145, 0.15);
+            box-shadow: 0 0 0 3px rgba(102,45,145,0.15);
         }
-
-        #searchResults { margin-top: 20px; }
 
         .search-result-item {
-            display: block;
+            background: #fff;
+            border-radius: 12px;
             padding: 16px;
             margin: 12px 0;
-            background: var(--gsu-white);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--gsu-black);
             border-left: 4px solid var(--gsu-purple);
-            transition: all 0.25s ease;
+            text-decoration: none;
+            color: #000;
+            transition: 0.25s;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-
         .search-result-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 45, 145, 0.15);
-            background: #f9f4ff;
+            transform: translateY(-3px);
+            background: #f8f3ff;
+            box-shadow: 0 4px 12px rgba(102,45,145,0.15);
         }
-
         .search-result-item strong {
+            font-size: 1.1rem;
+            color: var(--gsu-purple);
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.15em;
-            margin-bottom: 6px;
-            color: var(--gsu-purple);
         }
-
         .search-result-item p {
-            margin: 0;
+            font-size: 0.9rem;
             color: #666;
-            font-size: 0.95em;
-            line-height: 1.5;
+            margin-top: 4px;
         }
 
-        .no-result { text-align: center; color: #888; padding: 20px; font-style: italic; }
+        .no-result { text-align: center; padding: 20px; color: #777; }
 
         .main-menu {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         @media (min-width: 600px) {
-            .main-menu { grid-template-columns: 1fr 1fr; }
+            .main-menu {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .menu-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
             background: var(--gsu-white);
             border-radius: 16px;
+            padding: 25px 20px;
+            border: 1px solid var(--gsu-silver);
             text-align: center;
             text-decoration: none;
             color: var(--gsu-black);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            min-height: 180px;
-            border: 1px solid var(--gsu-silver);
         }
-
         .menu-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(102, 45, 145, 0.18);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102,45,145,0.18);
             border-color: var(--gsu-purple);
         }
 
         .menu-card i {
-            font-size: 2.2em;
-            margin-bottom: 16px;
+            font-size: 2em;
+            margin-bottom: 12px;
             color: var(--gsu-purple);
-            transition: transform 0.3s;
         }
 
-        .menu-card:hover i { transform: scale(1.15); }
-
         .menu-card h2 {
-            font-size: 1.4em;
+            font-size: 1.3em;
             font-weight: 700;
-            margin-bottom: 10px;
             color: var(--gsu-purple);
+            margin-bottom: 8px;
         }
 
         .menu-card p {
             font-size: 0.95em;
             color: #666;
-            line-height: 1.5;
         }
 
-        .footer { text-align: center; margin-top: 40px; color: var(--gsu-silver); font-size: 0.9em; }
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 35px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
+
         <header class="header">
             <h1><i class="fas fa-graduation-cap"></i> 강서대학교 수업 문의 안내</h1>
-            <p class="subtitle">출석, 성적, 휴·보강, 시험, 강의실 기자재 관련 안내를 한눈에 확인하세요.</p>
+            <p class="subtitle">출석, 성적, 휴·보강, 시험, 강의실 기자재 안내를 한눈에 확인하세요.</p>
+
             <div class="search-box">
-                <input type="text" id="globalSearch" placeholder="예: 출석인정, 보강 신청, 보드마카, 기자재 수리 등으로 검색">
+                <input id="globalSearch" type="text" placeholder="예: 출석인정, 시험 추가, 보드마카 등 검색">
             </div>
         </header>
 
@@ -185,13 +167,13 @@
             <a href="attendance.html" class="menu-card">
                 <i class="fas fa-user-check"></i>
                 <h2>출석 관련</h2>
-                <p>출석기준, 전자출결, 공결·유고결석 및 인정 절차 안내</p>
+                <p>출석기준, 전자출결, 공결·유고결석 절차 안내</p>
             </a>
 
             <a href="adjust.html" class="menu-card">
                 <i class="fas fa-calendar-alt"></i>
                 <h2>휴·보강 관련</h2>
-                <p>휴강/보강 신청, 계획서 제출 및 결과보고서 안내</p>
+                <p>휴보강 신청, 계획서 제출 및 결과보고 절차 안내</p>
             </a>
 
             <a href="score.html" class="menu-card">
@@ -203,13 +185,13 @@
             <a href="exam.html" class="menu-card">
                 <i class="fas fa-pen-to-square"></i>
                 <h2>시험 관련</h2>
-                <p>중간·기말시험 운영, 부정행위 예방 및 추가시험 안내</p>
+                <p>중간·기말 운영, 추가시험, 부정행위 안내</p>
             </a>
 
             <a href="facility.html" class="menu-card">
                 <i class="fas fa-chalkboard"></i>
-                <h2>강의실 및 기자재</h2>
-                <p>화이트보드·보드마카 사용, 강의실 수리 및 기자재 이상 신고 안내</p>
+                <h2>강의실·기자재</h2>
+                <p>보드마카·화이트보드 사용, 기자재 고장 신고</p>
             </a>
         </main>
 
