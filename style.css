@@ -1,64 +1,68 @@
 /* ================================
-   Gangseo University 통합 스타일 (B안: 가독성 강화)
+   강서대학교 통합 스타일 (최종본)
+   - 전 페이지 공통 디자인
+   - 가독성 B안 (17px / line-height 1.7)
+   - 아코디언 UI 완전 통일
 =================================== */
 
-/* 기본 설정 */
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #f5f7fa;
   color: #333;
-  font-size: 17px;              /* 기본 폰트 크게 */
-  line-height: 1.7;             /* 전체 가독성 강화 */
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-/* 컨테이너 박스 */
+/* 기본 컨테이너 */
 .container {
-  max-width: 950px !important;  /* 모든 페이지 동일 */
+  max-width: 950px;
   margin: 20px auto;
   background: #fff;
   padding: 28px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* 텍스트 기본 설정 */
-p, li {
+/* 기본 텍스트 */
+p,
+li {
   font-size: 16px;
   color: #444;
   line-height: 1.7;
 }
 
+/* 제목 */
 h1 {
-  font-size: 2.0em;    /* 페이지 큰 제목 */
+  font-size: 2.0em;
   font-weight: 700;
-  margin-bottom: 10px;
 }
-
 h2 {
-  font-size: 1.45em;   /* 메뉴 카드/소제목 */
+  font-size: 1.45em;
   font-weight: 700;
 }
-
 h3 {
   font-size: 1.2em;
   font-weight: 600;
 }
 
-/* 돌아가기 링크 */
+/* 돌아가기 버튼 */
 .back-link {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   text-decoration: none;
   color: #007bff;
   margin-bottom: 20px;
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 0.95em;
 }
 .back-link:hover {
   text-decoration: underline;
@@ -72,19 +76,18 @@ h3 {
   border-radius: 12px;
   background: #eaf4ff;
   border: 1px solid #cce5ff;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 .page-hero i {
-  font-size: 1.8em;
   color: #007bff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 1.8em;
 }
 .page-hero p {
-  color: #555;
   margin-top: 5px;
 }
 
-/* 안내 상자 */
+/* 안내 박스 */
 .info-box-header {
   background-color: #fff3cd;
   color: #856404;
@@ -92,104 +95,122 @@ h3 {
   border: 1px solid #ffeeba;
   border-radius: 8px;
   margin-bottom: 25px;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* 아코디언 */
+/* ================================
+   아코디언 통일 스타일
+=================================== */
+
 .accordion-header-new {
+  width: 100%;
   background: #f8f9fa;
-  padding: 18px;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: 18px 20px;
   font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  margin-bottom: 12px;
-  transition: all 0.3s ease;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
 }
-.accordion-header-new.active {
-  background-color: #e6f0ff;
-  border-color: #007bff;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-}
+
 .accordion-header-new i:first-child {
   color: #007bff;
   margin-right: 10px;
 }
-.toggle-icon {
+
+.accordion-header-new .toggle-icon {
   transition: transform 0.3s;
 }
 
-/* 아코디언 내용 */
+.accordion-header-new.active {
+  background-color: #e6f0ff;
+  border-color: #007bff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-header-new.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* 내용 */
 .accordion-content-new {
+  width: 100%;
   max-height: 0;
   overflow: hidden;
   background: #fff;
-  padding-left: 18px;
-  padding-right: 18px;
   border: 1px solid #eee;
-  border-top: 0;
-  border-radius: 0 0 10px 10px;
-  margin-bottom: 18px;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 0 20px;
+  margin-top: -12px;
+  margin-bottom: 20px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   font-size: 1rem;
 }
 
 .accordion-content-new ul,
 .accordion-content-new ol {
-  margin-left: 22px;
-  margin-top: 12px;
-  margin-bottom: 18px;
-}
-.accordion-content-new li {
-  margin-bottom: 6px;
+  margin: 15px 0 20px 26px;
 }
 
-/* 표 */
+/* ================================
+   공통 표 스타일
+=================================== */
+
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.98rem;
-  margin-top: 12px;
-  margin-bottom: 18px;
-}
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-th {
-  background-color: #f0f8ff;
-  font-weight: 600;
-}
-tr:nth-child(even) {
-  background-color: #fafafa;
+  font-size: 1rem;
+  margin: 15px 0 20px;
 }
 
-/* 문의박스 */
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background: #f0f8ff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* ================================
+   문의 박스
+=================================== */
+
 .contact-box {
   margin-top: 35px;
   background: #f7f9fc;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 .contact-box h3 {
+  font-size: 1.2em;
   display: flex;
   align-items: center;
-  font-size: 1.2em;
   margin-bottom: 10px;
 }
+
 .contact-box h3 i {
-  margin-right: 10px;
   color: #007bff;
+  margin-right: 10px;
 }
+
 .contact-box p {
   margin: 6px 0;
 }
-
